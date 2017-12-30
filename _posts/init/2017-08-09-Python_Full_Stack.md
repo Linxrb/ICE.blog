@@ -1,0 +1,23 @@
+---
+title: Python 全栈之路系列文章
+layout: post
+---
+
+### 基础篇
+
+1. [python]全栈基础篇：[开篇基础]({{site.baseurl}}/2017/05/03/python-basics)
+2. [python]全栈基础篇：[流程控制]({{site.baseurl}}/2017/05/03/python-flowcContort)
+3. [python]全栈基础篇：[赋值与运算符]({{site.baseurl}}/2017/05/03/python-assignment-and-operator)
+4. [python]全栈基础篇：[数字数据类型]({{site.baseurl}}/2017/05/03/python-digital-data-type)
+5. [python]全栈基础篇：[字符串数据类型]({{site.baseurl}}/2017/05/07/python-string-data-type)
+6. [python]全栈基础篇：[列表数据类型]({{site.baseurl}}/2017/05/05/python-list-data-type)
+7. [python]全栈基础篇：[元祖数据类型]({{site.baseurl}}/2017/05/03/python-tuple-data-type)
+8. [python]全栈基础篇：[字典数据类型]({{site.baseurl}}/2017/05/03/python-dict-data-type)
+9. [python]全栈基础篇：[集合(set)数据类型]({{site.baseurl}}/2017/05/03/python-set-data-type)
+10. [python]全栈基础篇：[布尔数据类型]({{site.baseurl}}/2017/05/03/python-bool-data-type)
+11. [python]全栈基础篇：[函数]({{site.baseurl}}/2017/05/07/python-function)
+12. [python]全栈基础篇：[内置函数]({{site.baseurl}}/2017/05/09/python-built-in-function)
+
+### 进阶篇
+
+1. [python]全栈进价篇：[文件操作]({{site.baseurl}}/2017/05/05/python-file-operation)

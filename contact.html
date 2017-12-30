@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>浊心’blog | 大好时光</title>
+    <meta name=”keyword” content="浊心,Linrb">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="statics/home_page.css">
+    <script src="statics/jquery-3.1.1.js"></script>
+
+<link rel="icon" href="images/ice.ico" type="images/ice.icon">
+<style type="text/css">
+        #contact{    border-bottom:1px solid;color:red;
+}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+    <header>
+        <div class="blocks-wrap clearfix">
+            <div class="block">
+                <div class="block-inner clearfix">
+                      <h1><a href="index.html">Linrb</a></h1>
+                </div>
+            </div>
+            <div class="block">
+                <div class="block-inner">
+                    <nav class="global-nav clearfix" id="block_inner" >
+                            <li> <a href="index.html" class="nav-link current" id="work">Work</a></li>
+                            <li> <a href="about.html" class="nav-link" id="about">About</a></li>
+                            <li> <a href="contact.html" class="nav-link" id="contact">Contact</a> </li>
+                            <li> <a href="article.html" class="nav-link" id="article">Article</a> </li>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="contact">
+        <div class="contact-section">
+            <div class="blocks-wrap clearfix">
+                <div class="block">
+                    <div class="block-inner">
+                        <h2 class="contact-section-title"> Contact </h2>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="block-inner">
+                        <div class="info-section-content">
+                            <p class="info-row">
+                                <span class="info-item">
+                                    <a href="mailto:Linxrb@163.com" id = "info-item-a"> Linxrb </a>
+                                </span>
+                                <span id="phone-number" class="info-item" data-phone-number="(+86) 130 3463 6345" data-phone-text="(+86) 130 DINE 6345"> (+86)  </span>
+                            </p>
+                            <p class="info-row">
+                                <span class="info-item">
+                                    <a href="mailto:Linxrb@163.com" id = "info-item-a"> Linxrb@163.com  </a>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-section">
+            <div class="blocks-wrap clearfix">
+                <div class="block">
+                    <div class="block-inner">
+                        <h2 class="contact-section-title"> Address </h2>
+                    </div> </div> <div class="block">
+                <div class="block-inner">
+                    <div class="info-section-content">
+                        <p class="info-row">
+                            <span class="info-item"> zhuoxin.me </span>
+                            <span class="info-item lighter"> <a href="" target="_blank" id = "info-item-a"> Map </a> </span>
+                        </p>
+                        <p class="info-row">
+                            <span class="info-item" > zhuoxin.me/article </p>
+                        <p class="info-row">
+                            <span class="info-item"> Guangdong, China </span> </p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="contact-section">
+            <div class="blocks-wrap clearfix">
+                <div class="block">
+                    <div class="block-inner">
+                        <h2 class="contact-section-title"> Elsewhere </h2>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="block-inner">
+                        <div class="info-section-content">
+                            <p class="info-row">
+                                <span class="info-item">
+                                    <a href="https://www.github.com/Linxrb" target="_blank" id = "info-item-a"> GitHub </a>
+                                </span>
+                                <span class="info-item">
+                                    <a href="/" target="_blank" id = "info-item-a"> Facebook </a>
+                                </span>
+                            </p>
+                            <p class="info-row">
+                                <span class="info-item">
+                                    <a href="/" target="_blank" id = "info-item-a"> Dribbble </a>
+                                </span>
+                                <span class="info-item">
+                                    <a href="/" target="_blank" id = "info-item-a"> Weibo </a>
+                                </span>
+                            </p>
+                            <p class="info-row">
+                                <span class="info-item">
+                                    <a href="/" target="_blank" id = "info-item-a"> Creative Market </a>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="blocks-wrap clearfix">
+            <div class="block">
+                <div class="block-inner">
+                    <a href='about.html' class="next-project-link emphasize"> Archive &raquo; </a>
+                    <p class="desc"> Check out the archive of my previous works. </p>
+                </div>
+            </div>
+            <div class="block">
+                <div class="block-inner">
+                    <p class="copyright"> <br /> &copy; 2017 Linrb. All rights reserved. </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<div id="TOP" class="go-top go-top_hide">
+    <img src="images/back-to-top.png" onclick="GoTop();" class="top_img"/>
+</div>
+<script>
+   window.onscroll = function () {
+            var current = $(window).scrollTop();
+            if (current > 180){
+                $(".go-top").removeClass("go-top_hide");
+            }else {
+                $(".go-top").addClass("go-top_hide");
+            }
+        };
+
+        function GoTop() {
+            $(window).scrollTop(900);
+            $('body,html').animate({scrollTop:0},500);
+        }
+</script>
+</body>
+</html>
+

@@ -1,0 +1,120 @@
+---
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>浊心’blog | 大好时光</title>
+    <meta name=”keyword” content="浊心,Linrb">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="statics/home_page.css">
+    <script src="statics/jquery-3.1.1.js"></script>
+
+<link rel="icon" href="images/ice.ico" type="images/ice.icon">
+<style type="text/css">
+        #article{    border-bottom:1px solid;color:red;
+}
+/***********  搜索框部分 ***********/
+.head .head_bottom{
+    width: 100%;
+    height:60px;
+    background-color: white;
+}
+.head .head_bottom input{
+    border: 0;
+    height: 60px;
+    width: 80%;
+    outline: none;
+}
+.head .head_bottom div{
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.head img{
+    border: 0;
+    height: auto;
+    max-height: 100%;
+    width: auto;
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+    <header>
+        <div class="blocks-wrap clearfix">
+            <div class="block">
+                <div class="block-inner clearfix">
+                      <h1><a href="index.html">Linrb</a></h1>
+                </div>
+            </div>
+            <div class="block">
+                <div class="block-inner">
+                    <nav class="global-nav clearfix" id="block_inner" >
+                            <li> <a href="index.html" class="nav-link current" id="work">Work</a></li>
+                            <li> <a href="about.html" class="nav-link" id="about">About</a></li>
+                            <li> <a href="contact.html" class="nav-link" id="contact">Contact</a> </li>
+                            <li> <a href="article.html" class="nav-link" id="article">Article</a> </li>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="head">
+        <div class="head_bottom">
+            <div>
+                <img src="images/soso.png">
+                <input type="text" value='在这里可以输入搜索关键字' style="color: #9c9c9c"
+                onfocus='if(this.value=="在这里可以输入搜索关键字"){this.value="";}; '
+                onblur='if(this.value==""){this.value="在这里可以输入搜索关键字";};' name="x"/>
+            </div>
+        </div>
+    </div>
+    <section class="hero">
+        <a href="{{ site.baseurl }}" class="slide-item">
+            <div class="slide-title">
+                <h2>页面没想好，设计中。。。</h2>
+            </div>
+            <img alt="" srcset="images/initium-5.png 1400w, images/initium-5.png 2800w" sizes="(min-width:700px) and (-webkit-min-device-pixel-ratio: 2) 2800px, (min-width:700px) 1400px" />
+        </a>
+    </section>
+    
+    <footer>
+        <div class="blocks-wrap clearfix">
+            <div class="block">
+                <div class="block-inner">
+                    <a href='about.html' class="next-project-link emphasize"> Archive &raquo; </a>
+                    <p class="desc"> Check out the archive of my previous works. </p>
+                </div>
+            </div>
+            <div class="block">
+                <div class="block-inner">
+                    <p class="copyright"> <br /> &copy; 2017 Linrb. All rights reserved. </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<div id="TOP" class="go-top go-top_hide">
+    <img src="images/back-to-top.png" onclick="GoTop();" class="top_img"/>
+</div>
+<script>
+   window.onscroll = function () {
+            var current = $(window).scrollTop();
+            if (current > 180){
+                $(".go-top").removeClass("go-top_hide");
+            }else {
+                $(".go-top").addClass("go-top_hide");
+            }
+        };
+
+        function GoTop() {
+            $(window).scrollTop(900);
+            $('body,html').animate({scrollTop:0},500);
+        }
+</script>
+</body>
+</html>

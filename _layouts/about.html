@@ -15,6 +15,7 @@
 <style type="text/css">
         
         #about{    border-bottom:1px solid;color:red;}
+        .my-site-list h2{cursor:pointer;}
         
 </style>
 </head>
@@ -80,6 +81,15 @@
     <img src="images/back-to-top.png" onclick="GoTop();" class="top_img"/>
 </div>
 <script>
+
+$(document).ready(function(){
+            
+    $(".my-site-list h2").click(function(){
+        $(this).next().slideToggle("slow");
+        //$("h2").next().css("display","block");
+      });
+});
+
    window.onscroll = function () {
             var current = $(window).scrollTop();
             if (current > 180){

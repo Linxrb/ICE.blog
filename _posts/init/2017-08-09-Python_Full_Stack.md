@@ -21,3 +21,4 @@ layout: post
 ### 进阶篇
 
 1. [python]全栈进价篇：[文件操作]({{site.baseurl}}/2017/05/05/python-file-operation)
+2. [python]全栈进价篇：[装饰器]({{site.baseurl}}/2017/05/09/python-decorator)

@@ -92,9 +92,9 @@ print(dic3)
 ```python
 dic = {'name': 'Linrb', 'age': 18,'class':1}
 
-dic.clear() : #清空字典，清空后变成一个空字典
+dic.clear() :   #清空字典，清空后变成一个空字典
 dic.pop('name') #删除指定项，并返回值
-dic.popitem() #随机删除某项并返回键和值
+dic.popitem()   #随机删除某项并返回键和值
 del dic['name'] #删除指定元素，也可以删除整个字典
 
 ```
@@ -107,7 +107,7 @@ dic3['name'] = 'alvin'
 
 dic4 = {'sex': 'male', 'hobby': 'girl', 'age': 36}
 dic3.update(dic4) #更新，存在覆盖，不存在添加
-print(dic3) #{'name': 'Linxrb', 'age': 36, 'sex': 'male', 'hobby': 'girl'}
+print(dic3)       #{'name': 'Linxrb', 'age': 36, 'sex': 'male', 'hobby': 'girl'}
 
 ```
 
@@ -121,11 +121,11 @@ print(dic3['names']) #取不到报错
 
 print(dic3.get('age',False)) #键存在就取值，不存在就使用默认值
 
-print(dic3.items()) #dict_items([('name', 'Linrb'), ('age', 99)])
-print(dic3.keys()) #dict_keys(['name', 'age'])
+print(dic3.items())  #dict_items([('name', 'Linrb'), ('age', 99)])
+print(dic3.keys())   #dict_keys(['name', 'age'])
 print(dic3.values()) #dict_values(['Linrb', 18])
 
-print('name' in dic3)  # py2:  dic3.has_key('name') #True
+print('name' in dic3)      # py2:  dic3.has_key('name') #True
 print(list(dic3.values())) #['Linrb', 99]
 ```
 

@@ -30,9 +30,9 @@ layout: post
 > abc  
 
 ```python
-f = open('hello.txt') #打开文件
-data = f.read() #获取文件内容
-f.close() #关闭文件
+f = open('hello.txt') #1 打开文件
+data = f.read()       #2 获取文件内容
+f.close()             #3 关闭文件
 ```
 **注意
  if in the win  
@@ -162,6 +162,9 @@ abc
 # 以只读的方式打开文件hello.txt
 f = open("hello.txt","r")
 # 将文件所有内容赋值给c
+#因为readlines 是一次性读取文件的所有内容，把每一行当成一个元素组成一个list
+#所以如果文件过大会一次性加载到内存，所有一般用 for line in f：
+#这里for 循环会把 f 处理成一个迭代器，所以它里面永远只有一行
 c = f.readlines()
 # 查看数据类型
 print(type(c))

@@ -22,3 +22,8 @@ layout: post
 
 1. [python]全栈进价篇：[文件操作]({{site.baseurl}}/2017/05/05/python-file-operation)
 2. [python]全栈进价篇：[装饰器]({{site.baseurl}}/2017/05/09/python-decorator)
+3. [python]全栈进价篇：[生成器与迭代器]({{site.baseurl}}/2017/05/10/python-generator-and-iterator)
+
+### Python标准库
+
+1. [python]标准库：[time]({{site.baseurl}}/2017/05/09/python-decorator)

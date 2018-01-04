@@ -119,7 +119,7 @@ func 就是一个`生成器函数`，调用该函数返回对象就是一个`生
 g = func(5)
 
 g.__next__()       #15
-next(g)             #25
+next(g)            #25
 
 g = func(5)
 for i in g:

@@ -30,7 +30,8 @@ print(datetime.date.fromtimestamp(time.time()))
 
 current_time = datetime.datetime.now()
 print(current_time)                 #2016-05-25 14:05:26.706667
-print(current_time.timetuple())     #将日期格式转换为struct_time格式。返回 struct_time 格式
+#将日期格式转换为struct_time格式。返回 struct_time 格式
+print(current_time.timetuple())
 time.struct_time(tm_year=2016, tm_mon=5, tm_mday=25, tm_hour=14, tm_min=5, tm_sec=26, tm_wday=2, tm_yday=146, tm_isdst=-1)
 ######################################
 

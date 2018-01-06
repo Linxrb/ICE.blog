@@ -259,3 +259,17 @@ while True:
         # 遇到StopIteration就退出循环
         break
 ```
+
+**迭代器为什么要有 __next__ 和 __iter__？**  
+这是个和多态有关的问题，Python中关于迭代有两个概念，第一个是 Iterable，第二个是 Iterator，  
+`协议规定 Iterable 的__iter_ 方法会返回一个 Iterator` ,  
+Iterator 的__next__方法（Python 2里是next）会返回下一个迭代对象，如果迭代结束则抛出 StopIteration 异常。  
+`同时，Iterator 自己也是一种 Iterable，所以也需要实现 Iterable 的接口，也就是__iter__ `，  
+这样在 for 当中两者都可以使用。Iterator 的__iter__只需要返回自己就行了。  
+**那么为什么不只保留Iterator的接口而还需要设计Iterable呢？**  
+许多对象比如 list、dict，是可以重复遍历的，甚至可以同时并发地进行遍历，  
+通过__iter__每次返回一个独立的迭代器，就可以保证不同的迭代过程不会互相影响。  
+而生成器表达式之类的结果往往是一次性的，不可以重复遍历，所以直接返回一个 Iterator 就好。  
+让 Iterator 也实现 Iterable 的兼容就可以很灵活地选择返回哪一种。  
+总结：Iterator 实现的__iter__是为了兼容 Iterable 的接口，从而让 Iterator 成为 Iterable 的一种实现。
+

@@ -26,7 +26,10 @@ layout: post
 
 ### Python标准库
 
-4. [python]标准库：[os]({{site.baseurl}}/2017/05/13/python-module-os)
-5. [python]标准库：[time]({{site.baseurl}}/2017/05/10/python-module-time)
-6. [python]标准库：[datetime]({{site.baseurl}}/2017/05/10/python-module-datetime)
-7. [python]标准库：[random]({{site.baseurl}}/2017/05/10/python-module-random)
+1. [python]标准库：[sys]({{site.baseurl}}/2017/05/13/python-module-sys)
+2. [python]标准库：[os]({{site.baseurl}}/2017/05/13/python-module-os)
+3. [python]标准库：[time]({{site.baseurl}}/2017/05/10/python-module-time)
+4. [python]标准库：[datetime]({{site.baseurl}}/2017/05/10/python-module-datetime)
+5. [python]标准库：[random]({{site.baseurl}}/2017/05/10/python-module-random)
+6. [python]标准库：[hashlib]({{site.baseurl}}/2017/05/13/python-module-hashlib)
+7. [python]标准库：[logging]({{site.baseurl}}/2017/05/15/python-module-logging)

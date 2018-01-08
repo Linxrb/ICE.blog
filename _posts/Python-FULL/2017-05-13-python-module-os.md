@@ -6,8 +6,6 @@ layout: post
 
 > This module provides a portable way of using operating system dependent functionality. If you just want to read or write a file see open(), if you want to manipulate paths, see the os.path module, and if you want to read all the lines in all the files on the command line see the fileinput module. For creating temporary files and directories see the tempfile module, and for high-level file and directory handling see the shutil module。  
 
-<br>
-
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 |**方法名**|**说明**|
 |os.getcwd()|获取当前工作目录，即当前python脚本工作的目录路径,不包括脚本文件名|

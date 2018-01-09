@@ -33,3 +33,4 @@ layout: post
 5. [python]标准库：[random]({{site.baseurl}}/2017/05/10/python-module-random)
 6. [python]标准库：[hashlib]({{site.baseurl}}/2017/05/13/python-module-hashlib)
 7. [python]标准库：[logging]({{site.baseurl}}/2017/05/15/python-module-logging)
+8. [python]标准库：[configparser]({{site.baseurl}}/2017/05/15/python-module-configparser)

@@ -23,6 +23,7 @@ layout: post
 1. [python]全栈进价篇：[文件操作]({{site.baseurl}}/2017/05/05/python-file-operation)
 2. [python]全栈进价篇：[装饰器]({{site.baseurl}}/2017/05/09/python-decorator)
 3. [python]全栈进价篇：[生成器与迭代器]({{site.baseurl}}/2017/05/10/python-generator-and-iterator)
+4. [python]全栈进价篇：[正则表达式 re]({{site.baseurl}}/2017/05/15/python-module-re)
 
 ### Python标准库
 

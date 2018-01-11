@@ -136,7 +136,7 @@ config.remove_option('Linrb','k1')             #删除节点下的某一项
 config.write(open('i.cfg', "w"))
 ```
 
-<h3 id='z2'>总结</h3>
+<h3 id='z2'>小结</h3>
 
 > 除了上面的一些方法外，其实可以把 config 对象当成一个字典来操作  
 > 添加节点：config[sections] = {}  

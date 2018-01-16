@@ -36,3 +36,4 @@ layout: post
 7. [python]标准库：[hashlib]({{site.baseurl}}/2017/05/13/python-module-hashlib)
 8. [python]标准库：[logging]({{site.baseurl}}/2017/05/15/python-module-logging)
 9. [python]标准库：[configparser]({{site.baseurl}}/2017/05/15/python-module-configparser)
+10. [python]标准库：[json 和 pickle]({{site.baseurl}}/2017/05/15/python-module-json-and-pickle)

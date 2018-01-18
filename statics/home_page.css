@@ -3,7 +3,7 @@ html,body,div,header,h1,h2,h3,h4,h5,h6,spen,a,section,p,img,footer,input,nav,for
     margin:0;padding:0
 }
 ::selection{
-    color:#323232;
+    color:#1a1a1a;
     background:rgba(0,0,0,0.08)
 }
 article,aside,canvas,figure,figure img,figcaption,hgroup,footer,header,nav,section,audio,video{
@@ -18,12 +18,12 @@ h1,h2,h3,h4,h5,h6,.emphasize{
     display:table;clear:both;content:''
 }
 html{
-    font-size:100%;height:100%;background:#323232;
+    font-size:100%;height:100%;background:#1a1a1a;
 }
 html::-webkit-scrollbar{display: none}
 body{
     font:400 100%/1.75 'Graphik Web', 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;height:100%;
-    color:#323232;
+    color:#1a1a1a;
 
 }
 nav ul,nav ol{
@@ -32,7 +32,7 @@ nav ul,nav ol{
 a{
     transition:color 0.1s ease;
     text-decoration:none;
-    color:#323232
+    color:#1a1a1a
 }
 a:hover{
     border-bottom:1px solid

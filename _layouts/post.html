@@ -191,11 +191,12 @@ $(document).ready(function(){
         $("#toggle").next().css("display","block");
       });
     $(".show_wz a").attr("target","_blank");
+    $("#markdown-toc a").removeAttr("target")
 });
 
 
 $("table a").addClass("topLink") //表格下的所有a标签加上类名
-
+$("#markdown-toc a").addClass("topLink")
     //锚点滑动
     $(document).ready(function() {      
       $("a.topLink").click(function() {

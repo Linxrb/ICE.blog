@@ -189,21 +189,52 @@ footer .next-project-link+.copyright{
     margin:1px 0 0 0;
     border-radius:0
 }
+
+/* toc */
+.bar{
+            width: 24px;
+            height: 24px;
+            border:1px solid #2a2a2a;
+            background-color:#2a2a2a;
+            position:fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index:1000;
+            cursor:pointer;
+        }
+        .menu{
+            width:20px;
+            height:2px;
+            background-color:#ffffff;
+            position:absolute;
+            transform:translate3d(-50%,-50%,0);
+            left:50%;
+            transition:all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s
+        }
+        #menu0{
+            top:30%;
+        }
+        #menu1{
+            top:50%;
+        }
+        #menu2{
+            top:70%;
+        }
 /* 返回顶部 */
 .go-top {
     position: fixed;
     right: 40px;
     bottom: 5px;
-    width: 23px;
-    height: 23px;
+    height: 24px;
+    width: 24px;
     background-color: #2a2a2a;
 }
 .go-top_hide {
     display: none;
 }
 .top_img{
-    height: 23px;
-    width: 23px;
+    height: 24px;
+    width: 24px;
 }
 @media (max-width: 800px){
     .wrap{width:100%;max-width:none }
@@ -226,5 +257,5 @@ footer .next-project-link+.copyright{
     .blocks-wrap{margin-right:1.8rem;margin-left:1.8rem;padding:1.8rem 0}
     .block{width:100%}.block+.block{margin-top:1.6rem}
     .block #block_inner{text-align: right}
-    .go-top {right: 30px;}
+    .go-top,.bar {right: 30px;}
 }

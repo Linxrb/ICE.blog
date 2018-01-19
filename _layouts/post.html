@@ -9,30 +9,8 @@
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/statics/code.css">
     <!--<script src="{{ site.baseurl }}/statics/code.js"></script>-->
     <script src="{{ site.baseurl }}/statics/jquery-3.1.1.js"></script>
-        <script type="text/javascript" >
-    $(setTimeout(function () {
-        (function(window) {
-    var theUA = window.navigator.userAgent.toLowerCase();
-    if ((theUA.match(/msie\s\d+/) && theUA.match(/msie\s\d+/)[0]) || (theUA.match(/trident\s?\d+/) && theUA.match(/trident\s?\d+/)[0])) {
-        var ieVersion = theUA.match(/msie\s\d+/)[0].match(/\d+/)[0] || theUA.match(/trident\s?\d+/)[0];
-        if (ieVersion < 9) {
-            var str = "你的浏览器版本太low了\n已经和时代脱轨了 :(";
-            var str2 = "推荐使用:<a href='#'>谷歌</a>,"
-            + "<a href='#'>火狐</a>,"
-            + "<a href='#'>猎豹</a>,其他双核急速模式";
-            document.writeln("<pre style='text-align:center;color:#fff;background-color:black; height:100%;border:0;position:fixed;top:0;left:0;width:100%;z-index:1234'>" +
-            "<h2 style='padding-top:200px;margin:0'><strong>" + str + "<br/></strong></h2><p>" +
-            str2 + "</p><h2 style='margin:0'><strong>如果你的使用的是双核浏览器,请切换到极速模式访问<br/></strong></h2></pre>");
-            document.execCommand("Stop");
-        };
-    }
-})(window);
-        $('#body_max').fadeOut(400)
-    },1000));
-</script>
+    <link rel="icon" href="{{ site.baseurl }}/images/ice.ico" type="images/ice.icon">
     
-
-<link rel="icon" href="{{ site.baseurl }}/images/ice.ico" type="images/ice.icon">
 <style type="text/css">
 /***********  搜索框部分 ***********/
 
@@ -62,23 +40,13 @@
 }
 /* 修改 markdown h 标签属性  */
 .markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h5,.markdown-body h6{
-    font-family:Roboto Slab;
-    background: rgba(0, 154, 205, 0.84);
-    color: #FFFFFF;
-    border-radius: 6px 6px 6px 6px;
-    font-weight: bold;
-    padding: 4px 12px 4px 10px;
-    text-shadow: 2px 2px 3px #222222;
-    width: auto;}
+    }
+.markdown-body h2{
+    border-bottom: 1px solid #eee;
+    font-size: 1.45em;
+}
 .markdown-body h4{    
-    display:inline-block;
-    background: rgba(0, 154, 205, 0.84);
-    color: #FFFFFF;
-    border-radius: 6px 6px 6px 6px;
-    font-weight: bold;
-    padding: 2px 12px 4px 10px;
-    text-shadow: 2px 2px 3px #222222;
-    width: auto;}
+}
 .markdown-body h3{margin-bottom: 30px}
 .markdown-body p{margin-bottom:0}
 /* 修改 Python/javascript 代码注释颜色*/
@@ -111,11 +79,17 @@
 
 /* 表格操作*/
 #toggle + table{display:none;margin-top:30px;margin-bottom:70px;color:#dd1144;text-align:center;}
+
+/*  toc */
+#markdown-toc ul,#markdown-toc ol,#markdown-toc li{list-style-type:none}
+#markdown-toc li{line-height:1.5}
+#markdown-toc{position: fixed;background-color: rgba(222, 213, 213, 0.32);right:10%;top:10%;display:none; padding: 30px;}
+#markdown-toc a:link{color:#888181;border-bottom:0}
+
+
 </style>
 </head>
 <body>
-<div id="body_max" ><img src="{{ site.baseurl }}/images/loading.gif" style="position: relative;top: 25%;border: 0;height: auto;max-height: 100%;width: auto;vertical-align: middle;max-width: 100%;"  /> </div>
-
 <div class='sh'></div>
 <div class="wrap">
     <header>
@@ -178,6 +152,11 @@
         </div>
     </footer>
 </div>
+<div class="bar" id="menubar">
+  <div class="menu" id="menu0"></div>
+  <div class="menu" id="menu1"></div>
+  <div class="menu" id="menu2"></div>
+</div>
 <div id="TOP" class="go-top go-top_hide">
     <img src="{{ site.baseurl }}/images/back-to-top.png" onclick="GoTop();" class="top_img"/>
 </div>
@@ -185,19 +164,50 @@
 <script>
 //隐藏与显示详细内容
 $(document).ready(function(){
-            
+
     $(".article_title .title span").click(function(){
         $("#toggle").next().slideToggle("slow");
         $("#toggle").next().css("display","block");
       });
-    $(".show_wz a").attr("target","_blank");
     $("#markdown-toc a").removeAttr("target")
+    
+        var current = $(window).scrollTop();
+        if (current > 400){
+            $(".go-top").removeClass("go-top_hide");
+        }else {
+            $(".go-top").addClass("go-top_hide");
+        }
+    // toc 按钮
+        var menubar = document.getElementById("menubar");
+        var menu0 = document.getElementById("menu0");
+        var menu1 = document.getElementById("menu1");
+        var menu2 = document.getElementById("menu2");
+        var i = 0;
+        menubar.onclick = function () {
+            i++;
+            if (i % 2 == 1) {
+                $("#markdown-toc").slideDown()
+                menu0.style.top = 50 + "%";
+                menu1.style.display = "none";
+                menu2.style.top = 50 + "%";
+                menu0.style.transform = "translate3d(-50%,-50%,0) rotate(135deg)";
+                menu2.style.transform = "translate3d(-50%,-50%,0) rotate(405deg)";
+            }
+            else {
+                $("#markdown-toc").slideUp()
+                menu0.style.transform = "translate3d(-50%,-50%,0) rotate(0deg)";
+                menu2.style.transform = "translate3d(-50%,-50%,0) rotate(0deg)";
+                menu0.style.top = 30 + "%";
+                menu2.style.top = 70 + "%";
+                menu1.style.display = "block";
+            }
+        }
 });
 
-
+//锚点滑动
 $("table a").addClass("topLink") //表格下的所有a标签加上类名
 $("#markdown-toc a").addClass("topLink")
-    //锚点滑动
+
     $(document).ready(function() {      
       $("a.topLink").click(function() {
         $("html, body").animate({
@@ -209,21 +219,29 @@ $("#markdown-toc a").addClass("topLink")
         return false;
       });
     });
-    
-    //返回顶部
-   window.onscroll = function () {
-            var current = $(window).scrollTop();
-            if (current > 400){
-                $(".go-top").removeClass("go-top_hide");
-            }else {
-                $(".go-top").addClass("go-top_hide");
-            }
-        };
 
-        function GoTop() {
-            $(window).scrollTop(900);
-            $('body,html').animate({scrollTop:350},500);
+//返回顶部
+
+//判断是否有 toc
+if ($("#markdown-toc").length>0){var markdownToc = $("#markdown-toc").offset().top}
+
+
+window.onscroll = function () {
+        var current = $(window).scrollTop();
+        if (current > 400){
+            $(".go-top").removeClass("go-top_hide");
+        }else {
+            $(".go-top").addClass("go-top_hide");
         }
+
+    };
+    
+
+function GoTop() {
+    $(window).scrollTop(900);
+    $('body,html').animate({scrollTop:350},500);
+}
+
 
 </script>
 </body>

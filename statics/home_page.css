@@ -249,6 +249,7 @@ footer .next-project-link+.copyright{
     .block .block-inner{margin-right:0;margin-left:0}
     .block #block_inner{margin-right:0;margin-left:0;text-align: right}
     footer{padding-bottom:2rem}
+    .bar {right: 75px;width:70px;bottom:5px}
 }
 @media (max-width: 480px){
      html{font-size:0.9rem}
@@ -259,5 +260,6 @@ footer .next-project-link+.copyright{
     .blocks-wrap{margin-right:1.8rem;margin-left:1.8rem;padding:1.8rem 0}
     .block{width:100%}.block+.block{margin-top:1.6rem}
     .block #block_inner{text-align: right}
-    .go-top,.bar {right: 30px;}
+    .go-top,{right: 30px;}
+    
 }

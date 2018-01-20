@@ -83,10 +83,11 @@
 /*  toc */
 #markdown-toc ul,#markdown-toc ol,#markdown-toc li{list-style-type:none}
 #markdown-toc li{line-height:1.5}
-#markdown-toc{position: fixed;background-color: rgba(222, 213, 213, 0.32);right:10%;top:10%;display:none; padding: 30px;}
+#markdown-toc{position: fixed;background-color:#fdfdfd;right:-100%;top:0; padding: 40px;overflow: auto;bottom: 0;text-overflow :ellipsis ;width:300px;z-index:100;margin:0;}
 #markdown-toc a:link{color:#888181;border-bottom:0}
+#markdown-toc::-webkit-scrollbar {display:none}
 
-
+.cover{position:fixed;top:0;right:0;left:0;bottom:0;background-color:rgba(0, 0, 0, 0.48);display:none}
 </style>
 </head>
 <body>
@@ -160,82 +161,98 @@
 <div id="TOP" class="go-top go-top_hide">
     <img src="{{ site.baseurl }}/images/back-to-top.png" onclick="GoTop();" class="top_img"/>
 </div>
-
+<div class = "cover"></div>
 <script>
 //隐藏与显示详细内容
 $(document).ready(function(){
-
-    $(".article_title .title span").click(function(){
+   /* 标题菜单
+   $(".article_title .title span").click(function(){
         $("#toggle").next().slideToggle("slow");
         $("#toggle").next().css("display","block");
       });
-    $("#markdown-toc a").removeAttr("target")
-    
+   */
+
+//$("#markdown-toc a").removeAttr("target")
+
+$("#markdown-toc a").addClass("topLink")    // toc  下 a 标签加类名
+var current = $(window).scrollTop();
+
+// 页面刷新时 返回顶部标签
+if (current > 400){
+    $(".go-top").removeClass("go-top_hide");
+}else {
+    $(".go-top").addClass("go-top_hide");
+}
+
+// toc 按钮
+if ($("#markdown-toc").length>0){
+var menubar = document.getElementById("menubar");
+var menu0 = document.getElementById("menu0");
+var menu1 = document.getElementById("menu1");
+var menu2 = document.getElementById("menu2");
+var i = 0;
+menubar.onclick = function () {
+    i++;
+    if (i % 2 == 1) {
+        $("#markdown-toc").css("display","block");
+        $("#markdown-toc").animate({right:'0px'},"slow")
+        $(".cover").fadeIn()
+        menu0.style.top = 50 + "%";
+        menu1.style.display = "none";
+        menu2.style.top = 50 + "%";
+        menu0.style.transform = "translate3d(-50%,-50%,0) rotate(135deg)";
+        menu2.style.transform = "translate3d(-50%,-50%,0) rotate(405deg)";
+    }else {
+        $("#markdown-toc").animate({right:'-100%'},"slow",function(){
+            $(this).css("display","none");
+        });
+        
+        $(".cover").fadeOut() 
+        menu0.style.transform = "translate3d(-50%,-50%,0) rotate(0deg)";
+        menu2.style.transform = "translate3d(-50%,-50%,0) rotate(0deg)";
+        menu0.style.top = 30 + "%";
+        menu2.style.top = 70 + "%";
+        menu1.style.display = "block";
         var current = $(window).scrollTop();
-        if (current > 400){
-            $(".go-top").removeClass("go-top_hide");
-        }else {
-            $(".go-top").addClass("go-top_hide");
-        }
-    // toc 按钮
-        var menubar = document.getElementById("menubar");
-        var menu0 = document.getElementById("menu0");
-        var menu1 = document.getElementById("menu1");
-        var menu2 = document.getElementById("menu2");
-        var i = 0;
-        menubar.onclick = function () {
-            i++;
-            if (i % 2 == 1) {
-                $("#markdown-toc").slideDown()
-                menu0.style.top = 50 + "%";
-                menu1.style.display = "none";
-                menu2.style.top = 50 + "%";
-                menu0.style.transform = "translate3d(-50%,-50%,0) rotate(135deg)";
-                menu2.style.transform = "translate3d(-50%,-50%,0) rotate(405deg)";
-            }
-            else {
-                $("#markdown-toc").slideUp()
-                menu0.style.transform = "translate3d(-50%,-50%,0) rotate(0deg)";
-                menu2.style.transform = "translate3d(-50%,-50%,0) rotate(0deg)";
-                menu0.style.top = 30 + "%";
-                menu2.style.top = 70 + "%";
-                menu1.style.display = "block";
-            }
-        }
-});
+        if (current < 400){$(".bar").css("display","none");}
+    }
+}}
 
 //锚点滑动
-$("table a").addClass("topLink") //表格下的所有a标签加上类名
-$("#markdown-toc a").addClass("topLink")
-
-    $(document).ready(function() {      
-      $("a.topLink").click(function() {
-        $("html, body").animate({
-          scrollTop: $($(this).attr("href")).offset().top - 30 + "px"
-        }, {
-          duration: 800,
-          easing: "swing"
-        });
-        return false;
-      });
-    });
-
-//返回顶部
+$("a.topLink").click(function() {
+$("html, body").animate({
+    scrollTop: $($(this).attr("href")).offset().top - 30 + "px"
+}, {
+    duration: 800,
+    easing: "swing"
+});
+    return false;
+})
+});
 
 //判断是否有 toc
 if ($("#markdown-toc").length>0){var markdownToc = $("#markdown-toc").offset().top}
 
 
-window.onscroll = function () {
-        var current = $(window).scrollTop();
-        if (current > 400){
-            $(".go-top").removeClass("go-top_hide");
-        }else {
-            $(".go-top").addClass("go-top_hide");
-        }
 
+//返回顶部   显示隐藏菜单按钮
+window.onscroll = function () {
+    var current = $(window).scrollTop();
+    if (current > 400){
+        $(".go-top").removeClass("go-top_hide");
+        if ($("#markdown-toc").length>0){
+            $(".bar").css("display","block");
+            }
+    }
+    else{
+        $(".go-top").addClass("go-top_hide");
+        if ($("#markdown-toc").length>0){   //y
+            if(parseInt($("#markdown-toc").css("right")) < 0){
+                $(".bar").css("display","none");}
+            else{$(".bar").css("display","block")}
+        }else{$("#bar").css("display","none")}
+    }
     };
-    
 
 function GoTop() {
     $(window).scrollTop(900);

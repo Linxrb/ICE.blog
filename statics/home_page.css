@@ -201,6 +201,7 @@ footer .next-project-link+.copyright{
             right: 40px;
             z-index:1000;
             cursor:pointer;
+            display:none;
         }
         .menu{
             width:20px;
@@ -225,6 +226,7 @@ footer .next-project-link+.copyright{
     position: fixed;
     right: 40px;
     bottom: 5px;
+    z-index:1000;
     height: 24px;
     width: 24px;
     background-color: #2a2a2a;

@@ -86,6 +86,7 @@
 #markdown-toc{position: fixed;background-color:#fdfdfd;right:-100%;top:0; padding: 40px;overflow: auto;bottom: 0;text-overflow :ellipsis ;width:300px;z-index:100;margin:0;}
 #markdown-toc a:link{color:#888181;border-bottom:0}
 #markdown-toc::-webkit-scrollbar {display:none}
+@media (max-width: 500px){#markdown-toc{width:280px}}
 
 .cover{position:fixed;top:0;right:0;left:0;bottom:0;background-color:rgba(0, 0, 0, 0.48);display:none}
 </style>
@@ -180,17 +181,18 @@ var current = $(window).scrollTop();
 // 页面刷新时 返回顶部标签
 if (current > 400){
     $(".go-top").removeClass("go-top_hide");
+    if ($("#markdown-toc").length>0){$(".bar").css("display","block")}
 }else {
     $(".go-top").addClass("go-top_hide");
 }
 
 // toc 按钮
 if ($("#markdown-toc").length>0){
-var menubar = document.getElementById("menubar");
-var menu0 = document.getElementById("menu0");
-var menu1 = document.getElementById("menu1");
-var menu2 = document.getElementById("menu2");
-var i = 0;
+    var menubar = document.getElementById("menubar");
+    var menu0 = document.getElementById("menu0");
+    var menu1 = document.getElementById("menu1");
+    var menu2 = document.getElementById("menu2");
+    var i = 0;
 menubar.onclick = function () {
     i++;
     if (i % 2 == 1) {
@@ -229,10 +231,6 @@ $("html, body").animate({
     return false;
 })
 });
-
-//判断是否有 toc
-if ($("#markdown-toc").length>0){var markdownToc = $("#markdown-toc").offset().top}
-
 
 
 //返回顶部   显示隐藏菜单按钮

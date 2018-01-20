@@ -3,7 +3,10 @@ title: Python 全栈之路系列文章
 layout: post
 ---
 
-### 基础篇
+* TOC
+{:toc}
+
+#### 基础篇
 
 1. [python]全栈基础篇：[开篇基础]({{site.baseurl}}/2017/05/03/python-basics)
 2. [python]全栈基础篇：[流程控制]({{site.baseurl}}/2017/05/03/python-flowcContort)
@@ -18,14 +21,14 @@ layout: post
 11. [python]全栈基础篇：[函数]({{site.baseurl}}/2017/05/07/python-function)
 12. [python]全栈基础篇：[内置函数]({{site.baseurl}}/2017/05/09/python-built-in-function)
 
-### 进阶篇
+#### 进阶篇
 
 1. [python]全栈进价篇：[文件操作]({{site.baseurl}}/2017/05/05/python-file-operation)
 2. [python]全栈进价篇：[装饰器]({{site.baseurl}}/2017/05/09/python-decorator)
 3. [python]全栈进价篇：[生成器与迭代器]({{site.baseurl}}/2017/05/10/python-generator-and-iterator)
 4. [python]全栈进价篇：[正则表达式 re]({{site.baseurl}}/2017/05/15/python-module-re)
 
-### Python标准库
+#### Python标准库
 
 1. [python]标准库：[模块介绍]({{site.baseurl}}/2017/05/15/python-module)
 2. [python]标准库：[sys]({{site.baseurl}}/2017/05/13/python-module-sys)

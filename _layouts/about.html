@@ -8,40 +8,13 @@
     <link rel="stylesheet" type="text/css" href="statics/home_page.css">
     <link rel="stylesheet" type="text/css" href="statics/about.css">
     <script src="statics/jquery-3.1.1.js"></script>
-  <!--     <script type="text/javascript" >
-    $(setTimeout(function () {
-        (function(window) {
-    var theUA = window.navigator.userAgent.toLowerCase();
-    if ((theUA.match(/msie\s\d+/) && theUA.match(/msie\s\d+/)[0]) || (theUA.match(/trident\s?\d+/) && theUA.match(/trident\s?\d+/)[0])) {
-        var ieVersion = theUA.match(/msie\s\d+/)[0].match(/\d+/)[0] || theUA.match(/trident\s?\d+/)[0];
-        if (ieVersion < 9) {
-            var str = "你的浏览器版本太low了\n已经和时代脱轨了 :(";
-            var str2 = "推荐使用:<a href='#'>谷歌</a>,"
-            + "<a href='#'>火狐</a>,"
-            + "<a href='#'>猎豹</a>,其他双核急速模式";
-            document.writeln("<pre style='text-align:center;color:#fff;background-color:black; height:100%;border:0;position:fixed;top:0;left:0;width:100%;z-index:1234'>" +
-            "<h2 style='padding-top:200px;margin:0'><strong>" + str + "<br/></strong></h2><p>" +
-            str2 + "</p><h2 style='margin:0'><strong>如果你的使用的是双核浏览器,请切换到极速模式访问<br/></strong></h2></pre>");
-            document.execCommand("Stop");
-        };
-    }
-})(window);
-        $('#body_max').fadeOut(400)
-    },1000));
-</script>
-    
--->
-<link rel="icon" href="images/ice.ico" type="images/ice.icon">
-<style type="text/css">
-        
-        #about{    border-bottom:1px solid;color:red;}
-        .my-site-list h2{cursor:pointer;}
-        
-</style>
+    <link rel="icon" href="images/ice.ico" type="images/ice.icon">
+    <style type="text/css">
+            #about{    border-bottom:1px solid;color:red;}
+            .my-site-list h2{cursor:pointer;}
+    </style>
 </head>
 <body>
-<!--<div id="body_max" ><img src="images/loading.gif" style="position: relative;top: 25%;border: 0;height: auto;max-height: 100%;width: auto;vertical-align: middle;max-width: 100%;"  /> </div>-->
-
 <div class="wrap">
     <header>
         <div class="blocks-wrap clearfix">
@@ -99,33 +72,14 @@
         </div>
     </footer>
 </div>
-<div id="TOP" class="go-top go-top_hide">
-    <img src="images/back-to-top.png" onclick="GoTop();" class="top_img"/>
-</div>
 <script>
-
 $(document).ready(function(){
             
     $(".my-site-list h2").click(function(){
         $(this).next().slideToggle("slow");
         //$("h2").next().css("display","block");
       });
-    $(".my-site-list a").attr("target","_blank");
 });
-
-   window.onscroll = function () {
-            var current = $(window).scrollTop();
-            if (current > 180){
-                $(".go-top").removeClass("go-top_hide");
-            }else {
-                $(".go-top").addClass("go-top_hide");
-            }
-        };
-
-        function GoTop() {
-            $(window).scrollTop(900);
-            $('body,html').animate({scrollTop:0},500);
-        }
 </script>
 </body>
 </html>

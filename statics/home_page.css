@@ -249,8 +249,9 @@ footer .next-project-link+.copyright{
     .block .block-inner{margin-right:0;margin-left:0}
     .block #block_inner{margin-right:0;margin-left:0;text-align: right}
     footer{padding-bottom:2rem}
-    .bar {right: 75px;width:70px;bottom:5px}
+    .bar {right: 45px;width:70px;bottom:5px}
     #linrb {margin-top: 10px;margin-bottom: 20px;}
+    .go-top{right:10px}
 }
 @media (max-width: 480px){
      html{font-size:0.9rem}

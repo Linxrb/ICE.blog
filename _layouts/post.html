@@ -239,18 +239,18 @@ $("html, body").animate({
 window.onscroll = function () {
     var current = $(window).scrollTop();
     if (current > 400){
-        $(".go-top").removeClass("go-top_hide");
+        $(".go-top").fadeIn();
         if ($("#markdown-toc").length>0){
-            $(".bar").css("display","block");
+            $(".bar").fadeIn();
             }
     }
     else{
-        $(".go-top").addClass("go-top_hide");
+        $(".go-top").fadeOut();
         if ($("#markdown-toc").length>0){   //y
             if(parseInt($("#markdown-toc").css("right")) < 0){
-                $(".bar").css("display","none");}
+                $(".bar").fadeOut();}
             else{$(".bar").css("display","block")}
-        }else{$("#bar").css("display","none")}
+        }else{$("#bar").fadeOut()}
     }
     };
 

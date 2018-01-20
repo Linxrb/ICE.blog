@@ -88,9 +88,9 @@
 #markdown-toc a:link{color:#1a1a1a;border-bottom:0}
 #markdown-toc a:hover{}
 #markdown-toc::-webkit-scrollbar {display:none}
-@media (max-width: 500px){#markdown-toc{width:280px}}
-
 .cover{position:fixed;top:0;right:0;left:0;bottom:0;background-color:rgba(0, 0, 0, 0.48);display:none}
+.Tcover{position:fixed;top:0;right:400px;left:0;bottom:0;display:none;z-index:1000}
+@media (max-width: 500px){#markdown-toc{width:250px}.Tcover{right:250px}}
 </style>
 </head>
 <body>
@@ -165,6 +165,8 @@
     <img src="{{ site.baseurl }}/images/back-to-top.png" onclick="GoTop();" class="top_img"/>
 </div>
 <div class = "cover"></div>
+<div class = "Tcover"></div>
+<div style="display:none" id="Value" value="0"></div>
 <script>
 //隐藏与显示详细内容
 $(document).ready(function(){
@@ -194,13 +196,15 @@ if ($("#markdown-toc").length>0){
     var menu0 = document.getElementById("menu0");
     var menu1 = document.getElementById("menu1");
     var menu2 = document.getElementById("menu2");
-    var i = 0;
 menubar.onclick = function () {
+    var i = $("#Value").attr("value")
     i++;
+    $("#Value").attr("value",i);
     if (i % 2 == 1) {
         $("#markdown-toc").css("display","block");
         $("#markdown-toc").animate({right:'0px'},"slow")
         $(".cover").fadeIn()
+        $(".Tcover").fadeIn()
         menu0.style.top = 50 + "%";
         menu1.style.display = "none";
         menu2.style.top = 50 + "%";
@@ -212,6 +216,7 @@ menubar.onclick = function () {
         });
         
         $(".cover").fadeOut() 
+        $(".Tcover").fadeOut()
         menu0.style.transform = "translate3d(-50%,-50%,0) rotate(0deg)";
         menu2.style.transform = "translate3d(-50%,-50%,0) rotate(0deg)";
         menu0.style.top = 30 + "%";
@@ -220,7 +225,31 @@ menubar.onclick = function () {
         var current = $(window).scrollTop();
         if (current < 400){$(".bar").css("display","none");}
     }
+    
 }}
+    $(".Tcover").bind("click", function(){
+        var i = $("#Value").attr("value");
+        i++;
+        $("#Value").attr("value",i);
+        var menubar = document.getElementById("menubar");
+        var menu0 = document.getElementById("menu0");
+        var menu1 = document.getElementById("menu1");
+        var menu2 = document.getElementById("menu2");
+        $("#markdown-toc").animate({right:'-100%'},"slow",function(){
+            $(this).css("display","none");
+        });
+        
+        $(".cover").fadeOut() 
+        $(".Tcover").fadeOut()
+        menu0.style.transform = "translate3d(-50%,-50%,0) rotate(0deg)";
+        menu2.style.transform = "translate3d(-50%,-50%,0) rotate(0deg)";
+        menu0.style.top = 30 + "%";
+        menu2.style.top = 70 + "%";
+        menu1.style.display = "block";
+        var current = $(window).scrollTop();
+        if (current < 400){$(".bar").css("display","none");}
+})
+
 
 //锚点滑动
 $("a.topLink").click(function() {

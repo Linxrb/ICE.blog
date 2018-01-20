@@ -250,7 +250,7 @@ footer .next-project-link+.copyright{
     .block #block_inner{margin-right:0;margin-left:0;text-align: right}
     footer{padding-bottom:2rem}
     .bar {right: 75px;width:70px;bottom:5px}
-    #linrb {margin-top: 10px;margin-bottom: 10px;}
+    #linrb {margin-top: 10px;margin-bottom: 20px;}
 }
 @media (max-width: 480px){
      html{font-size:0.9rem}

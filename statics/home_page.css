@@ -22,7 +22,7 @@ html{
 }
 html::-webkit-scrollbar{display: none}
 body{
-    font:400 100%/1.75 'Graphik Web', 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;height:100%;
+    font:400 14px/1.75 'Graphik Web', 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;height:100%;
     color:#1a1a1a;
 
 }
@@ -249,7 +249,7 @@ footer .next-project-link+.copyright{
     .block .block-inner{margin-right:0;margin-left:0}
     .block #block_inner{margin-right:0;margin-left:0;text-align: right}
     footer{padding-bottom:2rem}
-    .bar {right: 20px;width:30px;height:30px;border-radius: 50px;bottom:10px}
+    .bar {right: 30px;width:30px;height:30px;border-radius: 50px;bottom:10px}
     #linrb {margin-top: 10px;margin-bottom: 20px;}
     .go-top{right:10px;width:0}
     .top_img{width:0;height:0}

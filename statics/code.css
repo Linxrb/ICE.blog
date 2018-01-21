@@ -4,10 +4,9 @@ code.highlighter-rouge {
     /* border: solid; */
     /* background-color: red; */
     font-size: 12px;
-    color: red;
-    border: 1px solid #dddddd;
+    color: #d14;
     /* border-radius: 3px; */
-    background: #fafafa;
+    background: #f9f2f4;
     padding: 3px;
 }
 article,aside,details,figcaption,figure,footer,header,main,menu,nav,section{display:block}

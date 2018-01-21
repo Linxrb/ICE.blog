@@ -3,20 +3,14 @@ title: Python 全栈系列之字典数据类型
 layout: post
 ---
 
-<div id='toggle'></div>
+* TOC
+{:toc}
 
-|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-|**[创建方式](#z1)**|第一种|第二种|
-|**[字典生成](#z2)**|
-|**[常用方法](#z3)**|增|删|改|查|
-|**[其他操作](#z4)**|fromkeys|copy|sorted|字典遍历|嵌套|
+　　字典(dict)在基本的数据类型中使用频率也是相当高的，而且它的访问方式是通过键来获取到对应的值 `(键唯一)` ，当然存储的方式也是键值对了，属于可变类型。  
 
+### 创建字典的方式
 
-字典(dict)在基本的数据类型中使用频率也是相当高的，而且它的访问方式是通过键来获取到对应的值 `(键唯一)` ，当然存储的方式也是键值对了，属于可变类型。  
-
-<h3 id='z1'>一 创建字典的方式</h3>
-
-#### 1、第一种
+#### 第一种
 
 ```python
 >>> dic = {'k1':'v1','k2':'v2'}
@@ -26,7 +20,7 @@ layout: post
 <class 'dict'>
 ```
 
-#### 2、第二种
+#### 第二种
 
 ```python
 >>> dic = dict({"k1":"v1","k2":"v2"}) #参数不能是字符串
@@ -56,7 +50,7 @@ layout: post
 3
 ```
 
-<h3 id='z2'>二 字典生成</h3>
+### 字典生成
 
 ```python
 >>> D = {x: x*2 for x in range(10)}
@@ -68,9 +62,9 @@ layout: post
 {'a': 1, 'c': 3, 'b': 2}
 ```
 
-<h3 id='z3'>三 字典提供的常用方法</h3>
+### 字典提供的常用方法
 
-#### 1、增
+#### 增
 ```python
 dic3 = {}
  
@@ -87,7 +81,7 @@ print(dic3)
 # {'name': 'Linrb', 'ages': 90, 'age': 99}
 ```
 
-#### 2、删
+#### 删
 
 ```python
 dic = {'name': 'Linrb', 'age': 18,'class':1}
@@ -98,7 +92,7 @@ dic.popitem()   #随机删除某项并返回键和值
 del dic['name'] #删除指定元素，也可以删除整个字典
 
 ```
-#### 3、改
+#### 改
 
 ```python
 dic3 = {'name': 'Linrb', 'age': 99}
@@ -111,7 +105,7 @@ print(dic3)       #{'name': 'Linxrb', 'age': 36, 'sex': 'male', 'hobby': 'girl'}
 
 ```
 
-#### 4、查
+#### 查
 
 ```python
 dic3 = {'name': 'Linrb', 'age': 99}
@@ -129,7 +123,7 @@ print('name' in dic3)      # py2:  dic3.has_key('name') #True
 print(list(dic3.values())) #['Linrb', 99]
 ```
 
-<h3 id='z4'>四 其他操作和涉及到的方法</h3>
+### 其他操作和涉及到的方法
 
 **`1、 dict.fromkys()`**
 ```python
@@ -146,16 +140,16 @@ d2['host1'][0] = 'xiaomi'
 print(d2)  #{'host2': ['xiaomi', 'huawei'], 'host3': ['xiaomi', 'huawei'], 'host1': ['xiaomi', 'huawei']}
 ```
 
-**`2、 d.copy()` 对字典 d 进行浅复制，返回一个和d有相同键值对的新字典**  
+`2、 d.copy()` 对字典 d 进行浅复制，返回一个和d有相同键值对的新字典  
 
-**`3、 sorted(dict)` 返回一个有序的包含字典所有key的列表**  
+`3、 sorted(dict)` 返回一个有序的包含字典所有key的列表  
 ```python
 dic = {5:'555',2:'222',4:'444'}
 print(sorted(dic))
 #[2, 4, 5]　
 ```
 
-**`4、 字典遍历`**
+`4、 字典遍历`
 ```python
 dic5 = {'name': 'Linrb', 'age': 99}
  
@@ -175,7 +169,7 @@ for keys,values in dic5.items():
 #age 18
 ```
 
-**`5、 字典嵌套`**
+`5、 字典嵌套`
 ```python
 dic = {'zhangsan':{'age':23,'sex':'male'},
      '李四':{'age':33,'sex':'male'},

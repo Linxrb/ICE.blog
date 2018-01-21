@@ -225,6 +225,7 @@ footer .next-project-link+.copyright{
 .go-top {
     position: fixed;
     right: 80px;
+    cursor: pointer;
     bottom: 5px;
     z-index:1000;
     height: 25px;

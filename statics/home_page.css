@@ -192,8 +192,8 @@ footer .next-project-link+.copyright{
 
 /* toc */
 .bar{
-            width: 24px;
-            height: 24px;
+            width: 25px;
+            height: 25px;
             border:1px solid #2a2a2a;
             background-color:#2a2a2a;
             position:fixed;
@@ -204,7 +204,7 @@ footer .next-project-link+.copyright{
             display:none;
         }
         .menu{
-            width:20px;
+            width:16px;
             height:2px;
             background-color:#ffffff;
             position:absolute;
@@ -227,8 +227,8 @@ footer .next-project-link+.copyright{
     right: 80px;
     bottom: 5px;
     z-index:1000;
-    height: 24px;
-    width: 24px;
+    height: 25px;
+    width: 25px;
     background-color: #2a2a2a;
 }
 .go-top_hide {
@@ -249,9 +249,10 @@ footer .next-project-link+.copyright{
     .block .block-inner{margin-right:0;margin-left:0}
     .block #block_inner{margin-right:0;margin-left:0;text-align: right}
     footer{padding-bottom:2rem}
-    .bar {right: 45px;width:70px;bottom:5px}
+    .bar {right: 20px;width:30px;height:30px;border-radius: 50px;bottom:10px}
     #linrb {margin-top: 10px;margin-bottom: 20px;}
-    .go-top{right:10px}
+    .go-top{right:10px;width:0}
+    .top_img{width:0;height:0}
 }
 @media (max-width: 480px){
      html{font-size:0.9rem}

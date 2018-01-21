@@ -198,7 +198,7 @@ footer .next-project-link+.copyright{
             background-color:#2a2a2a;
             position:fixed;
             bottom: 40px;
-            right: 40px;
+            right: 80px;
             z-index:1000;
             cursor:pointer;
             display:none;
@@ -224,7 +224,7 @@ footer .next-project-link+.copyright{
 /* 返回顶部 */
 .go-top {
     position: fixed;
-    right: 40px;
+    right: 80px;
     bottom: 5px;
     z-index:1000;
     height: 24px;

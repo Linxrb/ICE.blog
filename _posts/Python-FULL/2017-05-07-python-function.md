@@ -16,14 +16,14 @@ layout: post
 #### 创建语法
 
 Python 定义函数使用 `def` 关键字，一般格式如下：
-```python
+{% highlight python  linenos %}
 def 函数名（参数）:
     函数体
-```
+{% endhighlight %}
 
 - 简单实例
 
-```python
+{% highlight python  linenos %}
 #x为函数的参数
 def num(x):
     print(x)
@@ -33,7 +33,7 @@ num("123456")
 
 #结果
 123456
-```
+{% endhighlight %}
 
 #### 命名规则
 
@@ -68,30 +68,30 @@ num("123456")
 #### 位置参数
 
 　　位置参数须以正确的顺序传入函数。<span style="border-bottom:1px dashed;">调用时的数量必须和声明时的一样。</span>
-```python
+{% highlight python  linenos %}
 def f(name,age):
     print('I am %s,I am %d'%(name,age))
 
 f('ICE',18)
 f('Linrb',16)
-```
+{% endhighlight %}
 
 #### 关键字参数
 
 　　关键字参数和函数调用关系紧密，函数调用使用关键字参数来确定传入的参数值。
 <span style="border-bottom:1px dashed ;">使用关键字参数允许函数调用时参数的顺序与声明时不一致</span>，因为 Python 解释器能够用参数名匹配参数值。
-```python
+{% highlight python  linenos %}
 def f(name,age):
     print('I am %s,I am %d'%(name,age))
 
 # f(16,'Linrb') #报错，%d 必须接受数字
 f(age=16,name='Linrb')
-```
+{% endhighlight %}
 
 #### 默认参数
 
 　　调用函数时，默认参数的值如果没有传入，则被认为是默认值，使用默认值。下例会打印默认的age，如果age没有被传入
-```python
+{% highlight python  linenos %}
 def print_info(name,age,sex='male'):
     print('Name:%s'%name)
     print('age:%s'%age)
@@ -99,13 +99,13 @@ def print_info(name,age,sex='male'):
 
 print_info('ICE',18)
 print_info('铁锤',40,'female')
-```
+{% endhighlight %}
 
 #### 动态参数
 
 - `第一种 *`：把接受到的所有参数组成一个元祖
 
-```python
+{% highlight python  linenos %}
 def ret(*args):
     print(args,type(args))
     
@@ -116,11 +116,11 @@ ret(11,22,33)
 
 #结果
 (11, 22, 33) <class 'tuple'>
-```
+{% endhighlight %}
 
 - `第二种 **`：传参的时候是一个key对应一个value的，相当于一个字典的键值对，而且返回的类型就是字典类型
 
-```python
+{% highlight python  linenos %}
 def ret(**kwargs):
     print(kwargs,type(kwargs))
     
@@ -131,11 +131,11 @@ ret(k1=123,k2=456,k3='ICE')
 
 #结果
 {'k1': 123, 'k2': 456} <class 'dict'>
-```
+{% endhighlight %}
 
 - `第三种 * 和 **`：可以接受任何参数
 
-```python
+{% highlight python  linenos %}
 def ret(*args,**kwargs):
     print(args,type(args))
     print(kwargs,type(kwargs))
@@ -145,10 +145,10 @@ ret(11,222,333,k1=111,k2=222)
 #结果
 (11, 222, 333) <class 'tuple'>
 {'k1': 111, 'k2': 222} <class 'dict'>
-```
+{% endhighlight %}
 
 <span style="border-bottom:1px solid ;">注意：还可以这样传参</span>
-```python
+{% highlight python  linenos %}
 def f(*args):
     print(args)
  
@@ -158,13 +158,13 @@ def f(**kargs):
     print(kargs)
  
 f(**{'name':'alex'}) #传入一个字典
-```
+{% endhighlight %}
 
 <br>
 > **优先级：`function(arg, kwarg, *args, **kwargs)`**  
 > **位置参数 > 默认参数 > 不定长参数 > 关键字参数**  
 
-### 三 作用域
+### 作用域
 
 #### 作用域介绍
 
@@ -175,7 +175,7 @@ python中的作用域分4种情况：
 - B：`built-in`，系统固定模块里面的变量，比如int, bytearray等。
 
 <span style="border-bottom:2px solid ;">搜索变量的优先级：作用域局部L > 外层作用域E > 当前模块中的全局G > python内置作用域B，也就是LEGB。</span>
-```python
+{% highlight python  linenos %}
 x = int(2.9)             #int built-in
  
 g_count = 0              #global
@@ -189,13 +189,13 @@ def outer():
 outer()
  
 #print(o_count) #找不到
-```
+{% endhighlight %}
 　　当然，local 和 enclosing 是相对的，enclosing 变量相对上层来说也是 local。
 
 #### 作用域的产生
 
 　　在 Python 中，只有 `模块(module)`，`类(class)` 以及 `函数(def、lambda)` 才会引入新的作用域，其它的代码块（如if、try、for等）是不会引入新的作用域的
-```python
+{% highlight python  linenos %}
 if 2 > 1:
     x = 1
 print(x)  # 1
@@ -205,11 +205,11 @@ def test():
     x = 2
 print(x) # NameError: name 'x2' is not defined
 #def、class、lambda是可以引入新作用域的。
-```
+{% endhighlight %}
 
 #### 变量的修改
 
-```python
+{% highlight python  linenos %}
 #################
 x = 6
 def f2():
@@ -229,13 +229,13 @@ def f2():
     #x = x + 1
     x + = 1 #local variable 'x' referenced before assignment.
 f2()
-```
+{% endhighlight %}
 
 #### global 关键字
 
 `enclosing` 中修改 `global(全局变量)`  
 　　当修改的变量是在全局作用域（global作用域）上的，就要使用 global 先声明一下，代码如下：
-```python
+{% highlight python  linenos %}
 count = 10
 def outer():
     global count
@@ -243,14 +243,14 @@ def outer():
     count = 100
     print(count)   #100
 outer()
-```
+{% endhighlight %}
 
 #### nonlocal 关键字
 
 `local` 中修改 `enclosing`  
 　　global 关键字声明的变量必须在全局作用域上，不能嵌套作用域上，当要修改嵌套作用域（enclosing作用域，外层非全局作用域）中的变量怎么办呢  
 这时就需要 nonlocal 关键字了
-```python
+{% highlight python  linenos %}
 def outer():
     count = 10
     def inner():
@@ -260,7 +260,7 @@ def outer():
     inner()
     print(count)    #20
 outer()
-```
+{% endhighlight %}
 
 <h3 id='z4'>小结</h3>
 

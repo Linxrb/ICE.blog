@@ -148,13 +148,13 @@ isdigit(...)
 
 ### 变量
 
-- 变量的命名规则:
-    - 变量名只能包含数字、字母、下划线
-    - 不能以数字开头
-    - 变量名不能使python内部的关键字
-    - 区分大小写
+变量的命名规则:  
+- 变量名只能包含数字、字母、下划线
+- 不能以数字开头
+- 变量名不能使python内部的关键字
+- 区分大小写
     
-- Python内部已占用的关键字
+Python内部已占用的关键字
 
 ```python
 ['and', 'as', 'assert', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'exec', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'not', 'or', 'pass', 'print', 'raise', 'return', 'try', 'while', 'with', 'yield']

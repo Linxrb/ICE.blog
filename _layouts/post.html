@@ -47,7 +47,7 @@
 .markdown-body h3{color:#002BB8;margin-bottom: 30px;font-size:1.25rem;border-bottom: 1px solid #ccc;padding-bottom:10px;padding-top: 30px}
 .markdown-body p{margin-bottom:0}
 /* 修改 Python/javascript 代码注释颜色*/
-.highlight .c,.highlight .c1{color:#0dc507}
+.highlight .c,.highlight .c1{color:#75715e}
 
 .show_wz{padding-top: 5rem;padding-right:2rem;padding-left:2rem;padding-bottom:5rem;background-color:#f3f3f3;font-size:14px}
 .show_wz a{color:#002BB8}
@@ -169,6 +169,10 @@
 <script>
 //隐藏与显示详细内容
 $(document).ready(function(){
+    //代码行号
+    //$(".highlight code").each(function(){
+    //    $(this).html("<ul><li>" + $(this).html().replace(/\n/g,"\n</li><li>") +"\n</li></ul>");
+    //});
    /* 标题菜单
    $(".article_title .title span").click(function(){
         $("#toggle").next().slideToggle("slow");
@@ -286,7 +290,6 @@ function GoTop() {
     $(window).scrollTop(900);
     $('body,html').animate({scrollTop:350},500);
 }
-
 
 </script>
 </body>

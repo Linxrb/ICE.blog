@@ -13,7 +13,8 @@ layout: post
 #### 创建数字类型的对象
 
 　　`int` 类型通常都是数字，创建数字类型的方式有两种，且在创建的时候值两边不需要加双引号或单引号。  
-```python
+
+{% highlight python linenos %}
 #第一种创建整型的方式
 >>> number = 9
 >>> type(number)
@@ -23,13 +24,13 @@ layout: post
 >>> number = int(9)
 >>> type(number)
 <class 'int'>
-```
+{% endhighlight %}
 
 #### \__init__
 
-```python
+{% highlight python linenos %}
 def __init__(self, x, base=10): # known special case of int.__init__
-```
+{% endhighlight %}
 
 　　可以从源码中看到，`__init__` 的方法有两个参数，其中 `base=10` 是可选的参数，`x` 是我们对象的值。  
 <br>
@@ -37,7 +38,8 @@ def __init__(self, x, base=10): # known special case of int.__init__
 `base=10` x 作为字符串时必须是 base 类型，也就是说 x 变成数字时必须能用 base 进制表示。
 通过 `int()` 可以将一个数字的字符串变成一个整数，并且如果你指定了第二个参数，还可以将值进制数转换为整数：
 指定第二个参数是，x 值必须为字符串
-```python
+
+{% highlight python linenos %}
 #将数字字符串转换为整数，数字字符串通过进制转换为整数
 >>> int('99'),int('100',2),int('0b100',2),int('10000000',2)
 (99,4,4,64,64,128)
@@ -49,14 +51,15 @@ def __init__(self, x, base=10): # known special case of int.__init__
 说明
 int(x,y)：y 不传默认为 base = 10 
 将 y 进制的对象值 x 转为 十进制数
-```
+{% endhighlight %}
 
 #### int内部优化机制
 
 　　首先我们知道当我们创建第一个对象 `var1` 的时候会在内存中开辟一块空间作为存放 `var1` 对象的值用的。当我们创建第二个对象 `var2` 的时候也会在内存中开辟一块空间来作为 `var2` 对象的值。那如果这样说，那是不是说对象 `var1` 和 `var2` 的值内存是否会同时开辟两块呢？  
 <br>
 我们通过下面的实例可以得到答案：
-```python
+
+{% highlight python linenos %}
 #分别创建对象var1和var2
 >>> var1 = 123
 >>> var2 = 123
@@ -73,8 +76,7 @@ int(x,y)：y 不传默认为 base = 10
 2452305956816
 >>> id(var2)
 2452308384720
-
-```
+{% endhighlight %}
 
 　　通过上面的结果我们可以看到 `var1` 和 `var2` 的内存地址是相同的，就代表他们的值是使用的同一块空间。  
 　　结论：当两个或者多个对象的值都是同一个的时候，那么这些对象都会使用同一个内存地址，这里的值是是有范围的，默认范围是 `-5~257`。  

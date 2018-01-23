@@ -12,7 +12,7 @@ layout: post
 
 #### 算术运算符
 
-```python
+{% highlight python linenos %}
 +   加      两个对象相加    a+b=30
 -   减      两个对象相减,可能会得到负数    a-b=-10
 *   乘      两数相称或是返回一个被重复若干次的字符串  a*b=200
@@ -20,11 +20,11 @@ layout: post
 %   取余    返回除法的余数    b%a=0
 **  幂      返回a的b次幂   a**b=100000000000000000000L
 //  整除余  返回商的整数部分    a//b=0
-```
+{% endhighlight %}
 
 #### 比较运算符
 
-```python
+{% highlight python linenos %}
 ==    等于    比较两个对象是否相等    a==b 返回 False
 !=    不等于   比较两个对象是否不相等    a!=b 返回 True
 <>    不等于   比较两个对象是否不相等    a<>b 返回 True
@@ -32,11 +32,11 @@ layout: post
 <     小于     比较a是否小于b    a<b 返回 True
 >=    大于等于    比较a是否大于等于b    a>=b 返回 False
 <=    小于等于    比较a是否小于等于b    a<=b 返回 True
-````
+{% endhighlight %}
 
 #### 赋值运算符
 
-```python
+{% highlight python linenos %}
 =     赋值运算符     c=a+b,将a+b的运算结果赋值给c
 +=    加法复制运算符   c+=a 等效于 c=c+a
 -=    减法复制运算符   c-=a 等效于 c=c-a
@@ -45,30 +45,30 @@ layout: post
 %=    取模赋值运算符   c%=a 等效于 c=c%a
 **=   幂赋值运算符    c**=a 等效于 c=c**a
 //=   取整除赋值运算符      c//=a 等效于 c=c//a
-```
+{% endhighlight %}
 
 #### 逻辑运算符
 
-```python
+{% highlight python linenos %}
 and    “与”  a and b返回true
 or     “或”   a or b返回true
 not    “非”  not(a and b)返回false
-```
+{% endhighlight %}
 
 #### 成员运算符
 
-```python
+{% highlight python linenos %}
 in    如果在指定的序列中找到值返回True，否则返回False
 not in    如果在指定的序列中没有找到值返回True，否则返回false
 
 li = [1,2,3]
 print(3 in li)    #Ture
 print(3 not in li)    #False
-```
+{% endhighlight %}
 
 ### 变量赋值实例
 
-```python
+{% highlight python linenos %}
 序列运算
 
 >>> nudge = 1
@@ -119,4 +119,4 @@ print(3 not in li)    #False
 #所引用的值也都是同一个
 >>> id(a),id(b),id(c)
 (4331109208, 4331109208, 4331109208)
-```
+{% endhighlight %}

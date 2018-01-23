@@ -12,34 +12,36 @@ layout: post
 
 #### 第一种
 
-```python
+{% highlight python linenos %}
 >>> dic = {'k1':'v1','k2':'v2'}
 >>> dic
 >>> {'k1':'v1','k2':'v2'}
 >>> type(dic)
 <class 'dict'>
-```
+{% endhighlight %}
 
 #### 第二种
 
-```python
+{% highlight python linenos %}
 >>> dic = dict({"k1":"v1","k2":"v2"}) #参数不能是字符串
 >>> dic
 {'k1': 'v1', 'k2': 'v2'}
 >>> type(dic)
 >>> <class 'dict'>
-```
-```python
+{% endhighlight %}
+
+{% highlight python linenos %}
 #在创建字典的时候，__init__初始化的时候还可以接受一个可迭代的变量作为值
 
 >>> li = ["a","b","c"]
 >>> dic = dict(enumerate(li))
 >>> dic
 {0: 'a', 1: 'b', 2: 'c'}
-```
+{% endhighlight %}
 
 `与其变量不同的是，字典的键不仅仅支持字符串，而且还支持其他数据类型`，譬如：
-```python
+
+{% highlight python linenos %}
 # 数字
 >>> D = {1:3}
 >>> D[1]
@@ -48,11 +50,11 @@ layout: post
 >>> D = {(1,2,3):3}
 >>> D[(1,2,3)]
 3
-```
+{% endhighlight %}
 
 ### 字典生成
 
-```python
+{% highlight python linenos %}
 >>> D = {x: x*2 for x in range(10)}
 >>> D
 {0: 0, 1: 2, 2: 4, 3: 6, 4: 8, 5: 10, 6: 12, 7: 14, 8: 16, 9: 18}
@@ -60,12 +62,13 @@ layout: post
 >>> D = {k:v for (k, v) in zip(['a','b','c'],[1,2,3])}
 >>> D
 {'a': 1, 'c': 3, 'b': 2}
-```
+{% endhighlight %}
 
 ### 字典提供的常用方法
 
 #### 增
-```python
+
+{% highlight python linenos %}
 dic3 = {}
  
 dic3['name'] = 'Linrb'
@@ -79,22 +82,22 @@ print(a,b)
 # Linrb 90
 print(dic3)
 # {'name': 'Linrb', 'ages': 90, 'age': 99}
-```
+{% endhighlight %}
 
 #### 删
 
-```python
+{% highlight python linenos %}
 dic = {'name': 'Linrb', 'age': 18,'class':1}
 
 dic.clear() :   #清空字典，清空后变成一个空字典
 dic.pop('name') #删除指定项，并返回值
 dic.popitem()   #随机删除某项并返回键和值
 del dic['name'] #删除指定元素，也可以删除整个字典
+{% endhighlight %}
 
-```
 #### 改
 
-```python
+{% highlight python linenos %}
 dic3 = {'name': 'Linrb', 'age': 99}
 
 dic3['name'] = 'alvin'
@@ -102,12 +105,11 @@ dic3['name'] = 'alvin'
 dic4 = {'sex': 'male', 'hobby': 'girl', 'age': 36}
 dic3.update(dic4) #更新，存在覆盖，不存在添加
 print(dic3)       #{'name': 'Linxrb', 'age': 36, 'sex': 'male', 'hobby': 'girl'}
-
-```
+{% endhighlight %}
 
 #### 查
 
-```python
+{% highlight python linenos %}
 dic3 = {'name': 'Linrb', 'age': 99}
 
 print(dic3['name'])
@@ -121,12 +123,13 @@ print(dic3.values()) #dict_values(['Linrb', 18])
 
 print('name' in dic3)      # py2:  dic3.has_key('name') #True
 print(list(dic3.values())) #['Linrb', 99]
-```
+{% endhighlight %}
 
 ### 其他操作和涉及到的方法
 
 **`1、 dict.fromkys()`**
-```python
+
+{% highlight python linenos %}
 d1 = dict.fromkeys(['host1', 'host2', 'host3'], 'Mac')
 print(d1)  #{'host2': 'Mac', 'host3': 'Mac', 'host1': 'Mac'}
 
@@ -138,19 +141,21 @@ print(d2)  #{'host2': ['Mac', 'huawei'], 'host3': ['Mac', 'huawei'], 'host1': ['
 
 d2['host1'][0] = 'xiaomi'
 print(d2)  #{'host2': ['xiaomi', 'huawei'], 'host3': ['xiaomi', 'huawei'], 'host1': ['xiaomi', 'huawei']}
-```
+{% endhighlight %}
 
 `2、 d.copy()` 对字典 d 进行浅复制，返回一个和d有相同键值对的新字典  
 
 `3、 sorted(dict)` 返回一个有序的包含字典所有key的列表  
-```python
+
+{% highlight python linenos %}
 dic = {5:'555',2:'222',4:'444'}
 print(sorted(dic))
 #[2, 4, 5]　
-```
+{% endhighlight %}
 
 `4、 字典遍历`
-```python
+
+{% highlight python linenos %}
 dic5 = {'name': 'Linrb', 'age': 99}
  
 for i in dic5:
@@ -167,13 +172,14 @@ for keys,values in dic5.items():
     print(keys,values)
 #name Linrb
 #age 18
-```
+{% endhighlight %}
 
 `5、 字典嵌套`
-```python
+
+{% highlight python linenos %}
 dic = {'zhangsan':{'age':23,'sex':'male'},
      '李四':{'age':33,'sex':'male'},
      'wangwu':{'age':27,'sex':'women'}  
      }
 #取值：dic[wangwu][sex]
-```
+{% endhighlight %}

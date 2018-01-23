@@ -3,30 +3,26 @@ title: Python 全栈系列之字符串数据类型
 layout: post
 ---
 
-<div id='toggle'></div>
+* TOC
+{:toc}
 
-|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-|**[字符串类型](#z1)**|创建|对应操作|内置方法|
+### 字符串类型（string）
 
+　　字符串是以单引号 `'` 或双引号 `"` 括起来的任意文本，比如 'abc'，"123" 等等。  
 
-<h3 id='z1'>字符串类型（string）</h3>
-
-字符串是以单引号 `'` 或双引号 `"` 括起来的任意文本，比如 'abc'，"123" 等等。
-
-请注意，'' 或 "" 本身只是一种表示方式，不是字符串的一部分。  
-因此，字符串 'abc' 只有 a，b，c 这3个字符。  
+　　请注意，'' 或 "" 本身只是一种表示方式，不是字符串的一部分。因此，字符串 'abc' 只有 a，b，c 这3个字符。
 如果 `'` 本身也是一个字符，那就可以用 `""` 括起来，比如 "I'm OK" 包含的字符是 I，'，m，空格，O，K 这6个字符。
 
-#### 1、创建字符串
+#### 创建字符串
 
-```python
+{% highlight python linenos %}
 var1 = 'Hello World!'
 var2 = "Python"
-```
+{% endhighlight %}
 
-#### 2、对应操作
+#### 对应操作
 
-```python
+{% highlight python linenos %}
 # 1   * 重复输出字符串
 print('hello'*2)
  
@@ -49,11 +45,11 @@ print(d1)
 # +效率低,该用join
 d2 = ''.join([a,b,c])
 print(d2)
-```
+{% endhighlight %}
 
-#### 3、字符串的内置方法
+#### 字符串的内置方法
 
-```python
+{% highlight python linenos %}
 string.capitalize()                                 首字母大写
 string.casefold()                                   #首字母小写
 string.center(width, fillchar=None)                 #内容居中，width：总长度；fillchar：空白处填充内容，默认无，可指定填充内容，填充字符必须是一个字符长。
@@ -95,4 +91,4 @@ string.title()                                      #返回"标题化"的 string
 string.translate(str, del="")                       #根据 str 给出的表(包含 256 个字符)转换 string 的字符,要过滤掉的字符放到 del 参数中
 string.upper()                                      #转换 string 中的小写字母为大写
 string.zfill(width)                                 #返回指定长度的字符串，原字符串右对齐，前面填充0
-```
+{% endhighlight %}

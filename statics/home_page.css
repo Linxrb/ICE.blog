@@ -38,7 +38,7 @@ html{
 }
 html::-webkit-scrollbar{display: none}
 body{
-    font:400 14.5px/1.75 'Graphik Web', 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;height:100%;
+    font:400 15px/1.75 'Graphik Web', 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;height:100%;
     color:#1a1a1a;
 
 }

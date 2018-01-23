@@ -14,14 +14,14 @@ layout: post
 - 2.通过句柄对文件进行操作
 - 3.关闭文件
 
-**创建一个文件内容如下：**
-> Hello Word!  
-> 123  
-> abc  
-> 456  
-> abc  
-> 789  
-> abc  
+创建一个文件内容如下：
+>>Hello Word!  
+>>123  
+>>abc  
+>>456  
+>>abc  
+>>789  
+>>abc  
 
 {% highlight python linenos %}
 f = open('hello.txt') #1 打开文件
@@ -29,19 +29,15 @@ data = f.read()       #2 获取文件内容
 f.close()             #3 关闭文件
 {% endhighlight %}
 
-**注意
- if in the win。  
- hello 文件是 utf8 保存的，打开文件时 open 函数是通过操作系统打开的文件。  
- 而 win 操作系统默认的是 gbk 编码。  
- 所以直接打开会乱码（或报错）。  
- 需要 f=open('hello',encoding='utf8')，hello 文件如果是 gbk 保存的，则直接打开即可。**  
+注意  
+　　if in the win。hello 文件是 utf8 保存的，打开文件时 open 函数是通过操作系统打开的文件。而 win 操作系统默认的是 gbk 编码。
+所以直接打开会乱码（或报错）。需要 f=open('hello',encoding='utf8')，hello 文件如果是 gbk 保存的，则直接打开即可。
 
 ### 件打开模式
 
 #### 基本模式
 
 {% highlight python linenos %}
-#
 ======================================================
 
     Character Meaning
@@ -57,7 +53,6 @@ f.close()             #3 关闭文件
 #### 带 + 模式
 
 {% highlight python linenos %}
-#
 ======================================================
 
     Character Meaning
@@ -73,7 +68,6 @@ f.close()             #3 关闭文件
 #### 带 b 和带 b+
 
 {% highlight python linenos %}
-#
 ======================================================
 
     Character Meaning
@@ -152,7 +146,7 @@ Hello Word!
 123
 
 abc
-```
+{% endhighlight %}
 
 #### readlines
 
@@ -342,7 +336,7 @@ with open('log','r') as f:
         pass
 {% endhighlight %}
 
-如此方式，当with代码块执行完毕时，内部会自动关闭并释放文件资源。  
+　　如此方式，当with代码块执行完毕时，内部会自动关闭并释放文件资源。  
 在Python 2.7 后，with又支持同时对多个文件的上下文进行管理，即：  
 
 {% highlight python linenos %}

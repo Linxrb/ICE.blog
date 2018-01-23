@@ -15,7 +15,7 @@ layout: post
 |random.sample(seq,int)|随机返回序列里的int个元素|
 
 
-```python
+{% highlight python linenos %}
 #生成0-1的小数
 random.random()
 0.06511225392331632
@@ -27,9 +27,11 @@ random.randint(5,9)
 
 #输出start到stop-1之间的数，可设置步长
 random.randrange(5,9,3)
-```
+{% endhighlight %}
+
 **随机验证码实例**
-```python
+
+{% highlight python linenos %}
 #!/usr/bin/env python
 import random
 checkcode = ''
@@ -48,9 +50,11 @@ for i in range(4):
     checkcode += str(temp)
 #输出字符
 print(checkcode)
-```
+{% endhighlight %}
+
 **随机数另外一种写法**
-```python
+
+{% highlight python linenos %}
 import random
 
 checkcode = ""
@@ -59,4 +63,4 @@ for i in range(4):
     #随机取一个数字或字母
     temp = random.choice([random.randrange(10),chr(random.randrange(65,90))])
     checkcode += str(temp)
-```
+{% endhighlight %}

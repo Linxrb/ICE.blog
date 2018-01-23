@@ -43,6 +43,18 @@ code.highlighter-rouge {
 
 blockquote {
     border-left: 2px solid #272822;
-    margin:0;
+    margin: 1em 0 1em;
     padding-left: 5px;
 }
+table.rouge-table td{border:0;padding:0}
+
+td{
+    border: 1px solid;
+    padding: 5px;
+    word-break:keep-all;/* 不换行 */
+    white-space:nowrap;/* 不换行 */
+    overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow:ellipsis;
+}    
+
+

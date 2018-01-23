@@ -15,7 +15,7 @@ layout: post
 |datetime.datetime.strptime(“21/11/06 16:30”, “%d/%m/%y %H:%M”)|将字符串转换成日期格式|
 
 
-```python
+{% highlight python linenos %}
 print(datetime.date.today())        #当前系统时间
 2016-05-25
 ######################################
@@ -67,4 +67,4 @@ print(new_date)
 new_date = datetime.datetime.now() + datetime.timedelta(seconds=120)
 print(new_date)
 2016-05-25 14:14:02.090219
-```
+{% endhighlight %}

@@ -23,7 +23,7 @@ layout: post
 - 结构化时间（struct_time）
 - 格式化时间(自定制)
 
-```python
+{% highlight python linenos %}
 time.time()
 #时间戳    1464154805.82723
 #############################
@@ -58,4 +58,4 @@ time.ctime(time.time()-86640)      #它可以接收一个时间戳，返回什�
 
 time.mktime(time.localtime())
 #接收一个 struct_time 结构时间，返回时间戳格式    1515056190.0
-```
+{% endhighlight %}

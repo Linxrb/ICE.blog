@@ -3,16 +3,14 @@ title: Python 全栈标准库之configparser
 layout: post
 ---
 
-<div id='toggle'></div>
-
-|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-|**[实例](#z1)**|生成文档|操作|
-|**[总结](#z2)**|
+* TOC
+{:toc}
 
 > 用于生成和修改常见配置文档，当前模块的名称在 python 2.x 版本中变更为 Configparser。其本质上是利用open来操作文件。  
 
 **常见文档格式如下**  
-```python
+
+{% highlight python linenos %}
 # 第一种注释方式
 ; 第二种注释方式
 
@@ -28,13 +26,13 @@ User = hg
 [topsecret.server.com]
 Port = 50022
 ForwardX11 = no
-```
+{% endhighlight %}
 
-<h3 id='z1'>一 实例</h3>
+### 实例
 
-#### 1、用 Python 生成这样的文档
+#### 用 Python 生成这样的文档
 
-```python
+{% highlight python linenos %}
 import configparser
 
 #创建对象
@@ -60,10 +58,11 @@ config['DEFAULT']['ForwardX11'] = 'yes'
 #写入文件
 with open('example.ini', 'w') as configfile:
    config.write(configfile)
-```
+{% endhighlight %}
 
 **写完了还可以再读出来**
-```python
+
+{% highlight python linenos %}
 import configparser
 config = configparser.ConfigParser()
 config.sections()           #[]    空列表，得先读出来
@@ -95,11 +94,11 @@ compression
 forwardx11
 
 config['bitbucket.org']['ForwardX11']       #'yes'
-```
+{% endhighlight %}
 
-#### 2、configparser增删改查语法
+#### configparser增删改查语法
 
-```python
+{% highlight python linenos %}
 import ConfigParser
   
 config = ConfigParser.ConfigParser()
@@ -134,9 +133,9 @@ config.write(open('i.cfg', "w"))
 config.remove_option('Linrb','k1')             #删除节点下的某一项
 #del config['Linrb']['k1']
 config.write(open('i.cfg', "w"))
-```
+{% endhighlight %}
 
-<h3 id='z2'>小结</h3>
+### 小结
 
 > 除了上面的一些方法外，其实可以把 config 对象当成一个字典来操作  
 > 添加节点：config[sections] = {}  

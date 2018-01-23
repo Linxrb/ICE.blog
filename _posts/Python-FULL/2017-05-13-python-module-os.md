@@ -39,7 +39,7 @@ layout: post
 |os.path.getmtime(path)|返回path所指向的文件或者目录的最后修改时间|
 
 
-```python
+{% highlight python linenos %}
 #获取当前工作目录
 print(os.getcwd())                  #C:\Users\user\PycharmProjects\pyProjects\
 
@@ -61,4 +61,4 @@ os.removedirs(‘dirname1/dirname2’)  #若目录为空，则删除，并递归
 #获取文件大小
 info = os.stat(‘path/filename’)
 info.st_size                        #4096
-```
+{% endhighlight %}

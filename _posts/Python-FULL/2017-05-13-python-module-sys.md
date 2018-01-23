@@ -18,7 +18,7 @@ layout: post
 |sys.version|获取Python解释程序的版本信息|
 
 
-```python
+{% highlight python linenos %}
 #位置参数
 #脚本 s.py，内容如下：
 import sys
@@ -45,13 +45,15 @@ C:\Python35\DLLs
 C:\Python35\lib
 C:\Python35
 C:\Python35\lib\site-packages
-```
+{% endhighlight %}
+
 **手写进度条**
-```python
+
+{% highlight python linenos %}
 import sys,time
 for ii in range(101):
     sys.stdout.write('\r')  #每一次清空原行。
     sys.stdout.write("%s%%  |%s|"%(int(int(ii)/100*100),int(int(ii)/100*100) * '#'))     #一共次数除当前次数算进度
     sys.stdout.flush()      #强制刷新到屏幕
     time.sleep(0.05)
-```
+{% endhighlight %}

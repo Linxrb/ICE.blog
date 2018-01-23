@@ -3,11 +3,8 @@ title: Python 全栈标准库之logging
 layout: post
 ---
 
-<div id='toggle'></div>
-
-|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-|**[简单应用](#z1)**|简单实例|日志级别|配置|参数|
-|**[logger对象](#z2)**|执行过程|深入|Filter|
+* TOC
+{:toc}
 
 > This module defines functions and classes which implement a flexible event logging system for applications and libraries.  
 
@@ -16,27 +13,29 @@ The key benefit of having the logging API provided by a standard library module 
 
 logging模块用于便捷记录日志且线程安全。  
 
-<h3 id='z1'>一 简单应用</h3>
+### 简单应用
 
-#### 1、简单实例
+#### 简单实例
 
-```python
+{% highlight python linenos %}
 import logging
 logging.debug('debug message')
 logging.info('info message')
 logging.warning('warning message')
 logging.error('error message')
 logging.critical('critical message')
-```
+{% endhighlight %}
+
 输出
-```text
+{% highlight text linenos %}
 WARNING:root:warning message
 ERROR:root:error message
 CRITICAL:root:critical message
-```
+{% endhighlight %}
+
 > 默认情况下 Python 的 logging 模块将日志打印到了标准输出中，且只显示了大于等于 WARNING 级别的日志，这说明默认的日志级别设置为 WARNING（日志级别等级CRITICAL > ERROR > WARNING > INFO > DEBUG > NOTSET），默认的日志格式为日志级别：Logger名称：用户输出消息。  
 
-#### 2、日志级别
+#### 日志级别
 
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 |**方法名**|**说明**|
@@ -49,9 +48,9 @@ CRITICAL:root:critical message
 |NOTSET|0|
 
 
-#### 3、配置日志级别，日志格式，输出位置
+#### 配置日志级别，日志格式，输出位置
 
-```python
+{% highlight python linenos %}
 #!/usr/bin/env python
 # _*_ coding:utf-8 _*_
 #导入logging模块
@@ -77,9 +76,11 @@ logging.warning('warning')
 logging.info('info')
 logging.debug('debug')
 logging.log(logging.INFO, 'NOTSET')
-```
+{% endhighlight %}
+
 执行结果
-```python
+
+{% highlight python linenos %}
 Linrb@Linrb-me:~$ ls 
 log.py
 Linrb@Linrb-me:~$ python log.py 
@@ -92,10 +93,9 @@ Linrb@Linrb-me:~$ cat log.log
 2016-05-27 21:46:15 PM - root - INFO - log: info
 2016-05-27 21:46:15 PM - root - DEBUG - log: debug
 2016-05-27 21:46:15 PM - root - INFO - log: NOTSET
-```
+{% endhighlight %}
 
 `logging.basicConfig` 函数各个参数  
-<br>
 
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 |**参数**|**说明**|
@@ -107,7 +107,6 @@ Linrb@Linrb-me:~$ cat log.log
 
 <br>
 `format` 参数  
-<br>
 
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 |**参数**|**说明**|
@@ -124,12 +123,13 @@ Linrb@Linrb-me:~$ cat log.log
 |%(process)d|打印进程ID|
 |%(message)s|打印日志信息|
 
-<h3 id='z2'>二 logger 对象</h3>
+### logger 对象
 
-上述例子中了解到了logging.debug()、logging.info()、logging.warning()、logging.error()、logging.critical()（分别用以记录不同级别的日志信息），logging.basicConfig()（用默认日志格式（Formatter）为日志系统建立一个默认的流处理器（StreamHandler），设置基础配置（如日志级别等）并加到root logger（根Logger）中）这几个logging模块级别的函数，另外还有一个模块级别的函数是 `logging.getLogger([name])`（返回一个logger对象，如果没有指定名字将返回root logger）  
+　　上述例子中了解到了logging.debug()、logging.info()、logging.warning()、logging.error()、logging.critical()（分别用以记录不同级别的日志信息），logging.basicConfig()（用默认日志格式（Formatter）为日志系统建立一个默认的流处理器（StreamHandler），设置基础配置（如日志级别等）并加到root logger（根Logger）中）这几个logging模块级别的函数，另外还有一个模块级别的函数是 `logging.getLogger([name])`（返回一个logger对象，如果没有指定名字将返回root logger）  
 
-#### 1、最简单的过程
-```python
+#### 最简单的过程
+
+{% highlight python linenos %}
 import logging
 
 logger = logging.getLogger()
@@ -156,14 +156,16 @@ logger.info('logger info message')
 logger.warning('logger warning message')
 logger.error('logger error message')
 logger.critical('logger critical message')
-```
-**简单介绍：logging库提供了多个组件：`Logger` 、`Handler` 、`Filter` 、`Formatter` 。Logger对象提供应用程序可直接使用的接口，Handler 发送日志到适当的目的地，Filter 提供了过滤日志信息的方法，Formatter 指定日志显示格式。**  
+{% endhighlight %}
+
+　　**简单介绍：logging库提供了多个组件：`Logger` 、`Handler` 、`Filter` 、`Formatter` 。Logger对象提供应用程序可直接使用的接口，Handler 发送日志到适当的目的地，Filter 提供了过滤日志信息的方法，Formatter 指定日志显示格式。**  
 >Logger 是一个树形层级结构，输出信息之前都要获得一个 Logger（如果没有显示的获取则自动创建并使用 root Logger，如第一个例子所示）。  
 > logger = logging.getLogger()返回一个默认的 Logger 也即 root Logger，并应用默认的日志级别(warning)、Handler 和 Formatter 设置。  
 > 当然也可以通过 `Logger.setLevel(lel)` 指定最低的日志级别，可用的日志级别有 logging.DEBUG、logging.INFO、logging.WARNING、logging.ERROR、logging.CRITICAL。  
 
-#### 2、再创建两个logger对象
-```python
+#### 再创建两个logger对象
+
+{% highlight python linenos %}
 logger1 = logging.getLogger('mylogger')
 logger1.setLevel(logging.DEBUG)
 
@@ -187,9 +189,11 @@ logger2.info('logger2 info message')
 logger2.warning('logger2 warning message')
 logger2.error('logger2 error message')
 logger2.critical('logger2 critical message')
-```
+{% endhighlight %}
+
 结果：
-```python
+
+{% highlight python linenos %}
 2016-01-08 11:22:20,559 - root - WARNING - logger warning message
 2016-01-08 11:22:20,560 - root - ERROR - logger error message
 2016-01-08 11:22:20,560 - root - CRITICAL - logger critical message
@@ -209,7 +213,7 @@ logger2.critical('logger2 critical message')
 2016-01-08 11:22:20,565 - mylogger - ERROR - logger2 error message
 2016-01-08 11:22:20,565 - mylogger - CRITICAL - logger2 critical message
 2016-01-08 11:22:20,565 - mylogger - CRITICAL - logger2 critical message
-```
+{% endhighlight %}
 
 **提问1**  
 > 明明通过 logger1.setLevel(logging.DEBUG) 将 logger1 的日志级别设置为了 DEBUG，为何显示的时候没有显示出 DEBUG 级别的日志信息，而是从 INFO 级别的日志开始显示呢？  
@@ -224,13 +228,14 @@ logger2.critical('logger2 critical message')
 
 
 
-#### 3、Filter
+#### Filter
 
 限制只有满足过滤规则的日志才会输出。  
-比如我们定义了 filter = logging.Filter('a.b.c') ,并将这个 Filter 添加到了一个 Handler 上，则使用该 Handler 的 Logger 中只有名字带 a.b.c 前缀的 Logger 才能输出其日志。也可以给 logger 对象添加
+　　比如我们定义了 filter = logging.Filter('a.b.c') ,并将这个 Filter 添加到了一个 Handler 上，则使用该 Handler 的 Logger 中只有名字带 a.b.c 前缀的 Logger 才能输出其日志。也可以给 logger 对象添加
 
 实例
-```python
+
+{% highlight python linenos %}
 #coding:utf-8
 import logging
 
@@ -326,4 +331,4 @@ logger5.info('logger5 info message')
 logger5.warning('logger5 warning message')
 logger5.error('logger5 error message')
 logger5.critical('logger5 critical message')
-```
+{% endhighlight %}

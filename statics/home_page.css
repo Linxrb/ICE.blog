@@ -213,7 +213,7 @@ footer .next-project-link+.copyright{
             border:1px solid #2a2a2a;
             background-color:#2a2a2a;
             position:fixed;
-            bottom: 40px;
+            bottom: 45px;
             right: 80px;
             z-index:1000;
             cursor:pointer;
@@ -242,18 +242,18 @@ footer .next-project-link+.copyright{
     position: fixed;
     right: 80px;
     cursor: pointer;
-    bottom: 5px;
+    bottom: 10px;
     z-index:1000;
-    height: 25px;
-    width: 25px;
+    height: 26px;
+    width: 26px;
     background-color: #2a2a2a;
 }
 .go-top_hide {
     display: none;
 }
 .top_img{
-    height: 24px;
-    width: 24px;
+    height: 25px;
+    width: 25px;
 }
 @media (max-width: 800px){
     .wrap{width:100%;max-width:none }

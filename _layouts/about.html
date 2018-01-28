@@ -44,7 +44,8 @@
             </div>
             <div class="block">
                 <div class="block-inner">
-                    <p class="case-intro"> I'm Linrb, and this is my permanent personal blog, which will record my past, present, and future. Go through the archive to see how my progressed and evolved.. </p>
+                   <!--<div style="display:none" id="string">隐藏内容</div><span id="showStr">要显示的内容</span> -->
+                    <p class="case-intro"> I'm Linrb, and this is my permanent personal blog, which will record my past, present, and future. Go through the archive to see how my progressed and evolved... </p>
                 </div>
             </div>
         </div>
@@ -80,6 +81,16 @@ $(document).ready(function(){
         //$("h2").next().css("display","block");
       });
 });
+
+   /* var index = 0;  
+    var str = document.getElementById("string").innerHTML;  
+    function type() {  
+        if(index == str.length) {  
+            index = 0;  
+            }
+        document.getElementById("showStr").innerText = str.substring(0, index++);  
+        }
+    setInterval(type, 90); //通过定时器来让文字逐步显示 */
 </script>
 </body>
 </html>

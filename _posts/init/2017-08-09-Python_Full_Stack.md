@@ -31,7 +31,7 @@ layout: init-post
 [类成员（字段、方法、属性）]({{site.baseurl}}/2017/05/16/python-object-oriented-class-member) \|
 [成员修饰符（公有、私有）]({{site.baseurl}}/2017/05/16/python-object-oriented-member-modifier) \|
 [类的特殊成员]({{site.baseurl}}/2017/05/16/python-object-oriented-special-member) \|
-
+[元类]({{site.baseurl}}/2017/05/16/python-object-oriented-meta-class) \|
 #### Python标准库
 
 [模块介绍]({{site.baseurl}}/2017/05/15/python-module) \|

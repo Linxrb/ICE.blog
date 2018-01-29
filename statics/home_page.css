@@ -19,8 +19,7 @@ html,body,div,header,h1,h2,h3,h4,h5,h6,spen,a,section,p,img,footer,input,nav,for
     margin:0;padding:0
 }
 ::selection{
-    color:#1a1a1a;
-    background:rgba(0,0,0,0.08)
+    background:rgba(130, 127, 127, 0.16)
 }
 article,aside,canvas,figure,figure img,figcaption,hgroup,footer,header,nav,section,audio,video{
     position:relative;

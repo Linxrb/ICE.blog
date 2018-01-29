@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ page.title}} - 浊心’blog | 大好时光</title>
+    <meta name=”keyword” content="浊心,Linrb">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="{{ site.baseurl }}/statics/jquery-3.1.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/statics/init-post.css">
+    <link rel="icon" href="{{ site.baseurl }}/images/ice.ico" type="images/ice.icon">
+    
+<style type="text/css">
+</style>
+</head>
+<body>
+<div class="wrap">
+    <div class = "show_wz">
+        <div class="article_body">
+            <div class= "markdown-body">
+
+                {{ content }}
+
+            </div>
+        </div>
+        </div>
+</div>
+    <div class="bar" id="menubar">
+        <div class="menu" id="menu0"></div>
+        <div class="menu" id="menu1"></div>
+        <div class="menu" id="menu2"></div>
+    </div>
+
+<script>/*
+$(document).ready(function(){
+    $(".markdown-body a").attr("target","_blank")
+});*/
+</script>
+</body>
+</html>

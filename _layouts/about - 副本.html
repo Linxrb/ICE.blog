@@ -9,18 +9,12 @@
     <link rel="stylesheet" type="text/css" href="statics/about.css">
     <script src="statics/jquery-3.1.1.js"></script>
     <link rel="icon" href="images/ice.ico" type="images/ice.icon">
+    <style type="text/css">
+            #about{    border-bottom:1px solid;color:red;}
+            .my-site-list h2{cursor:pointer;}
+    </style>
 </head>
 <body>
-  <!--  <div id="ShowLink">
-    <iframe style="height:100%;width:100%;border:0" name="Showcontent" ></iframe>
-    </div>
-    <div style="display:none" id="Value" value="0"></div>
-    <div class="aboutbar" id="aboutmenubar">
-        <div class="aboutmenu" id="aboutmenu0"></div>
-        <div class="aboutmenu" id="aboutmenu1"></div>
-        <div class="aboutmenu" id="aboutmenu2"></div>
-    </div> -->
-
 <div class="wrap">
     <header>
         <div class="blocks-wrap clearfix">
@@ -86,42 +80,17 @@ $(document).ready(function(){
         $(this).next().slideToggle("slow");
         //$("h2").next().css("display","block");
       });
-    //$(".my-site-list a").attr("target","Showcontent")
 });
 
-/*
-// 按钮
-var menubar = document.getElementById("aboutmenubar");
-var menu0 = document.getElementById("aboutmenu0");
-var menu1 = document.getElementById("aboutmenu1");
-var menu2 = document.getElementById("aboutmenu2");
-var i = 0
-menubar.onclick = function () {
-        menu0.style.transform = "translate3d(-50%,-50%,0) rotate(0deg)";
-        menu2.style.transform = "translate3d(-50%,-50%,0) rotate(0deg)";
-        menu0.style.top = 30 + "%";
-        menu2.style.top = 70 + "%";
-        menu1.style.display = "block";
-
-        $("#ShowLink").slideUp();
-        $("#aboutmenubar").slideUp()
-        $("html").removeClass("mu")
-        $("body").removeClass("mu")
-         }
-//链接
-$(".my-site-list a").click(
-  function(){
-        menu0.style.top = 50 + "%";
-        menu1.style.display = "none";
-        menu2.style.top = 50 + "%";
-        menu0.style.transform = "translate3d(-50%,-50%,0) rotate(135deg)";
-        menu2.style.transform = "translate3d(-50%,-50%,0) rotate(405deg)";
-        $("#ShowLink").slideDown();
-        $("#aboutmenubar").slideDown();
-        $("html").addClass("mu")
-        $("body").addClass("mu")
-    })
-    */
+   /* var index = 0;  
+    var str = document.getElementById("string").innerHTML;  
+    function type() {  
+        if(index == str.length) {  
+            index = 0;  
+            }
+        document.getElementById("showStr").innerText = str.substring(0, index++);  
+        }
+    setInterval(type, 90); //通过定时器来让文字逐步显示 */
 </script>
 </body>
 </html>

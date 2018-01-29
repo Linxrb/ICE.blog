@@ -1,0 +1,64 @@
+html,body,div,header,h1,h2,h3,h4,h5,h6,spen,a,section,p,img,footer,input,nav,form{
+    margin:0;padding:0
+}
+::selection{
+    color:#1a1a1a;
+    background:rgba(0,0,0,0.08)
+}
+article,aside,canvas,figure,figure img,figcaption,hgroup,footer,header,nav,section,audio,video{
+    position:relative;
+    display:block
+}
+h1,h2,h3,h4,h5,h6,.emphasize{
+    font-weight:500;
+    letter-spacing:0.02rem
+}
+.clearfix::after{
+    display:table;clear:both;content:''
+}
+html{
+    height:100%;
+    background-color:#1a1a1a;
+}
+html::-webkit-scrollbar{display: none}
+/*'Graphik Web', 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif*/
+body{
+    font:400 14px/1.75 Roboto,'Helvetica Neue',Helvetica,Arial,'Microsoft Yahei',sans-serif;height:100%;
+    color:#1a1a1a;
+
+}
+nav ul,nav ol{
+    list-style:none
+}
+a{
+    transition:color 0.1s ease;
+    text-decoration:none;
+    color:#1a1a1a
+}
+a:hover{
+    border-bottom:1px solid
+}
+
+.wrap{
+    max-width:1400px;
+    max-width:87.5rem;
+    min-height:100%;
+    margin-right:auto;
+    margin-left:auto;
+    background:#f3f3f3;
+}
+.article_body{max-width:900px;margin: 0 auto;letter-spacing: 1px;background-color:rgba(255, 255, 255, 0)}
+
+/* 修改 markdown h 标签属性  */
+.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{color:#1a1a1a;font-weight: bold;padding-top: 10px;margin: 20px 0 15px;}
+.markdown-body h4{font-size:1rem;}
+.markdown-body h3{color:#002BB8;margin-bottom: 30px;font-size:1.25rem;border-bottom: 1px solid #ccc;padding-bottom:10px;padding-top: 30px}
+.markdown-body p{margin-bottom:0}
+.show_wz a{color:#dd1144}
+.show_wz a:hover{color:black;text-decoration:none}
+
+/* 修改字体大小*/
+.markdown-body{padding:3rem;color:#555;line-height:2;word-wrap:break-word;}
+.markdown-body ul li,.markdown-body ol li{line-height:2}
+@media (max-width: 500px){.markdown-body{padding:2rem;font-size:100%}.markdown-body ul, .markdown-body ol {padding-left: 2em;}}
+@media (max-width: 500px){.show_wz{padding-left: 0px;padding-right:0px;}}

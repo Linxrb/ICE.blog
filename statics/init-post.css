@@ -44,12 +44,12 @@ a:hover{
     min-height:100%;
     margin-right:auto;
     margin-left:auto;
-    background:#f3f3f3;
+    background:#f9f9f9;
 }
 .article_body{max-width:900px;margin: 0 auto;letter-spacing: 1px;background-color:rgba(255, 255, 255, 0)}
 
 /* 修改 markdown h 标签属性  */
-.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{color:#1a1a1a;font-weight: bold;padding-top: 10px;margin: 20px 0 15px;}
+.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{font-weight: bold;padding-top: 10px;margin: 20px 0 15px;}
 .markdown-body h4{font-size:1rem;}
 .markdown-body h3{color:#002BB8;margin-bottom: 30px;font-size:1.25rem;border-bottom: 1px solid #ccc;padding-bottom:10px;padding-top: 30px}
 .markdown-body p{margin-bottom:0}

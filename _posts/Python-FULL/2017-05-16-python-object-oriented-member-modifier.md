@@ -84,5 +84,22 @@ obj = Foo("zhuoxin.me")
 {% endhighlight %}
 
 　　方法、属性的访问于上述方式相似，即：<span style="color:red">私有成员只能在类内部使用</span>，
-即使是继承关系也不可以。
-ps：非要访问私有属性的话，可以通过 对象._类__属性名
+即使是继承关系也不可以。  
+ps：非要访问私有属性的话，可以通过 `对象._类__属性名`  
+
+{% highlight python linenos %}
+class Foo:
+
+    # 父类的构造方法
+    def __init__(self):
+
+        # 私有普通字段
+        self.__Blog = "http://zhuoxin.me"
+
+# 创建一个对象
+obj = Foo()
+
+# 通过特殊的方法访问
+print(obj._Foo__Blog)
+# 一个下划线，一个类名，私有的变量名
+{% endhighlight %}

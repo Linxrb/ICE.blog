@@ -24,6 +24,8 @@ layout: init-post
 [装饰器]({{site.baseurl}}/2017/05/09/python-decorator) \|
 [生成器与迭代器]({{site.baseurl}}/2017/05/10/python-generator-and-iterator) \|
 [正则表达式 re]({{site.baseurl}}/2017/05/15/python-module-re) \|
+[异常处理]({{site.baseurl}}/2017/05/20/python-exception-handling) \|
+[反射]({{site.baseurl}}/2017/05/20/python-reflection) \|
 
 #### 面向对象
 

@@ -7,6 +7,7 @@ layout: post
 {:toc}
 
 阅读以下代码：
+
 {% highlight python linenos%}
 class Foo(object):
     def __init__(self):

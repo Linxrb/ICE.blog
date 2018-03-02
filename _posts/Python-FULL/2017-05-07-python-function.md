@@ -16,6 +16,7 @@ layout: post
 #### 创建语法
 
 Python 定义函数使用 `def` 关键字，一般格式如下：
+
 {% highlight python  linenos %}
 def 函数名（参数）:
     函数体
@@ -68,6 +69,7 @@ num("123456")
 #### 位置参数
 
 　　位置参数须以正确的顺序传入函数。<span style="border-bottom:1px dashed;">调用时的数量必须和声明时的一样。</span>
+
 {% highlight python  linenos %}
 def f(name,age):
     print('I am %s,I am %d'%(name,age))
@@ -80,6 +82,7 @@ f('Linrb',16)
 
 　　关键字参数和函数调用关系紧密，函数调用使用关键字参数来确定传入的参数值。
 <span style="border-bottom:1px dashed ;">使用关键字参数允许函数调用时参数的顺序与声明时不一致</span>，因为 Python 解释器能够用参数名匹配参数值。
+
 {% highlight python  linenos %}
 def f(name,age):
     print('I am %s,I am %d'%(name,age))
@@ -91,6 +94,7 @@ f(age=16,name='Linrb')
 #### 默认参数
 
 　　调用函数时，默认参数的值如果没有传入，则被认为是默认值，使用默认值。下例会打印默认的age，如果age没有被传入
+
 {% highlight python  linenos %}
 def print_info(name,age,sex='male'):
     print('Name:%s'%name)
@@ -148,6 +152,7 @@ ret(11,222,333,k1=111,k2=222)
 {% endhighlight %}
 
 <span style="border-bottom:1px solid ;">注意：还可以这样传参</span>
+
 {% highlight python  linenos %}
 def f(*args):
     print(args)
@@ -175,6 +180,7 @@ python中的作用域分4种情况：
 - B：`built-in`，系统固定模块里面的变量，比如int, bytearray等。
 
 <span style="border-bottom:2px solid ;">搜索变量的优先级：作用域局部L > 外层作用域E > 当前模块中的全局G > python内置作用域B，也就是LEGB。</span>
+
 {% highlight python  linenos %}
 x = int(2.9)             #int built-in
  
@@ -195,6 +201,7 @@ outer()
 #### 作用域的产生
 
 　　在 Python 中，只有 `模块(module)`，`类(class)` 以及 `函数(def、lambda)` 才会引入新的作用域，其它的代码块（如if、try、for等）是不会引入新的作用域的
+
 {% highlight python  linenos %}
 if 2 > 1:
     x = 1
@@ -235,6 +242,7 @@ f2()
 
 `enclosing` 中修改 `global(全局变量)`  
 　　当修改的变量是在全局作用域（global作用域）上的，就要使用 global 先声明一下，代码如下：
+
 {% highlight python  linenos %}
 count = 10
 def outer():
@@ -250,6 +258,7 @@ outer()
 `local` 中修改 `enclosing`  
 　　global 关键字声明的变量必须在全局作用域上，不能嵌套作用域上，当要修改嵌套作用域（enclosing作用域，外层非全局作用域）中的变量怎么办呢  
 这时就需要 nonlocal 关键字了
+
 {% highlight python  linenos %}
 def outer():
     count = 10

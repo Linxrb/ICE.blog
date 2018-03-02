@@ -27,6 +27,7 @@ logging.critical('critical message')
 {% endhighlight %}
 
 输出
+
 {% highlight text linenos %}
 WARNING:root:warning message
 ERROR:root:error message

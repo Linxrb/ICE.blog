@@ -4,6 +4,7 @@ layout: post
 ---
 
 网络编程,向百度发送请求,获取百度首页代码，保存到本地
+
 {% highlight python linenos %}
 #coding=utf-8
 #客户端建立socket套接字

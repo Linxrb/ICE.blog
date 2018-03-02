@@ -8,6 +8,7 @@ layout: post
 
 　　当程序出现错误的时候，进行捕捉，然后根据捕捉到的错误信息进行对应的处  
 - 基本语法
+
 {% highlight python linenos %}
 try:
     正常执行

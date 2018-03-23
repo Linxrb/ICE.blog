@@ -17,6 +17,7 @@ layout: init-post
 [布尔数据类型]({{site.baseurl}}/2017/05/03/python-bool-data-type) \|
 [函数]({{site.baseurl}}/2017/05/07/python-function) \|
 [内置函数]({{site.baseurl}}/2017/05/09/python-built-in-function) \|
+[编码与解码]({{site.baseurl}}/2017/06/20/python-decode-and-encode) \|
 
 #### 进阶篇
 

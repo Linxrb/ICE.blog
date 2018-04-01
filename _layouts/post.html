@@ -36,7 +36,7 @@
 
 
 /* 文章title*/
-.article_body{letter-spacing: 1px;}
+.article_body{letter-spacing: 1px;border:1px solid}
 .article_body .article_title{text-align:center;padding-bottom:5px}
 .article_body .article_title .title{font-size:24px;font-family: Roboto Slab;font-weight:600;padding:4rem 2rem 0 2rem;margin-top:0;margin-bottom:0}
 .article_body .article_title .title span{cursor:pointer;}
@@ -62,13 +62,13 @@
 #markdown-toc::-webkit-scrollbar {display:none}
 .cover{position:fixed;top:0;right:0;left:0;bottom:0;background-color:rgba(0, 0, 0, 0.48);display:none}
 .Tcover{position:fixed;top:0;right:430px;left:0;bottom:0;display:none;z-index:1000}
-@media (max-width: 500px){#markdown-toc{border-left: 40px solid #fdfdfd;width:180px}.Tcover{right:240px}#markdown-toc ul{padding-left:2.5rem}}
+@media (max-width: 500px){#markdown-toc{border-left: 40px solid #fdfdfd;width:180px}.Tcover{right:240px}#markdown-toc ul{padding-left:2.5rem}.article_body{border:0}}
 </style>
 </head>
 <body>
 <div class="wrap">
     <div class = "show_wz">
-        <div class="article_body" style="max-width:900px;margin: 0 auto;letter-spacing: 1px;border:1px solid">
+        <div class="article_body" style="max-width:900px;margin: 0 auto;letter-spacing: 1px;">
             <div class = 'article_title'>
                 <div class='title'><span>{{ page.title}}</span></div>
                 <div class= 'time'><span>{{ page.date | date: "%Y/%m/%d" }}</span> BY <span>Linrb</span></div>

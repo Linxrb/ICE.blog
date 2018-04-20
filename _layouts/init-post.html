@@ -7,15 +7,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="{{ site.baseurl }}/statics/jquery-3.1.1.js"></script>
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/statics/init-post.css">
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/statics/home_page.css">
     <link rel="icon" href="{{ site.baseurl }}/images/ice.ico" type="images/ice.icon">
     
 <style type="text/css">
+/***********  搜索框部分 ***********/
+.head .head_bottom{
+    width: 100%;
+    height:60px;
+    background-color: white;
+}
+.head .head_bottom input{
+    border: 0;
+    height: 60px;
+    width: 80%;
+    outline: none;
+}
+.head .head_bottom div{
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.head img{
+    border: 0;
+    height: auto;
+    max-height: 100%;
+    width: auto;
+    vertical-align: middle;
+    max-width: 100%;
+}
+
 </style>
 </head>
 <body>
 <div class="wrap">
-    <div class = "show_wz">
-        <div class="show_top"></div>
+    <header>
+        <div class="blocks-wrap clearfix">
+            <div class="block">
+                <div class="block-inner clearfix" id='linrb'>
+                      <h1><a href="{{ site.baseurl }}/index.html">Linrb</a></h1>
+                </div>
+            </div>
+            <div class="block">
+                <div class="block-inner">
+                    <nav class="global-nav clearfix" id="block_inner" >
+                            <li> <a href="{{ site.baseurl }}/index.html" class="nav-link current" id="work">Work</a></li>
+                            <li> <a href="{{ site.baseurl }}/about.html" class="nav-link" id="about">About</a></li>
+                            <li> <a href="{{ site.baseurl }}/contact.html" class="nav-link" id="contact">Contact</a> </li>
+                            <li> <a href="{{ site.baseurl }}/article.html" class="nav-link" id="article">Article</a> </li>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="head">
+        <div class="head_bottom">
+            <div>
+                <img src="{{ site.baseurl }}/images/soso.png">
+                <input type="text" value='在这里可以输入搜索关键字' style="color: #9c9c9c"
+                onfocus='if(this.value=="在这里可以输入搜索关键字"){this.value="";}; '
+                onblur='if(this.value==""){this.value="在这里可以输入搜索关键字";};' name="x"/>
+            </div>
+        </div>
+    </div>
+    <div class = "show_wz"  style="background-color:#f6f6f6">
         <div class="article_body">
             <div class= "markdown-body">
 
@@ -24,6 +79,21 @@
             </div>
         </div>
         </div>
+        <footer>
+        <div class="blocks-wrap clearfix">
+            <div class="block">
+                <div class="block-inner">
+                    <a href='{{ site.baseurl }}/about.html' class="next-project-link emphasize"> Archive &raquo; </a>
+                    <p class="desc"> Check out the archive of my previous works. </p>
+                </div>
+            </div>
+            <div class="block">
+                <div class="block-inner">
+                    <p class="copyright"> <br /> &copy; 2017 Linrb. All rights reserved. </p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </div>
     <div class="bar" id="menubar">
         <div class="menu" id="menu0"></div>

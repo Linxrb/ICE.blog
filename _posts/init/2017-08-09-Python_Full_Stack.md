@@ -7,14 +7,16 @@ layout: init-post
 
 [开篇基础]({{site.baseurl}}/2017/05/03/python-basics) \|
 [流程控制]({{site.baseurl}}/2017/05/03/python-flowcContort) \|
-[赋值与运算符]({{site.baseurl}}/2017/05/03/python-assignment-and-operator) \|
+[赋值与运算符]({{site.baseurl}}/2017/05/03/python-assignment-and-operator) \|  
+
 [数字数据类型]({{site.baseurl}}/2017/05/03/python-digital-data-type) \|
 [字符串数据类型]({{site.baseurl}}/2017/05/07/python-string-data-type) \|
 [列表数据类型]({{site.baseurl}}/2017/05/05/python-list-data-type) \|
 [元祖数据类型]({{site.baseurl}}/2017/05/03/python-tuple-data-type) \|
 [字典数据类型]({{site.baseurl}}/2017/05/03/python-dict-data-type) \|
 [集合(set)数据类型]({{site.baseurl}}/2017/05/03/python-set-data-type) \|
-[布尔数据类型]({{site.baseurl}}/2017/05/03/python-bool-data-type) \|
+[布尔数据类型]({{site.baseurl}}/2017/05/03/python-bool-data-type) \|  
+
 [函数]({{site.baseurl}}/2017/05/07/python-function) \|
 [内置函数]({{site.baseurl}}/2017/05/09/python-built-in-function) \|
 [编码与解码]({{site.baseurl}}/2017/06/20/python-decode-and-encode) \|

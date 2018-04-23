@@ -52,8 +52,8 @@ a:hover{
 .markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{font-weight: bold;padding-top: 10px;margin: 20px 0 15px;}
 .markdown-body h4{font-size:1.1rem;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;}
 .markdown-body h3{color:#002BB8;margin-bottom: 30px;font-size:1.25rem;border-bottom: 1px solid #ccc;padding-bottom:10px;padding-top: 30px}
-.markdown-body p{margin-bottom:0;border-bottom: 1px solid;display: table;}
-.show_wz a{color:#555;}/*border-bottom: 1px #555 dotted; #dd1144*/
+.markdown-body p{margin-bottom:0;border: 1px solid;display: table;padding: 5px;margin: 10px;background-color: #fff;}
+.show_wz a{color:#2a2a2a;}/*border-bottom: 1px #555 dotted; #dd1144*/
 .show_wz a:hover{color:black;text-decoration:none;border-bottom:0}
 
 /* 修改字体大小*/

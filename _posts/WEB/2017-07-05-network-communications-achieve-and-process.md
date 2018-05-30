@@ -45,17 +45,14 @@ layout: post
 ![]({{site.baseurl}}/images/images/1036857-20161008191742160-1888861499.png)  
 <br>
 
-#### 第四步：HTTP部分的内容，类似于下面这样：  
+#### 第四步：HTTP部分的内容，类似于下面这样
 
-　　*GET / HTTP/1.1  
+　　GET / HTTP/1.1  
 　　Host: www.google.com  
 　　Connection: keep-alive  
-　　User-Agent: Mozilla/5.0 (Windows NT 6.1) ……  
-　　Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8  
-　　Accept-Encoding: gzip,deflate,sdch  
-　　Accept-Language: zh-CN,zh;q=0.8  
-　　Accept-Charset: GBK,utf-8;q=0.7,*;q=0.3  
-　　Cookie: … *
+　　User-Agent: Mozilla/5.0 (Windows NT 6.1) .....  
+　　.....
+
 
 我们假定这个部分的长度为4960字节，它会被嵌在TCP数据包之中。  
 

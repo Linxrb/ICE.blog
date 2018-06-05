@@ -17,7 +17,7 @@ layout: about
 
 ## 数据 & 可视化
 
-- 数据库(Database) \| [MySQL]() \| [MongoDB]() \| [Redis]({{site.baseurl}}/2017/08/15/redis) \| Oracle \| SQLite
+- 数据库(Database) \| [MySQL]({{site.baseurl}}/2017/09/16/Mysql) \| [MongoDB]() \| [Redis]({{site.baseurl}}/2017/08/15/redis) \| Oracle \| SQLite
 
 ***
 

@@ -26,7 +26,7 @@ else:
 {% highlight python linenos %}
 var = 值1 if 条件 else 值2
 
-#例子
+# 例子
 >>> var = "True" if 1==1 else "False"
 >>> var
 'True'
@@ -58,7 +58,7 @@ for i in enumerate(li ,1):
 
 # 结果
 
-(1, 1)   #结果是一个元祖
+(1, 1)   # 结果是一个元祖
 (2, 2)
 (3, 3)
 
@@ -79,7 +79,7 @@ for n in range(3):
 1
 2
 
-#反向输出
+# 反向输出
 
 for n in range(5,-1,-1):
     print(n)

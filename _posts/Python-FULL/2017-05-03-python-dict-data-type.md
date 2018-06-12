@@ -23,7 +23,7 @@ layout: post
 #### 第二种
 
 {% highlight python linenos %}
->>> dic = dict({"k1":"v1","k2":"v2"}) #参数不能是字符串
+>>> dic = dict({"k1":"v1","k2":"v2"})
 >>> dic
 {'k1': 'v1', 'k2': 'v2'}
 >>> type(dic)
@@ -31,7 +31,7 @@ layout: post
 {% endhighlight %}
 
 {% highlight python linenos %}
-#在创建字典的时候，__init__初始化的时候还可以接受一个可迭代的变量作为值
+# 在创建字典的时候，__init__初始化的时候还可以接受一个可迭代的变量作为值
 
 >>> li = ["a","b","c"]
 >>> dic = dict(enumerate(li))
@@ -73,7 +73,7 @@ dic3 = {}
  
 dic3['name'] = 'Linrb'
 dic3['age'] = 99
-print(dic3) #{'name': 'Linrb', 'age': 99}
+print(dic3) # {'name': 'Linrb', 'age': 99}
 
 # 如果字典中存在键，则不添加并返回值，如果键不存在则添加并返回值
 a = dic3.setdefault('name','Linxrb')
@@ -89,10 +89,10 @@ print(dic3)
 {% highlight python linenos %}
 dic = {'name': 'Linrb', 'age': 18,'class':1}
 
-dic.clear() :   #清空字典，清空后变成一个空字典
-dic.pop('name') #删除指定项，并返回值
-dic.popitem()   #随机删除某项并返回键和值
-del dic['name'] #删除指定元素，也可以删除整个字典
+dic.clear() :   # 清空字典，清空后变成一个空字典
+dic.pop('name') # 删除指定项，并返回值
+dic.popitem()   # 随机删除某项并返回键和值
+del dic['name'] # 删除指定元素，也可以删除整个字典
 {% endhighlight %}
 
 #### 改
@@ -103,8 +103,8 @@ dic3 = {'name': 'Linrb', 'age': 99}
 dic3['name'] = 'alvin'
 
 dic4 = {'sex': 'male', 'hobby': 'girl', 'age': 36}
-dic3.update(dic4) #更新，存在覆盖，不存在添加
-print(dic3)       #{'name': 'Linxrb', 'age': 36, 'sex': 'male', 'hobby': 'girl'}
+dic3.update(dic4) # 更新，存在覆盖，不存在添加
+print(dic3)       # {'name': 'Linxrb', 'age': 36, 'sex': 'male', 'hobby': 'girl'}
 {% endhighlight %}
 
 #### 查
@@ -113,16 +113,16 @@ print(dic3)       #{'name': 'Linxrb', 'age': 36, 'sex': 'male', 'hobby': 'girl'}
 dic3 = {'name': 'Linrb', 'age': 99}
 
 print(dic3['name'])
-print(dic3['names']) #取不到报错
+print(dic3['names']) # 取不到报错
 
-print(dic3.get('age',False)) #键存在就取值，不存在就使用默认值
+print(dic3.get('age',False)) # 键存在就取值，不存在就使用默认值
 
-print(dic3.items())  #dict_items([('name', 'Linrb'), ('age', 99)])
-print(dic3.keys())   #dict_keys(['name', 'age'])
-print(dic3.values()) #dict_values(['Linrb', 18])
+print(dic3.items())  # dict_items([('name', 'Linrb'), ('age', 99)])
+print(dic3.keys())   # dict_keys(['name', 'age'])
+print(dic3.values()) # dict_values(['Linrb', 18])
 
 print('name' in dic3)      # py2:  dic3.has_key('name') #True
-print(list(dic3.values())) #['Linrb', 99]
+print(list(dic3.values())) # ['Linrb', 99]
 {% endhighlight %}
 
 ### 其他操作和涉及到的方法
@@ -131,16 +131,16 @@ print(list(dic3.values())) #['Linrb', 99]
 
 {% highlight python linenos %}
 d1 = dict.fromkeys(['host1', 'host2', 'host3'], 'Mac')
-print(d1)  #{'host2': 'Mac', 'host3': 'Mac', 'host1': 'Mac'}
+print(d1)  # {'host2': 'Mac', 'host3': 'Mac', 'host1': 'Mac'}
 
 d1['host1'] = 'xiaomi'
-print(d1)  #{'host2': 'Mac', 'host3': 'Mac', 'host1': 'xiaomi'}
+print(d1)  # {'host2': 'Mac', 'host3': 'Mac', 'host1': 'xiaomi'}
 
 d2 = dict.fromkeys(['host1', 'host2', 'host3'], ['Mac', 'huawei'])
-print(d2)  #{'host2': ['Mac', 'huawei'], 'host3': ['Mac', 'huawei'], 'host1': ['Mac', 'huawei']}
+print(d2)  # {'host2': ['Mac', 'huawei'], 'host3': ['Mac', 'huawei'], 'host1': ['Mac', 'huawei']}
 
 d2['host1'][0] = 'xiaomi'
-print(d2)  #{'host2': ['xiaomi', 'huawei'], 'host3': ['xiaomi', 'huawei'], 'host1': ['xiaomi', 'huawei']}
+print(d2)  # {'host2': ['xiaomi', 'huawei'], 'host3': ['xiaomi', 'huawei'], 'host1': ['xiaomi', 'huawei']}
 {% endhighlight %}
 
 `2、 d.copy()` 对字典 d 进行浅复制，返回一个和d有相同键值对的新字典  
@@ -150,7 +150,7 @@ print(d2)  #{'host2': ['xiaomi', 'huawei'], 'host3': ['xiaomi', 'huawei'], 'host
 {% highlight python linenos %}
 dic = {5:'555',2:'222',4:'444'}
 print(sorted(dic))
-#[2, 4, 5]　
+# [2, 4, 5]　
 {% endhighlight %}
 
 `4、 字典遍历`
@@ -160,18 +160,18 @@ dic5 = {'name': 'Linrb', 'age': 99}
  
 for i in dic5:
     print(i,dic5[i])
-#name Linrb
-#age 18
+# name Linrb
+# age 18
 
 for items in dic5.items():
     print(items)
-#('name', 'Linrb')
-#('age', 18)
+# ('name', 'Linrb')
+# ('age', 18)
 
 for keys,values in dic5.items():
     print(keys,values)
-#name Linrb
-#age 18
+# name Linrb
+# age 18
 {% endhighlight %}
 
 `5、 字典嵌套`
@@ -181,5 +181,5 @@ dic = {'zhangsan':{'age':23,'sex':'male'},
      '李四':{'age':33,'sex':'male'},
      'wangwu':{'age':27,'sex':'women'}  
      }
-#取值：dic[wangwu][sex]
+# 取值：dic[wangwu][sex]
 {% endhighlight %}

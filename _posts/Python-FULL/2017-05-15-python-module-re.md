@@ -22,99 +22,99 @@ layout: post
 {% highlight python linenos %}
 import re
 
-#方式一：
+# 方式一：
 re.findall(pattern, string, flags)
 
-#方式二：
-#生成Pattern对象实例,r表示匹配源字符串
+# 方式二：
+# 生成Pattern对象实例,r表示匹配源字符串
 ret = re.compile(r'nick')
-print(type(ret))               #<class '_sre.SRE_Pattern'>
+print(type(ret))               # <class '_sre.SRE_Pattern'>
 ret.findall(string)
 {% endhighlight %}
 
 #### 常用的正则表达式符号(元字符)
 
 {% highlight python linenos %}
-' . '      #默认匹配除\n之外的任意一个字符，若指定flag DOTALL,则匹配任意字符，包括换行
-' ^ '      #匹配字符开头，若指定flags MULTILINE,这种也可以匹配上(r"^a","\nabc\neee",flags=re.MULTILINE)
-' $ '      #匹配字符结尾，或e.search("foo$","bfoo\nsdfsf",flags=re.MULTILINE).group()也可以
-' * '      #匹配*号前的字符0次或多次，re.findall("ab*","cabb3abcbbac")  结果为['abb', 'ab', 'a']
-' + '      #匹配前一个字符1次或多次，re.findall("ab+","ab+cd+abb+bba") 结果['ab', 'abb']
-' ? '      #匹配前一个字符1次或0次
-'{m}'      #匹配前一个字符m次
-'{n,m}'    #匹配前一个字符n到m次，re.findall("ab{1,3}","abb abc abbcbbb") 结果'abb', 'ab', 'abb']
-' | '      #匹配|左或|右的字符，re.search("abc|ABC","ABCBabcCD").group() 结果'ABC'
-'(..)'     #分组匹配，re.search("(abc){2}a(123|456)c", "abcabca456c").group() 结果 abcabca456c
+' . '      # 默认匹配除\n之外的任意一个字符，若指定flag DOTALL,则匹配任意字符，包括换行
+' ^ '      # 匹配字符开头，若指定flags MULTILINE,这种也可以匹配上(r"^a","\nabc\neee",flags=re.MULTILINE)
+' $ '      # 匹配字符结尾，或e.search("foo$","bfoo\nsdfsf",flags=re.MULTILINE).group()也可以
+' * '      # 匹配*号前的字符0次或多次，re.findall("ab*","cabb3abcbbac")  结果为['abb', 'ab', 'a']
+' + '      # 匹配前一个字符1次或多次，re.findall("ab+","ab+cd+abb+bba") 结果['ab', 'abb']
+' ? '      # 匹配前一个字符1次或0次
+'{m}'      # 匹配前一个字符m次
+'{n,m}'    # 匹配前一个字符n到m次，re.findall("ab{1,3}","abb abc abbcbbb") 结果'abb', 'ab', 'abb']
+' | '      # 匹配|左或|右的字符，re.search("abc|ABC","ABCBabcCD").group() 结果'ABC'
+'(..)'     # 分组匹配，re.search("(abc){2}a(123|456)c", "abcabca456c").group() 结果 abcabca456c
  
  
-' \A '     #只从字符开头匹配，re.search("\Aabc","apexabc") 是匹配不到的
-' \Z '     #匹配字符结尾，同$
-' \d '     #匹配数字0-9
-' \D '     #匹配非数字
-' \w '     #匹配[A-Za-z0-9]
-' \W '     #匹配非[A-Za-z0-9]
-' \s '     #匹配空白字符、\t、\n、\r , re.search("\s+","ab\tc1\n3").group() 结果 '\t'
-' \b '     #匹配特殊字符边界
+' \A '     # 只从字符开头匹配，re.search("\Aabc","apexabc") 是匹配不到的
+' \Z '     # 匹配字符结尾，同$
+' \d '     # 匹配数字0-9
+' \D '     # 匹配非数字
+' \w '     # 匹配[A-Za-z0-9]
+' \W '     # 匹配非[A-Za-z0-9]
+' \s '     # 匹配空白字符、\t、\n、\r , re.search("\s+","ab\tc1\n3").group() 结果 '\t'
+' \b '     # 匹配特殊字符边界
 
 flags
 
-'re.I'     #不区分大小写
+'re.I'     # 不区分大小写
 're.M'     #
  
-'(?P<name>...)' #分组匹配 re.search("(?P<province>[0-9]{4})(?P<city>[0-9]{2})(?P<birthday>[0-9]{4})","371481199306143242").groupdict("city") 
-                #结果{'province': '3714', 'city': '81', 'birthday': '1993'}
+'(?P<name>...)' # 分组匹配 re.search("(?P<province>[0-9]{4})(?P<city>[0-9]{2})(?P<birthday>[0-9]{4})","371481199306143242").groupdict("city") 
+                # 结果{'province': '3714', 'city': '81', 'birthday': '1993'}
 {% endhighlight %}
 
 **元字符之字符集［］：**
 
 {% highlight python linenos %}
-#------------- 或的关系 -----------------------字符集[]
-#字符集里不需要用 ，分隔，，在里面也是匹配对象
+# ------------- 或的关系 -----------------------字符集[]
+# 字符集里不需要用 ，分隔，，在里面也是匹配对象
 ret = re.findall('ab[cd]e','abcde')
-print(ret)#[]   只能取 c 或 d
+print(ret) # []   只能取 c 或 d
 
 ret = re.findall('a[bc]d','acd')
-print(ret)#['acd']
+print(ret) # ['acd']
  
 ret = re.findall('[a-z]','acd')
-print(ret)#['a', 'c', 'd']
+print(ret) # ['a', 'c', 'd']
  
-ret = re.findall('[.*+]','a.cd+')       #元字符在字符集里没有特殊意义
-print(ret)#['.', '+']
+ret = re.findall('[.*+]','a.cd+')       # 元字符在字符集里没有特殊意义
+print(ret) # ['.', '+']
  
-#在字符集里有功能的符号: - ^ \
+# 在字符集里有功能的符号: - ^ \
  
 ret = re.findall('[1-9]','45dha3')
-print(ret)#['4', '5', '3']
+print(ret) # ['4', '5', '3']
  
-ret = re.findall('[^ab]','45bdha3')     #这里 ^ 是取反，即：非
-print(ret)#['4', '5', 'd', 'h', '3']
+ret = re.findall('[^ab]','45bdha3')     # 这里 ^ 是取反，即：非
+print(ret) # ['4', '5', 'd', 'h', '3']
  
 ret = re.findall('[\d]','45bdha3')
-print(ret)#['4', '5', '3']
+print(ret) # ['4', '5', '3']
 {% endhighlight %}
 
 #### 常用的匹配语法
 
 {% highlight python linenos %}
-re.match        #从头开始匹配，返回一个对象，通过 group() 取值，只匹配一次
-re.search       #匹配包含，返回一个对象，通过 group() 取值，只匹配一次
-re.findall      #把所有匹配到的字符放到以列表中的元素返回
-re.finditer     #返回一个迭代器
-re.split        #分隔，按规则分割成两个，再继续分割后面那一个，可指定次数
-re.sub          #匹配字符并替换
-re.subn         #和 sub 一样，它会返回替换了多少次
+re.match        # 从头开始匹配，返回一个对象，通过 group() 取值，只匹配一次
+re.search       # 匹配包含，返回一个对象，通过 group() 取值，只匹配一次
+re.findall      # 把所有匹配到的字符放到以列表中的元素返回
+re.finditer     # 返回一个迭代器
+re.split        # 分隔，按规则分割成两个，再继续分割后面那一个，可指定次数
+re.sub          # 匹配字符并替换
+re.subn         # 和 sub 一样，它会返回替换了多少次
 
-ret = re.finditer("(abc)(123)","abc123abc") #<callable_iterator object at 0x0146FEB0>
-next(ret)                                   #<_sre.SRE_Match object; span=(0, 6), match='abc123'>
-next(ret).group()                           #abc123
-next(ret).groups()                          #('abc', '123')
+ret = re.finditer("(abc)(123)","abc123abc") # <callable_iterator object at 0x0146FEB0>
+next(ret)                                   # <_sre.SRE_Match object; span=(0, 6), match='abc123'>
+next(ret).group()                           # abc123
+next(ret).groups()                          # ('abc', '123')
 
-re.split("[\d,]","ab96c",)                  #['ab', '', 'c'] 匹配到9时[ab, 6c]  然后再匹配到6['', c]
-re.split("[\d,]","ab96c",1)                 #分割次数  ['ab', '6c']
+re.split("[\d,]","ab96c",)                  # ['ab', '', 'c'] 匹配到9时[ab, 6c]  然后再匹配到6['', c]
+re.split("[\d,]","ab96c",1)                 # 分割次数  ['ab', '6c']
 
-re.sub("abc","def","abc123abc")             #'def123def'
-re.sub("abc","def","abc123abc",count=1)     #'def123abc'
+re.sub("abc","def","abc123abc")             # 'def123def'
+re.sub("abc","def","abc123abc",count=1)     # 'def123abc'
 {% endhighlight %}
 
 #### 关于反斜杠
@@ -123,19 +123,19 @@ re.sub("abc","def","abc123abc",count=1)     #'def123abc'
 #### 分组匹配和分组别名
 
 {% highlight python linenos %}
-#findall 加分组只会取分组里的，先匹配到整体，再从整体里把分组组成元祖返回
-re.findall("(abc(123))","abc123abc123")                         #[('abc123', '123'), ('abc123', '123')]
-re.findall(r'(ad)+', 'adadadadadd')                             #['ad']
-re.findall("(abc)(123)","abc123abc")                            #[('abc', '123')]
-re.findall("(?:abc)(?:123)","abc123abc")                        #['abc123']   取消组的优先级
-re.findall("(abc)(123)","abc123abc123")                         #[('abc', '123'), ('abc', '123')]
+# findall 加分组只会取分组里的，先匹配到整体，再从整体里把分组组成元祖返回
+re.findall("(abc(123))","abc123abc123")                         # [('abc123', '123'), ('abc123', '123')]
+re.findall(r'(ad)+', 'adadadadadd')                             # ['ad']
+re.findall("(abc)(123)","abc123abc")                            # [('abc', '123')]
+re.findall("(?:abc)(?:123)","abc123abc")                        # ['abc123']   取消组的优先级
+re.findall("(abc)(123)","abc123abc123")                         # [('abc', '123'), ('abc', '123')]
 
-re.search("abc(123)","abc123abc123").group()                    #abc123  返回整体
-re.search("(abc)(123)","abc123abc123").groups()                 #('abc', '123')  只返回分组
-re.search("(?P<zimu>abc)(?P<shuzi>123)","abc123").groupdict()   #{'zimu': 'abc', 'shuzi': '123'}  返回一个字典
-re.search("(?P<zimu>abc)(?P<shuzi>123)","abc123").group("zimu") #abc  返回分组名对应的值
+re.search("abc(123)","abc123abc123").group()                    # abc123  返回整体
+re.search("(abc)(123)","abc123abc123").groups()                 # ('abc', '123')  只返回分组
+re.search("(?P<zimu>abc)(?P<shuzi>123)","abc123").groupdict()   # {'zimu': 'abc', 'shuzi': '123'}  返回一个字典
+re.search("(?P<zimu>abc)(?P<shuzi>123)","abc123").group("zimu") # abc  返回分组名对应的值
 
-#关于 match 和 search 一样
+# 关于 match 和 search 一样
 {% endhighlight %}
 
 #### 贪婪匹配和惰性匹配
@@ -144,10 +144,10 @@ re.search("(?P<zimu>abc)(?P<shuzi>123)","abc123").group("zimu") #abc  返回分�
 
 {% highlight python linenos %}
 ret = re.findall('abc*?','abcccccc')
-print(ret)#['ab']
+print(ret) # ['ab']
 
 ret = re.findall('abc*','abcccccc')
-print(ret)#['abcccccc']
+print(ret) # ['abcccccc']
 {% endhighlight %}
 
 
@@ -155,43 +155,43 @@ print(ret)#['abcccccc']
 
 {% highlight python linenos %}
 >>> import re
- #定义的字符串
+ # 定义的字符串
  >>> source = '''I wish I may, I wish I migth
  ... Hava a dish of fish tonight.'''
- #在字符串中检索wish
+ # 在字符串中检索wish
  >>> re.findall('wish',source)
  ['wish', 'wish']
- #对源字符串任意位置查询wish或者fish
+ # 对源字符串任意位置查询wish或者fish
  >>> re.findall('wish|fish',source)
  ['wish', 'wish', 'fish']
- #从字符串开头开始匹配wish
+ # 从字符串开头开始匹配wish
  >>> re.findall('^wish',source)    
  []
- #从字符串开头匹配I wish
+ # 从字符串开头匹配I wish
  >>> re.findall('^I wish',source)
  ['I wish']
- #从字符串结尾匹配fish
+ # 从字符串结尾匹配fish
  >>> re.findall('fish$',source)   
  []
- #从字符串结尾匹配fish tonight.
+ # 从字符串结尾匹配fish tonight.
  >>> re.findall('fish tonight.$',source)
  ['fish tonight.']
- #查询以w或f开头,后面紧跟着ish的匹配
+ # 查询以w或f开头,后面紧跟着ish的匹配
  >>> re.findall('[wf]ish',source)
  ['wish', 'wish', 'fish']
- #查询以若干个w\s\h组合的匹配
+ # 查询以若干个w\s\h组合的匹配
  >>> re.findall('[wsh]+',source) 
  ['w', 'sh', 'w', 'sh', 'h', 'sh', 'sh', 'h']
- #查询以ght开头，后面紧跟着一个非数字和字母的匹配
+ # 查询以ght开头，后面紧跟着一个非数字和字母的匹配
  >>> re.findall('ght\W',source)
  ['ght.']
- #查询已以I开头，后面紧跟着wish的匹配
+ # 查询已以I开头，后面紧跟着wish的匹配
  >>> re.findall('I (?=wish)',source)
  ['I ', 'I ']
- #最后查询以wish结尾,前面为I的匹配（I出现次数尽量少）
+ # 最后查询以wish结尾,前面为I的匹配（I出现次数尽量少）
  >>> re.findall('(?<=I) wish',source)
  [' wish', ' wish']
- #匹配时不区分大小写
+ # 匹配时不区分大小写
  >>> re.match('a','Abc',re.I).group()
  'A'
  >>> import re
@@ -201,16 +201,16 @@ print(ret)#['abcccccc']
  >>> ma = pa.match("Linrb.me")
  >>> ma
  <_sre.SRE_Match object; span=(0, 7), match='Linrb'>
- #匹配到的值存到group内
+ # 匹配到的值存到group内
  >>> ma.group()
  'Linrb'
- #返回字符串的所有位置
+ # 返回字符串的所有位置
  >>> ma.span()
  (0, 7)
- #匹配的字符串会被放到string中
+ # 匹配的字符串会被放到string中
  >>> ma.string
  'Linrb.me'
- #实例放在re中
+ # 实例放在re中
  >>> ma.re
  re.compile('Linrb')
 {% endhighlight %}

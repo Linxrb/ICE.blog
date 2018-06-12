@@ -30,8 +30,8 @@ class Foo:
  
 # 根据类Foo创建对象obj
 obj = Foo()
-obj.Bar()            #执行Bar方法
-obj.Hello('Linrb') #执行Hello方法
+obj.Bar()            # 执行Bar方法
+obj.Hello('Linrb')   # 执行Hello方法
 {% endhighlight %}
 
 　　场景的不同适合其的编程方式也不同。总结：函数式的应用场景 --> 各个函数之间是独立且无共用的数据。
@@ -50,19 +50,19 @@ obj.Hello('Linrb') #执行Hello方法
 - 1、将内容封装到某处
 
 {% highlight python linenos %}
-#创建类
+# 创建类
 class Foo:
     def __init__(self,name,age):
         self.name = name
         self.age = age
         
-#根据类Foo创建对象
-#创建时会自动执行Foo类中的 __init__ 方法”
-obj1 = Foo("Linrb",90)      #将 Linrb 和 90 分别封装到 obj1(self) 的 name 和 age 属性中
+# 根据类Foo创建对象
+# 创建时会自动执行Foo类中的 __init__ 方法”
+obj1 = Foo("Linrb",90)      # 将 Linrb 和 90 分别封装到 obj1(self) 的 name 和 age 属性中
 
-#根据类Foo创建对象
-#创建时会自动执行Foo类中的 __init__ 方法”
-obj2 = Foo("zhuoxin",90)    #将 zhuoxin 和 90 分别封装到 obj2(self) 的 name 和 age 属性中
+# 根据类Foo创建对象
+# 创建时会自动执行Foo类中的 __init__ 方法”
+obj2 = Foo("zhuoxin",90)    # 将 zhuoxin 和 90 分别封装到 obj2(self) 的 name 和 age 属性中
 {% endhighlight %}
 
 - 2、从某处调用被封装的内容  
@@ -78,16 +78,16 @@ class Foo:
         self.age = age
  
 obj1 = Foo('Linrb', 90)
-print obj1.name    #直接调用obj1对象的name属性
-print obj1.age     #直接调用obj1对象的age属性
+print obj1.name    # 直接调用obj1对象的name属性
+print obj1.age     # 直接调用obj1对象的age属性
  
 obj2 = Foo('zhuoxin', 90)
-print obj2.name    #直接调用obj2对象的name属性
-print obj2.age     #直接调用obj2对象的age属性
+print obj2.name    # 直接调用obj2对象的name属性
+print obj2.age     # 直接调用obj2对象的age属性
 
 
 2、通过self间接调用被封装的内容
-#执行类中的方法时，需要通过self间接调用被封装的内容
+# 执行类中的方法时，需要通过self间接调用被封装的内容
 class Foo:
     def __init__(self, name, age):
         self.name = name
@@ -111,17 +111,17 @@ obj2.detail()  # Python默认会将obj2传给self参数，即：obj1.detail(obj2
 {% highlight python linenos%}
 # 创建一个类，类名是Class_basis
 class Class_basis:
-    #在类里面创建了一个方法ret
+    # 在类里面创建了一个方法ret
     def ret(self,):
-        #输出self的内存地址
+        # 输出self的内存地址
         print("self内存地址", id(self))
 
-#创建一个对象obj，类名后面加括号
+# 创建一个对象obj，类名后面加括号
 obj = Class_basis()
 
-#输出对象obj的内存地址
+# 输出对象obj的内存地址
 print("obj内存地址", id(obj))
-#通过对象调用类中的ret方法
+# 通过对象调用类中的ret方法
 obj.ret()
 
 执行结果
@@ -152,11 +152,11 @@ class Us(People):
     def info(self):
         print("你是美国人，你的语言是英文，皮肤是黑色")
 
-c = China()     #你的通用特征有：四肢、头发、眼、耳朵
-c.info()        #你是中国人，你的语言是中文，皮肤是黄色
+c = China()     # 你的通用特征有：四肢、头发、眼、耳朵
+c.info()        # 你是中国人，你的语言是中文，皮肤是黄色
 
-m = Us()        #你的通用特征有：四肢、头发、眼、耳朵
-m.info()        #你是美国人，你的语言是英文，皮肤是黑色
+m = Us()        # 你的通用特征有：四肢、头发、眼、耳朵
+m.info()        # 你是美国人，你的语言是英文，皮肤是黑色
 {% endhighlight%}
 
 `People` –> `父类` or `基类`  

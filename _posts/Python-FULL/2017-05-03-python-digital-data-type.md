@@ -15,12 +15,12 @@ layout: post
 　　`int` 类型通常都是数字，创建数字类型的方式有两种，且在创建的时候值两边不需要加双引号或单引号。  
 
 {% highlight python linenos %}
-#第一种创建整型的方式
+# 第一种创建整型的方式
 >>> number = 9
 >>> type(number)
 <class 'int'>
 
-#第二种创建整型的方式
+# 第二种创建整型的方式
 >>> number = int(9)
 >>> type(number)
 <class 'int'>
@@ -40,7 +40,7 @@ def __init__(self, x, base=10): # known special case of int.__init__
 指定第二个参数是，x 值必须为字符串
 
 {% highlight python linenos %}
-#将数字字符串转换为整数，数字字符串通过进制转换为整数
+# 将数字字符串转换为整数，数字字符串通过进制转换为整数
 >>> int('99'),int('100',2),int('0b100',2),int('10000000',2)
 (99,4,4,64,64,128)
 >>> int('40',16)
@@ -60,10 +60,10 @@ int(x,y)：y 不传默认为 base = 10
 我们通过下面的实例可以得到答案：
 
 {% highlight python linenos %}
-#分别创建对象var1和var2
+# 分别创建对象var1和var2
 >>> var1 = 123
 >>> var2 = 123
-#我们可以看到他们的内存地址都是指向的`1502084720`
+# 我们可以看到他们的内存地址都是指向的`1502084720`
 >>> id(var1)
 1502084720
 >>> id(var2)

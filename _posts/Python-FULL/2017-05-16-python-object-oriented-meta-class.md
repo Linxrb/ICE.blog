@@ -13,15 +13,15 @@ class Foo(object):
     def __init__(self):
         pass
 
-obj = Foo()   #obj是通过Foo类实例化的对象
+obj = Foo()   # obj是通过Foo类实例化的对象
 {% endhighlight %}
 
 　　上述代码中，obj 是通过 Foo 类实例化的对象，其实，不仅 obj 是一个对象，Foo类本身也是一个对象，<span style="color:red">因为在Python中一切事物都是对象</span>。
 如果按照一切事物都是对象的理论：创建 obj 对象会执行 Foo 类的`构造方法`，那么 Foo 类对象应该也是通过执行某个类的构造方法创建。
 
 {% highlight python linenos%}
-print type(obj) #输出：<class '__main__.Foo'>     表示，obj 对象由Foo类创建
-print type(Foo) #输出：<type 'type'>              表示，Foo类对象由 type 类创建
+print type(obj)  # 输出：<class '__main__.Foo'>     表示，obj 对象由Foo类创建
+print type(Foo)  # 输出：<type 'type'>              表示，Foo类对象由 type 类创建
 {% endhighlight %}
 
 　　所以，<span style="color:red">obj对象是Foo类的一个实例，Foo类对象是 type 类的一个实例</span>，即：Foo类对象 是通过type类的构造方法创建。  
@@ -43,9 +43,9 @@ def function(self):
     print 'hello wupeiqi'
  
 Foo = type('Foo',(object,), {'func': function})
-#type第一个参数：类名
-#type第二个参数：当前类的基类
-#type第三个参数：类的成员
+# type第一个参数：类名
+# type第二个参数：当前类的基类
+# type第三个参数：类的成员
 {% endhighlight %}
 
 `类 是由 type 类实例化产生`  
@@ -64,7 +64,7 @@ class MyType(type):
 
         self.__init__(obj)
 
-#python3 class foo(object,metaclass = MyType)
+# python3 class foo(object,metaclass = MyType)
 class Foo(object):
 
     __metaclass__ = MyType

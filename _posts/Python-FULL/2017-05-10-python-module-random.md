@@ -16,16 +16,16 @@ layout: post
 
 
 {% highlight python linenos %}
-#生成0-1的小数
+# 生成0-1的小数
 random.random()
 0.06511225392331632
 ###############################
 
-#输出a和b范围内的数，包括a和b
+# 输出a和b范围内的数，包括a和b
 random.randint(5,9)
 ###############################
 
-#输出start到stop-1之间的数，可设置步长
+# 输出start到stop-1之间的数，可设置步长
 random.randrange(5,9,3)
 {% endhighlight %}
 
@@ -35,20 +35,20 @@ random.randrange(5,9,3)
 #!/usr/bin/env python
 import random
 checkcode = ''
-#for循环四次
+# for循环四次
 for i in range(4):
-    #current=0-3的数字
+    # current=0-3的数字
     current = random.randrange(0,4)
-    #如果current的值不等于i
+    # 如果current的值不等于i
     if current != i:
-    	#通过chr把数字转换为一个字母赋值给temp
+    	# 通过chr把数字转换为一个字母赋值给temp
         temp = chr(random.randint(65,90))
     else:
-    	#否则temp=0-9之间的数字
+    	# 否则temp=0-9之间的数字
         temp = random.randint(0,9)
-    #checkcode = checkcode + str(temp)
+    # checkcode = checkcode + str(temp)
     checkcode += str(temp)
-#输出字符
+# 输出字符
 print(checkcode)
 {% endhighlight %}
 
@@ -58,9 +58,9 @@ print(checkcode)
 import random
 
 checkcode = ""
-#for循环四次
+# for循环四次
 for i in range(4):
-    #随机取一个数字或字母
+    # 随机取一个数字或字母
     temp = random.choice([random.randrange(10),chr(random.randrange(65,90))])
     checkcode += str(temp)
 {% endhighlight %}

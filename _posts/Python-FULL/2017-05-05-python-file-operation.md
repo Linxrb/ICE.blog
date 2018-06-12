@@ -24,9 +24,9 @@ layout: post
 >>abc  
 
 {% highlight python linenos %}
-f = open('hello.txt') #1 打开文件
-data = f.read()       #2 获取文件内容
-f.close()             #3 关闭文件
+f = open('hello.txt') # 1 打开文件
+data = f.read()       # 2 获取文件内容
+f.close()             # 3 关闭文件
 {% endhighlight %}
 
 注意  
@@ -42,10 +42,10 @@ f.close()             #3 关闭文件
 
     Character Meaning
     -----------------------
-    r    只读模式    文件必须存在
-    w    只写模式    文件不存在则创建文件，文件存在则清空文件内容
-    x    只写模式    文件不可读，文件不存在则创建，存在则报错 #创建一个新文件并打开它以便编写
-    a    追加模式    文件不存在创建文件，文件存在则在文件末尾添加内容
+    r    只读模式    # 文件必须存在
+    w    只写模式    # 文件不存在则创建文件，文件存在则清空文件内容
+    x    只写模式    # 文件不可读，文件不存在则创建，存在则报错，创建一个新文件并打开它以便编写
+    a    追加模式    # 文件不存在创建文件，文件存在则在文件末尾添加内容
 
 =======================================================
 {% endhighlight %}
@@ -57,10 +57,10 @@ f.close()             #3 关闭文件
 
     Character Meaning
     -----------------------
-    r+    读写    #写是追加，不管 read 到哪个 tell ，都从最后面最加
-    w+    写读    #读的时候 tell 在最后面，所以是空
-    x+    写读    #同上
-    a+    写读    #tell 默认在最后
+    r+    读写    # 写是追加，不管 read 到哪个 tell ，都从最后面最加
+    w+    写读    # 读的时候 tell 在最后面，所以是空
+    x+    写读    # 同上
+    a+    写读    # tell 默认在最后
 
 =======================================================
 {% endhighlight %}
@@ -72,15 +72,15 @@ f.close()             #3 关闭文件
 
     Character Meaning
     -----------------------
-    rb    二进制读模式
-    wb    二进制写模式
-    xb    二进制只写模式
-    ab    二进制追加模式
+    rb     # 二进制读模式
+    wb     # 二进制写模式
+    xb     # 二进制只写模式
+    ab     # 二进制追加模式
     -----------------------
-    rb+    二进制读写模式
-    wb+    二进制读写模式
-    xb+    二进制只写模式
-    ab+    二进制读写模式
+    rb+    # 二进制读写模式
+    wb+    # 二进制读写模式
+    xb+    # 二进制只写模式
+    ab+    # 二进制读写模式
     
     # 提示：以b方式打开时，读取到的内容是字节类型，写入时也需要提供字节类型
 
@@ -90,9 +90,9 @@ f.close()             #3 关闭文件
 ### 文件的读取方式
 
 {% highlight python linenos %}
-read([size])        读取文件全部内容，如果设置了size，那么就读取size字节
-readline([size])    一行一行的读取，size同上
-readlines()         读取所有内容组成一个列表，每一行内容作为列表中的一个元素
+read([size])        # 读取文件全部内容，如果设置了size，那么就读取size字节
+readline([size])    # 一行一行的读取，size同上
+readlines()         # 读取所有内容组成一个列表，每一行内容作为列表中的一个元素
 {% endhighlight %}
 
 #### read
@@ -107,7 +107,7 @@ f.close()
 # 输出c的值
 print(c)
 
-#输出结果：
+# 输出结果：
 
 Hello Word!
 123
@@ -138,9 +138,9 @@ print(c2)
 # 输出读取文件第三行内容
 print(c3)
 
-#输出结果：
+# 输出结果：
 
-#每行后面还有一个 \n
+# 每行后面还有一个 \n
 Hello Word!
 
 123
@@ -154,9 +154,9 @@ abc
 # 以只读的方式打开文件hello.txt
 f = open("hello.txt","r")
 # 将文件所有内容赋值给c
-#因为readlines 是一次性读取文件的所有内容，把每一行当成一个元素组成一个list
-#所以如果文件过大会一次性加载到内存，所有一般用 for line in f：
-#这里for 循环会把 f 处理成一个迭代器，所以它里面永远只有一行
+# 因为readlines 是一次性读取文件的所有内容，把每一行当成一个元素组成一个list
+# 所以如果文件过大会一次性加载到内存，所有一般用 for line in f：
+# 这里for 循环会把 f 处理成一个迭代器，所以它里面永远只有一行
 c = f.readlines()
 # 查看数据类型
 print(type(c))
@@ -166,7 +166,7 @@ f.close()
 for n in c:
     print(n)
 
-#结果
+# 结果
 
 # 输出的数据类型
 <class 'list'>
@@ -202,7 +202,7 @@ file.write("test write")
 # 关闭文件
 file.close()
 
-#write.txt文件内容为：
+# write.txt文件内容为：
 
 test write
 {% endhighlight %}
@@ -217,7 +217,7 @@ f.writelines(["11","22","33"])
 # 关闭文件
 f.close()
 
-#wr_lines.txt文件内容：
+# wr_lines.txt文件内容：
 
 112233
 {% endhighlight %}
@@ -227,7 +227,7 @@ f.close()
 **`1、 close(self):` 关闭文件**
 
 {% highlight python linenos %}
-#关闭已经打开的文件
+# 关闭已经打开的文件
 f.close()
 {% endhighlight %}
 
@@ -239,7 +239,7 @@ ret = f.fileno()
 f.close()
 print(ret)
 
-#执行结果：
+# 执行结果：
 
 3
 {% endhighlight %}
@@ -258,7 +258,7 @@ ret = f.isatty()
 f.close()
 print(ret)
 
-#返回结果：
+# 返回结果：
 
 False
 {% endhighlight %}
@@ -271,7 +271,7 @@ ret = f.readable()
 f.close()
 print(ret)
 
-#返回结果：
+# 返回结果：
 
 True
 {% endhighlight %}
@@ -283,7 +283,7 @@ f = open("hello.txt","r")
 print(f.tell())
 f.close()
 
-#返回结果:
+# 返回结果:
 
 0
 {% endhighlight %}
@@ -297,7 +297,7 @@ f.seek(3)
 print(f.tell())
 f.close()
 
-#执行结果
+# 执行结果
 
 0
 3
@@ -310,7 +310,7 @@ f = open("hello.txt","r")
 print(f.seekable())
 f.close()
 
-#执行结果
+# 执行结果
 
 True
 {% endhighlight %}
@@ -322,7 +322,7 @@ f = open("hello.txt","r")
 print(f.writable())
 f.close()
 
-#执行结果
+# 执行结果
 
 False
 {% endhighlight %}

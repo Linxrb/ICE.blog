@@ -20,7 +20,7 @@ layout: post
 从技术角度来说，当它可以用来询问某个元素是否包含在其中时，那么这个对象就可以认为是一个容器，比如 list，set，tuples都是容器对象：
 
 {% highlight python linenos %}
-5 in [1,2,3,4,5]    #True
+5 in [1,2,3,4,5]    # True
 {% endhighlight %}
 
 　　尽管绝大多数容器都提供了某种方式来获取其中的每一个元素，但这并不是容器本身提供的能力，
@@ -37,10 +37,10 @@ layout: post
 {% highlight python linenos %}
 x = [1,2,3,4,5]
 y = iter(x)
-print(next(y))  #1
-print(next(y))  #2
-print(type(x))  #<class 'list'>
-print(type(y))  #<class 'list_iterator'>
+print(next(y))  # 1
+print(next(y))  # 2
+print(type(x))  # <class 'list'>
+print(type(y))  # <class 'list_iterator'>
 {% endhighlight %}
 
 　　这里 x 是一个可迭代对象，可迭代对象和容器一样是一种通俗的叫法，并不是指某种具体的数据类型，
@@ -53,11 +53,11 @@ list是可迭代对象，dict是可迭代对象，set也是可迭代对象。 y 
 {% highlight python linenos %}
 from collections import Iterable
 
-isinstance([], Iterable)        #True
-isinstance({}, Iterable)        #True
-isinstance('abc', Iterable)     #True
-isinstance((x for x in range(10)), Iterable)        #True
-isinstance(100, Iterable)       #False
+isinstance([], Iterable)        # True
+isinstance({}, Iterable)        # True
+isinstance('abc', Iterable)     # True
+isinstance((x for x in range(10)), Iterable)        # True
+isinstance(100, Iterable)       # False
 {% endhighlight %}
 
 ### 生成器(generator)
@@ -74,9 +74,9 @@ Python 有两种不同的方式提供生成器：
 
 {% highlight python linenos %}
 L = [x * x for x in range(10)]
-L       #[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+L       # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
 g = (x * x for x in range(10))
-g       #<generator object <genexpr> at 0x1022ef630>
+g       # <generator object <genexpr> at 0x1022ef630>
 {% endhighlight %}
 
 　　创建 L 和 g 的区别仅在于最外层的 [] 和 ()，L 是一个 list，而 g 是一个 `generator` 。
@@ -84,10 +84,10 @@ g       #<generator object <genexpr> at 0x1022ef630>
 如果要一个一个打印出来，可以通过 next() 函数获得 generator 的下一个返回值：
 
 {% highlight python linenos %}
-next(g)     #0
-next(g)     #1
-next(g)     #4
-next(g)     #9
+next(g)     # 0
+next(g)     # 1
+next(g)     # 4
+next(g)     # 9
 ...
 next(g)
 
@@ -118,9 +118,9 @@ def func(n):
     
     yield n*5
     
-print(func)     #<function func at 0x1022ef630>
+print(func)     # <function func at 0x1022ef630>
 g = func(5)
-print(g)        #<generator object func at 0x102289790ef630>
+print(g)        # <generator object func at 0x102289790ef630>
 {% endhighlight %}
 
 　　func 就是一个`生成器函数`，调用该函数返回对象就是一个`生成器 g` ，
@@ -130,8 +130,8 @@ print(g)        #<generator object func at 0x102289790ef630>
 {% highlight python linenos %}
 g = func(5)
 
-g.__next__()       #15
-next(g)            #25
+g.__next__()       # 15
+next(g)            # 25
 
 g = func(5)
 for i in g:
@@ -166,9 +166,9 @@ for n in fab(5):
 
 {% highlight python linenos %}
 f = fab(3)
-f.__next__()        #1
-f.__next__()        #1
-f.__next__()        #2
+f.__next__()        # 1
+f.__next__()        # 1
+f.__next__()        # 2
 f.__next__()
  
 Traceback (most recent call last):
@@ -214,8 +214,8 @@ f=f()
 print(f.send(None))
 print(next(f))
 
-#print(f.send(None))等同于print(next(f)),
-#执行流程:打印ok,yield7,当再next进来时:将None赋值给s,然后返回8,可以通过断点来观察   
+# print(f.send(None))等同于print(next(f)),
+# 执行流程:打印ok,yield7,当再next进来时:将None赋值给s,然后返回8,可以通过断点来观察   
 {% endhighlight %}
 
 ### 迭代器
@@ -239,18 +239,18 @@ print(next(f))
 {% highlight python linenos %}
 from collections import Iterator
 
-isinstance((x for x in range(10)), Iterator)    #True
-isinstance([], Iterator)                        #False
-isinstance({}, Iterator)                        #False
-isinstance('abc', Iterator)                     #False
+isinstance((x for x in range(10)), Iterator)    # True
+isinstance([], Iterator)                        # False
+isinstance({}, Iterator)                        # False
+isinstance('abc', Iterator)                     # False
 {% endhighlight %}
 
 　　生成器都是 Iterator 对象，但 list、dict、str 虽然是 Iterable ，却不是 Iterator。
 把 list、dict、str 等 Iterable 变成 Iterator 可以使用 `iter()` 函数：
 
 {% highlight python linenos %}
-isinstance(iter([]), Iterator)      #True
-isinstance(iter('abc'), Iterator)   #True
+isinstance(iter([]), Iterator)      # True
+isinstance(iter('abc'), Iterator)   # True
 {% endhighlight %}
 
 > 为什么 list、dict、str 等数据类型不是 Iterator ？  
@@ -274,9 +274,9 @@ for x in [1, 2, 3, 4, 5]:
 
 实际上完全等价于：
 
-#首先获得Iterator对象:
+# 首先获得Iterator对象:
 it = iter([1, 2, 3, 4, 5])
-#循环:
+# 循环:
 while True:
     try:
         # 获得下一个值:

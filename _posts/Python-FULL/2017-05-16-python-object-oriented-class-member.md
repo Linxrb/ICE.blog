@@ -29,9 +29,9 @@ class Province:
     def __init__(self, name):
         普通字段
         self.name = name
-        #访问静态字段
-        #self.country
-        #Province.country
+        # 访问静态字段
+        # self.country
+        # Province.country
 
 # 直接访问普通字段
 obj = Province('河北省')
@@ -39,9 +39,9 @@ print obj.name
 
 # 类直接访问静态字段
 Province.country
-#对象访问静态字段
+# 对象访问静态字段
 obj.country
-#如果 obj.country = "世界"  则相当于obj对象自己创建了一个普通字段 country，不会修改到静态字段
+# 如果 obj.country = "世界"  则相当于obj对象自己创建了一个普通字段 country，不会修改到静态字段
 {% endhighlight %}
 
 由上可见：  
@@ -119,7 +119,7 @@ class Foo:
 # ############### 调用 ###############
 foo_obj = Foo()
 foo_obj.func()
-foo_obj.prop   #调用属性
+foo_obj.prop   # 调用属性
 {% endhighlight %}
 
 由属性的定义和调用要注意一下几点：  
@@ -197,9 +197,9 @@ class Foo：
 
 obj = Foo()
 
-obj.BAR              # 自动调用第一个参数中定义的方法：get_bar
+obj.BAR                 # 自动调用第一个参数中定义的方法：get_bar
 obj.BAR = "zhuoxin"     # 自动调用第二个参数中定义的方法：set_bar方法，并将“zhuoxin”当作参数传入
-del Foo.BAR          # 自动调用第三个参数中定义的方法：del_bar方法
-obj.BAE.__doc__      # 自动获取第四个参数中设置的值：description...
+del Foo.BAR             # 自动调用第三个参数中定义的方法：del_bar方法
+obj.BAE.__doc__         # 自动获取第四个参数中设置的值：description...
 {% endhighlight %}
 

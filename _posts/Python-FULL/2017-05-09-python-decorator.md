@@ -16,7 +16,7 @@ def foo():
 bar = foo
 bar()
 foo()
-print(id(foo),id(bar))  #4321123592 4321123592
+print(id(foo),id(bar))  # 4321123592 4321123592
 {% endhighlight %}
 
 > 注意：这里说的函数都是指函数名，比如 `foo`；而 `foo()` 已经执行函数了，foo() 是什么类型取决于 return 的内容是什么类型！！！
@@ -24,30 +24,30 @@ print(id(foo),id(bar))  #4321123592 4321123592
 - 看一个小问题：
 
 {% highlight python linenos %}
-#想执行inner函数,两种方法
+# 想执行inner函数,两种方法
 def outer():
      x = 1
      def inner():
-         print (x) #1
-     #inner()      #2
+         print (x)  # 1
+     # inner()      # 2
      return inner
  
-#outer()             #返回inner
-in_func = outer()      #
-in_func()            #inner()
+# outer()             # 返回inner
+in_func = outer()    
+in_func()             # inner()
 {% endhighlight %}
 
 - 提问1：下面两种调用方式有什么不同？不都是在外面调用inner吗？
 
 {% highlight python linenos %}
-#1
+# 1
 in_func = outer()
-in_func()       #in_func = inner
+in_func()       # in_func = inner
 
 ###########
 
-#2
-inner()         #(已经加载到内存啦) 可不可以直接调用呢？
+# 2
+inner()         # (已经加载到内存啦) 可不可以直接调用呢？
 {% endhighlight %}
 
 往下看
@@ -59,9 +59,9 @@ def outer():
          print (x)
      return inner
      
-#inner()           #1 直接调用报错原因:找不到这个引用变量  作用域，只能在outer函数内调用
-in_func = outer()    #2 yes  这里其实就是一个变量赋值,将inner的引用对象赋值给in_func,类似于a=5,b=a一样
-                   #3 直接赋值不行吗？: in_func=inner?  inner不还是找不到吗,对吧，参考1
+#inner()             # 1 直接调用报错原因:找不到这个引用变量  作用域，只能在outer函数内调用
+in_func = outer()    # 2 yes  这里其实就是一个变量赋值,将inner的引用对象赋值给in_func,类似于a=5,b=a一样
+                     # 3 直接赋值不行吗？: in_func=inner?  inner不还是找不到吗,对吧，参考1
 in_func()
 {% endhighlight %}
 
@@ -69,8 +69,8 @@ in_func()
 
 {% highlight python linenos %}
 def outer():
-    x = 1    #函数outer执行完毕即被销毁
-print(x)   #报错
+    x = 1    # 函数outer执行完毕即被销毁
+print(x)     # 报错
 {% endhighlight %}
 
 既然这样，`inner()` 执行的时候 `outer` 函数已经执行完了，为什么 inner 还可以调用 outer 里的变量 `x` 呢？  
@@ -110,7 +110,7 @@ foo()
 import time
 def foo():
     start_time = time.time()
-    print('hello foo')    #<<< 这是要记录下执行时间的代码
+    print('hello foo')    # <<< 这是要记录下执行时间的代码
     time.sleep(3)
     end_time = time.time()
     print('spend %s'%(end_time-start_time))
@@ -125,7 +125,7 @@ foo()
 import time
 def show_time(func):
     start_time = time.time()
-    func()    #foo()    <<< 这是要记录下执行时间的代码
+    func()    # foo()    <<< 这是要记录下执行时间的代码
     end_time = time.time()
     print('spend %s'%(end_time-start_time))
 
@@ -163,7 +163,7 @@ def foo():
     print('hello foo')
     time.sleep(3)
 
-foo = show_time(foo)    #返回wrapper
+foo = show_time(foo)    # 返回wrapper
 foo()
 {% endhighlight %}
 
@@ -183,14 +183,14 @@ def show_time(func):
 
     return wrapper
 
-#它会把下面的函数名 foo 当做参数赋给 show_time 的参数
-@show_time   #foo = show_time(foo)
+# 它会把下面的函数名 foo 当做参数赋给 show_time 的参数
+@show_time   # foo = show_time(foo)
 def foo():
     print('hello foo')
     time.sleep(3)
 
-#同上
-@show_time  #bar = show_time(bar)
+# 同上
+@show_time   # bar = show_time(bar)
 def bar():
     print('in the bar')
     time.sleep(2)
@@ -216,7 +216,7 @@ import time
 
 def show_time(func):
 
-    def wrapper(a,b):    #如果被装饰的函数是不定长参数，这里也可以是 *args **kwargs
+    def wrapper(a,b):    # 如果被装饰的函数是不定长参数，这里也可以是 *args **kwargs
         start_time = time.time()
         func(a,b)
         end_time = time.time()
@@ -224,7 +224,7 @@ def show_time(func):
 
     return wrapper
 
-@show_time   #add = show_time(add)
+@show_time   # add = show_time(add)
 def add(a,b):
 
     time.sleep(1)
@@ -292,10 +292,10 @@ def makeitalic(fn):
         return "<i>" + fn() + "</i>"
     return wrapper
  
-@makebold           #步骤二：hello = makebold(hello)     此时 hello = wrapper1     return wrapper2
-@makeitalic         #步骤一：hello = makeitalic(hello)   return wrapper1
+@makebold           # 步骤二：hello = makebold(hello)     此时 hello = wrapper1     return wrapper2
+@makeitalic         # 步骤一：hello = makeitalic(hello)   return wrapper1
 def hello():
     return "hello Linrb"
  
-hello()     #<b><i>hello Linrb</i></b>
+hello()     # <b><i>hello Linrb</i></b>
 {% endhighlight %}

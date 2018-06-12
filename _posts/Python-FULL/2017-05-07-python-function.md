@@ -25,14 +25,14 @@ def 函数名（参数）:
 - 简单实例
 
 {% highlight python  linenos %}
-#x为函数的参数
+# x为函数的参数
 def num(x):
     print(x)
 
-#调用 123456等于x
+# 调用 123456等于x
 num("123456")
 
-#结果
+# 结果
 123456
 {% endhighlight %}
 
@@ -87,7 +87,7 @@ f('Linrb',16)
 def f(name,age):
     print('I am %s,I am %d'%(name,age))
 
-# f(16,'Linrb') #报错，%d 必须接受数字
+# f(16,'Linrb') # 报错，%d 必须接受数字
 f(age=16,name='Linrb')
 {% endhighlight %}
 
@@ -113,12 +113,12 @@ print_info('铁锤',40,'female')
 def ret(*args):
     print(args,type(args))
     
-    #取值
-    #print(args[0]) #11
+    # 取值
+    # print(args[0]) # 11
 
 ret(11,22,33)
 
-#结果
+# 结果
 (11, 22, 33) <class 'tuple'>
 {% endhighlight %}
 
@@ -128,12 +128,12 @@ ret(11,22,33)
 def ret(**kwargs):
     print(kwargs,type(kwargs))
     
-    #取值
-    print(kwargs['k3']) #ICE
+    # 取值
+    print(kwargs['k3']) # ICE
 
 ret(k1=123,k2=456,k3='ICE')
 
-#结果
+# 结果
 {'k1': 123, 'k2': 456} <class 'dict'>
 {% endhighlight %}
 
@@ -146,7 +146,7 @@ def ret(*args,**kwargs):
 
 ret(11,222,333,k1=111,k2=222)
 
-#结果
+# 结果
 (11, 222, 333) <class 'tuple'>
 {'k1': 111, 'k2': 222} <class 'dict'>
 {% endhighlight %}
@@ -157,12 +157,18 @@ ret(11,222,333,k1=111,k2=222)
 def f(*args):
     print(args)
  
-f(*[1,2,5]) #传入一个列表
- 
+f(*[1,2,5]) # 传入一个列表
+
+# 结果
+(1, 2, 5)
+
 def f(**kargs):
     print(kargs)
  
-f(**{'name':'alex'}) #传入一个字典
+f(**{'name':'ICE'}) # 传入一个字典
+
+# 结果
+{'name': 'ICE'}
 {% endhighlight %}
 
 <br>
@@ -182,19 +188,19 @@ python中的作用域分4种情况：
 <span style="border-bottom:2px solid ;">搜索变量的优先级：作用域局部L > 外层作用域E > 当前模块中的全局G > python内置作用域B，也就是LEGB。</span>
 
 {% highlight python  linenos %}
-x = int(2.9)             #int built-in
+x = int(2.9)             # int built-in
  
-g_count = 0              #global
+g_count = 0              # global
 def outer():
-    o_count = 1          #enclosing
+    o_count = 1          # enclosing
     def inner():
-        i_count = 2      #local
+        i_count = 2      # local
         print(o_count)
-    #print(i_count) 找不到
+    # print(i_count) 找不到
     inner() 
 outer()
  
-#print(o_count) #找不到
+# print(o_count) # 找不到
 {% endhighlight %}
 　　当然，local 和 enclosing 是相对的，enclosing 变量相对上层来说也是 local。
 
@@ -206,12 +212,12 @@ outer()
 if 2 > 1:
     x = 1
 print(x)  # 1
-#这个是没有问题的，if并没有引入一个新的作用域，x仍处在当前作用域中，后面代码可以使用。
+# 这个是没有问题的，if并没有引入一个新的作用域，x仍处在当前作用域中，后面代码可以使用。
 
 def test():
     x = 2
 print(x) # NameError: name 'x2' is not defined
-#def、class、lambda是可以引入新作用域的。
+# def、class、lambda是可以引入新作用域的。
 {% endhighlight %}
 
 #### 变量的修改
@@ -222,19 +228,19 @@ x = 6
 def f2():
     print(x)
     x = 5
-f2()    #报错
+f2()    # 报错
 
-#报 local variable 'x' referenced before assignment.
-#看了就不能改
-#错误的原因在于print(x)时,解释器会在局部作用域找,会找到x=5(函数已经加载到内存),但x在声明前使用了,所以报错
-#如何证明找到了x=5呢? 简单:注释掉x=5,x=6
+# 报 local variable 'x' referenced before assignment.
+# 看了就不能改
+# 错误的原因在于print(x)时,解释器会在局部作用域找,会找到x=5(函数已经加载到内存),但x在声明前使用了,所以报错
+# 如何证明找到了x=5呢? 简单:注释掉x=5,x=6
 # 报错为:name 'x' is not defined
 
-#同理
+# 同理
 x = 6
 def f2():
-    #x = x + 1
-    x + = 1 #local variable 'x' referenced before assignment.
+    # x = x + 1
+    x + = 1 # local variable 'x' referenced before assignment.
 f2()
 {% endhighlight %}
 
@@ -247,9 +253,9 @@ f2()
 count = 10
 def outer():
     global count
-    print(count)   #10
+    print(count)   # 10
     count = 100
-    print(count)   #100
+    print(count)   # 100
 outer()
 {% endhighlight %}
 
@@ -265,9 +271,9 @@ def outer():
     def inner():
         nonlocal count
         count = 20
-        print(count)    #20
+        print(count)    # 20
     inner()
-    print(count)    #20
+    print(count)    # 20
 outer()
 {% endhighlight %}
 

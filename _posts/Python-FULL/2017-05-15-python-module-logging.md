@@ -54,20 +54,20 @@ CRITICAL:root:critical message
 {% highlight python linenos %}
 #!/usr/bin/env python
 # _*_ coding:utf-8 _*_
-#导入logging模块
+# 导入logging模块
 import logging
 
-#创建一个log.log日志文件
+# 创建一个log.log日志文件
 logging.basicConfig(
-                    #日志要写入的文件
+                    # 日志要写入的文件
                     filename='log.log',
-                    #日志的写入模式，默认a
+                    # 日志的写入模式，默认a
                     filemode='a'
-                    #日志格式，格式化的字符串
+                    # 日志格式，格式化的字符串
                     format='%(asctime)s - %(name)s - %(levelname)s - %(module)s: %(message)s',
-                    #时间
+                    # 时间
                     datefmt='%Y-%m-%d %H:%M:%S %p',
-                    #错误级别
+                    # 错误级别
                     level=logging.NOTSET
                     )
 
@@ -141,15 +141,15 @@ fh = logging.FileHandler('test.log')
 # 再创建一个处理对象，用于输出到控制台
 ch = logging.StreamHandler()
 
-#创建日志的记录格式
+# 创建日志的记录格式
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
-#给处理对象添加记录格式
+# 给处理对象添加记录格式
 fh.setFormatter(formatter)
 ch.setFormatter(formatter)
 
-#给日志对象添加处理对象
-logger.addHandler(fh) #logger对象可以添加多个fh和ch对象
+# 给日志对象添加处理对象
+logger.addHandler(fh) # logger对象可以添加多个fh和ch对象
 logger.addHandler(ch)
 
 logger.debug('logger debug message')
@@ -258,45 +258,45 @@ logger4.setLevel(logging.DEBUG)
 logger5 = logging.getLogger('mylogger.child1.child2.child3')
 logger5.setLevel(logging.DEBUG)
 
-#创建一个handler，用于写入日志文件
+# 创建一个handler，用于写入日志文件
 fh = logging.FileHandler('/tmp/test.log')
 
-#再创建一个handler，用于输出到控制台
+# 再创建一个handler，用于输出到控制台
 ch = logging.StreamHandler()
 
-#定义handler的输出格式formatter    
+# 定义handler的输出格式formatter    
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 fh.setFormatter(formatter)
 ch.setFormatter(formatter)
 
-#定义一个filter
-#filter = logging.Filter('mylogger.child1.child2')      #只有 4,5 会写入文件
-#fh.addFilter(filter)
+# 定义一个filter
+# filter = logging.Filter('mylogger.child1.child2')      # 只有 4,5 会写入文件
+# fh.addFilter(filter)
 
-#给logger添加handler
-#logger.addFilter(filter)
+# 给logger添加handler
+# logger.addFilter(filter)
 logger.addHandler(fh)
 logger.addHandler(ch)
 
-#logger1.addFilter(filter)
+# logger1.addFilter(filter)
 logger1.addHandler(fh)
 logger1.addHandler(ch)
 
 logger2.addHandler(fh)
 logger2.addHandler(ch)
 
-#logger3.addFilter(filter)
+# logger3.addFilter(filter)
 logger3.addHandler(fh)
 logger3.addHandler(ch)
 
-#logger4.addFilter(filter)
+# logger4.addFilter(filter)
 logger4.addHandler(fh)
 logger4.addHandler(ch)
 
 logger5.addHandler(fh)
 logger5.addHandler(ch)
 
-#记录一条日志
+# 记录一条日志
 logger.debug('logger debug message')
 logger.info('logger info message')
 logger.warning('logger warning message')

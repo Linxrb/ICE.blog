@@ -19,22 +19,22 @@ layout: post
 
 {% highlight python linenos %}
 1
-#把一个模块当做成一个整体来进行导入
+# 把一个模块当做成一个整体来进行导入
 import sys
 sys.path
 
 2
-#从一个模块中导入特定的变量或者是方法
+# 从一个模块中导入特定的变量或者是方法
 #from sys import *          #导入所有方法
 from sys import path
-#直接调用
+# 直接调用
 print(path)
-#['C:\\Users\\user\\PycharmProjects\\pyProjects\\module', 'C:\\Users\\user\\PycharmProjects\\pyProjects', 'C:\\Windows\\system32\\python34.zip', 'C:\\Python34\\DLLs', 'C:\\Python34\\lib', 'C:\\Python34', 'C:\\Python34\\lib\\site-packages']
+# ['C:\\Users\\user\\PycharmProjects\\pyProjects\\module', 'C:\\Users\\user\\PycharmProjects\\pyProjects', 'C:\\Windows\\system32\\python34.zip', 'C:\\Python34\\DLLs', 'C:\\Python34\\lib', 'C:\\Python34', 'C:\\Python34\\lib\\site-packages']
 
 3
-#给导入的模块或者方法起一个别名
+# 给导入的模块或者方法起一个别名
 from sys import path as path_alias
-#调用的时候使用别名path_alias
+# 调用的时候使用别名path_alias
 print(path_alias)
 {% endhighlight %}
 
@@ -43,7 +43,7 @@ print(path_alias)
 #### 导入包里的模块
 
 {% highlight python linenos %}
-#目录
+# 目录
 pro
 ├── modules
 │   ├── __init__.py
@@ -53,13 +53,13 @@ pro
 {% endhighlight %}
 
 {% highlight python linenos %}
-#hello.py
-#导入 lib01
+# hello.py
+# 导入 lib01
 
 1
-#import lib01    #X   不能直接导入
+# import lib01    # 错   不能直接导入
 import module.lib01
-#调用
+# 调用
 module.lib01.add()
 
 2
@@ -72,7 +72,7 @@ add()
 
 4
 import module
-#执行 init 
+# 执行 init 
 {% endhighlight %}
 
 > 不管是 from 还是直接 import ，如果 init 文件里有代码，则会执行里面的代码且只会执行一次，关于包的导入继续往下看
@@ -87,7 +87,7 @@ import module
 **`调用包就是执行包下的__init__.py文件`**
 
 {% highlight python linenos %}
-#目录
+# 目录
 pro
 ├── modules
 │   ├── __init__.py
@@ -105,9 +105,9 @@ pro
 {% highlight python linenos %}
 import sys,os
 # __file__会返回当前执行文件的路径
-#abspath会返回执行文件的完整路径
-#dirname会找到上一层module，再一次会找到上一层Pro
-#最后添加到 sys.path
+# abspath会返回执行文件的完整路径
+# dirname会找到上一层module，再一次会找到上一层Pro
+# 最后添加到 sys.path
 BASE_DIR=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(BASE_DIR)
 import hello
@@ -119,7 +119,7 @@ hello.hello1()
 #### \__name__
 
 {% highlight python linenos %}
-#目录
+# 目录
 pro
 ├── modules
 │   ├── __init__.py
@@ -129,16 +129,16 @@ pro
 {% endhighlight %}
 
 {% highlight python linenos %}
-#lib01.py
+# lib01.py
 
-print(__name__)     #__main__
+print(__name__)     # __main__
 {% endhighlight %}
 
 {% highlight python linenos %}
-#hello.py
+# hello.py
 
 import lib01
-#执行会输出 modules.lib01
+# 执行会输出 modules.lib01
 {% endhighlight %}
 
 　　当 module 被其它 module 引入使用时，其 \__name__ 的值将发生变化，\__name__ 的值将会是 module 的名字。
@@ -165,7 +165,7 @@ import lib01
 可以使用 `imp` 模块中的 `reload` 方法重新载入某个模块的方法，例如下面的实例：
 
 {% highlight python linenos %}
-#simple.py 
+# simple.py 
 
 print('Hello, World!')
 spam = 1
@@ -193,7 +193,7 @@ Hello, World!
 在模块中的所有变量以 `_` 开头的都不会被 from * 所导入
 
 {% highlight python linenos %}
-#simple.py 
+# simple.py 
 
 _spam1 = 1
 spam2 = 1
@@ -209,7 +209,7 @@ spam2 = 1
 相反的 `__all__` 列表里面的变量则会被 from * 所导入，没有在 \__all__ 列表里面的变量则不会被导入
 
 {% highlight python linenos %}
-#simple.py
+# simple.py
 
 __all__ = ['spam2']
 

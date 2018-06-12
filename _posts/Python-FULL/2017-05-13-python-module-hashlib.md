@@ -13,11 +13,11 @@ layout: post
 
 {% highlight python linenos %}
 import hashlib
-#hashlib后面是把数据加密成什么类型
+# hashlib后面是把数据加密成什么类型
 hash = hashlib.md5()
-#在python3内，加密的字符串转换成字节指定字符编码
-hash.update(bytes('Linrb', encoding='utf-8'))    #hash.update("Linrb".encoding('utf-8'))
-#获取加密后的md5值
+# 在python3内，加密的字符串转换成字节指定字符编码
+hash.update(bytes('Linrb', encoding='utf-8'))    # hash.update("Linrb".encoding('utf-8'))
+# 获取加密后的md5值
 hash.hexdigest()
 'c68f15638a51482030a248f2c9e9f24e'
 {% endhighlight %}
@@ -26,7 +26,7 @@ hash.hexdigest()
 
 {% highlight python linenos %}
 import hashlib
-#hashlib.md5括号内填写盐的内容
+# hashlib.md5括号内填写盐的内容
 hash = hashlib.md5(bytes('me', encoding='utf-8'))
 hash.hexdigest()
 '5a11a293491401f1d22b3658d5d74ebd'

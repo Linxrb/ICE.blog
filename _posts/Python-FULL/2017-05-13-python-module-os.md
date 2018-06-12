@@ -40,25 +40,25 @@ layout: post
 
 
 {% highlight python linenos %}
-#获取当前工作目录
-print(os.getcwd())                  #C:\Users\user\PycharmProjects\pyProjects\
+# 获取当前工作目录
+print(os.getcwd())                  # C:\Users\user\PycharmProjects\pyProjects\
 
-#改变当前脚本的工作目录
+# 改变当前脚本的工作目录
 os.chdir(r'c:\Users')
-print(os.getcwd())                  #c:\Users
+print(os.getcwd())                  # c:\Users
 
-#返回当前目录
-print(os.curdir)                    #.
+# 返回当前目录
+print(os.curdir)                    # .
 
-#获取当前目录的上一级目录
-print(os.pardir)                    #..
+# 获取当前目录的上一级目录
+print(os.pardir)                    # ..
 
-#可生成多层递归目录，默认在当前目录创建
+# 可生成多层递归目录，默认在当前目录创建
 os.makedirs(‘dirname1/dirname2’)
 
-os.removedirs(‘dirname1/dirname2’)  #若目录为空，则删除，并递归到上一级目录，如若也为空，则删除，依此类推，如果目录里有文件则不会删
+os.removedirs(‘dirname1/dirname2’)  # 若目录为空，则删除，并递归到上一级目录，如若也为空，则删除，依此类推，如果目录里有文件则不会删
 
-#获取文件大小
+# 获取文件大小
 info = os.stat(‘path/filename’)
-info.st_size                        #4096
+info.st_size                        # 4096
 {% endhighlight %}

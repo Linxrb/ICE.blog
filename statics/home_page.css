@@ -39,7 +39,7 @@ html::-webkit-scrollbar{display: none}
 /*'Graphik Web', 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif*/
 body{
     font:400 14px/1.75 Roboto,'Helvetica Neue',Helvetica,Arial,'Microsoft Yahei',sans-serif;height:100%;
-    color:#1a1a1a;
+    color:#000000;
 
 }
 nav ul,nav ol{
@@ -48,7 +48,7 @@ nav ul,nav ol{
 a{
     transition:color 0.1s ease;
     text-decoration:none;
-    color:#1a1a1a
+    color:#000000
 }
 a:hover{
     border-bottom:1px solid

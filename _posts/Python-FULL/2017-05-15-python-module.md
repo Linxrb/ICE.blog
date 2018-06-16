@@ -77,6 +77,20 @@ import module
 
 > 不管是 from 还是直接 import ，如果 init 文件里有代码，则会执行里面的代码且只会执行一次，关于包的导入继续往下看
 
+### 通过字符串导入模块
+
+{% highlight python linenos %}
+import importlib
+
+module = 'src.user_info'             # 模块名
+func_name = 'add'                    # 函数名
+m = importlib.import_module(module)  # 导入模块
+func = gerattr(module,func_name)     # 通过反射获取函数
+
+func()                               # 执行函数
+
+{% endhighlight %}
+
 ### 关于包
 
 如果说 `模块(文件)` 是用来组织方法，那么 `包(目录)` 就是来组织 模块(文件) 的。  

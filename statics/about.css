@@ -6,7 +6,7 @@
 hr{height: 0.25em;padding: 0;margin: 24px 0;background-color: #e1e4e8;border: 0;}
 
 #about{border-bottom:1px solid;color:red;}
-.my-site-list h2{cursor:pointer;}
+.my-site-list h2{cursor:pointer;font-size: 1.1rem;}
 #ShowLink{display:none;width:100%;height:100%;background-color:#f9f9f9;text-align:center;position:fixed;top:0;bottom:0;right:0;left:0;z-index:10;}
 .aboutbar{width: 25px;height: 25px;border: 1px solid #2a2a2a;background-color: #2a2a2a;position: fixed;bottom: 45px;right: 80px;z-index: 1000;cursor: pointer;z-index:100;display:none;}
 .aboutmenu{width: 16px;height: 2px;background-color: #ffffff;position: absolute;transform: translate3d(-50%,-50%,0);left: 50%;transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;}

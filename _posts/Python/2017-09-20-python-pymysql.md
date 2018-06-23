@@ -76,15 +76,16 @@ import pymysql
   
 conn = pymysql.connect(host='127.0.0.1', port=3306, user='root', passwd='123', db='t1')
 cursor = conn.cursor()
-cursor.execute("select * from hosts")
+cursor.execute("select * from color")
   
-# 获取第一行数据
-row_1 = cursor.fetchone()
+# 获取第一行数据，获取到的数据是元组类型
+row_1 = cursor.fetchone()       #(1, 'yellow')
   
-# 获取前n行数据
-# row_2 = cursor.fetchmany(3)
+# 获取前n行数据,会接着往下一个取
+row_2 = cursor.fetchmany(3)     #((2, 'green'), (3, 'pink'), (4, 'red'))
+
 # 获取所有数据
-# row_3 = cursor.fetchall()
+row_3 = cursor.fetchall()
   
 conn.commit()
 cursor.close()
@@ -112,8 +113,9 @@ conn = pymysql.connect(host='127.0.0.1', port=3306, user='root', passwd='123', d
 cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
 r = cursor.execute("call p1()")
   
-result = cursor.fetchone()
-  
+result = cursor.fetchone()      #{'name': 'yellow', 'nid': 1}
+result = cursor.fetchall()      #[{'name': 'green', 'nid': 2}, {'name': 'ppink', 'nid': 3}]
+
 conn.commit()
 cursor.close()
 conn.close()

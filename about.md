@@ -6,7 +6,7 @@ layout: about
 
 - [Python]({{site.baseurl}}/2017/08/09/Python)
     - Web 框架：[Django]({{site.baseurl}}/2017/08/09/Django) \| [Tornado]() \| Flask \| [小控件(control)]() \| >>Projects
-    - [Python 全栈之路系列文章]({{site.baseurl}}/2017/08/09/Python_Full_Stack)
+    - [Python 全栈开发学习笔记]({{site.baseurl}}/2017/08/09/Python_Full_Stack)
 - [Jquery]() \| [Ajax]({{site.baseurl}}/2017/08/09/Ajax) - Jsonp
 - [正则表达式(RegExp)]({{site.baseurl}}/2017/08/13/re)
 - [Git]() \| [Markdown]({{site.baseurl}}/2017/08/09/Markdown) \| [Jekyll]({{site.baseurl}}/2017/08/09/Jekyll)

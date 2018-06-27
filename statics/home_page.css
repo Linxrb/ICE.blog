@@ -33,7 +33,7 @@ h1,h2,h3,h4,h5,h6,.emphasize{
     display:table;clear:both;content:''
 }
 html{
-    height:100%;background:#1a1a1a;
+    height:100%;background:#000000;
 }
 html::-webkit-scrollbar{display: none}
 /*'Graphik Web', 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif*/

@@ -42,6 +42,7 @@ body{
     color:#000000;
 
 }
+*{ cursor:url(../images/15202.gif),auto;}
 nav ul,nav ol{
     list-style:none
 }

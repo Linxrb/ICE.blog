@@ -2,16 +2,16 @@
 //图片的过程中，横坐标的轨迹是以一点为中心的正弦曲线
 //利用了setTimeout函数完成了动画的功能
 //雪花个数
-var no = 7; 
+var no = 6; 
 //声明变量，xp表示横坐标，yp表示纵坐标>
 var dx, xp, yp;
 //声明变量，am表示左右摆动的幅度，stx表示横坐标的偏移步长，sty表示纵坐标的步长>
 var am, stx, sty;  
 {
   //获取当前窗口的宽度
-  clientWidth =  document.body.scrollWidth;
+  clientWidth =  document.body.clientWidth;
   //获取当前窗口的高度
-  clientHeight = document.body.scrollHeight;
+  clientHeight = document.body.clientHeight;
 }
 var dx = new Array();
 var xp = new Array();
@@ -36,7 +36,7 @@ for (i = 0; i < no; ++ i) {
   //生成一个容纳雪花图片的div，并设置其绝对坐标
   var snowFlakeDiv = document.createElement('div');
   snowFlakeDiv.setAttribute('id', 'dot'+ i);
-  snowFlakeDiv.style.position = 'absolute';
+  snowFlakeDiv.style.position = 'fixed';
   snowFlakeDiv.style.top = 15+ 'px';
   snowFlakeDiv.style.left = 15 +'px';
   //生成一个雪花图片对象，设置宽高，并加入div
@@ -60,7 +60,8 @@ function snow() {
       //重新赋值图片的纵坐标
       yp[i] = 0;
     }
-    clientWidth =  document.body.scrollWidth;
+    clientWidth =  document.body.clientWidth;
+    clientHeight = document.body.clientHeight;
     if (xp[i] > clientWidth-50) {
       //重新赋值图片的横坐标
       xp[i] = Math.random()*(clientWidth-am[i]-30);

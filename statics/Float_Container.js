@@ -67,7 +67,7 @@ function snow() {
     //第i个图片的纵坐标加上步长
     yp[i] = yp[i] + sty[i];
     //如果新坐标超过了屏幕下沿，重置该图片的信息，包括横坐标、纵坐标以及x方向的步长和y方向的步长
-    if (yp[i] > clientHeight-50) {
+    if (yp[i] > clientHeight) {
       //重新赋值图片的横坐标
       xp[i] = Math.random()*(clientWidth-am[i]-30);
       //重新赋值图片的纵坐标
@@ -75,7 +75,7 @@ function snow() {
     }
     clientWidth =  document.body.clientWidth;
     clientHeight = document.body.clientHeight;
-    if (xp[i] > clientWidth-50) {
+    if (xp[i] > clientWidth) {
       //重新赋值图片的横坐标
       xp[i] = Math.random()*(clientWidth-am[i]-30);
       //重新赋值图片的纵坐标

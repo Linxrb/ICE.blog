@@ -34,7 +34,7 @@ h1,h2,h3,h4,h5,h6,.emphasize{
 }
 html{
     height:100%;background:#000000;
-    cursor:url(../images/15202.gif),default;
+    /*cursor:url(../images/15202.gif),default;*/
 }
 html::-webkit-scrollbar{display: none}
 /*'Graphik Web', 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif*/

@@ -52,12 +52,12 @@ a:hover{
 .markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{font-weight: bold;padding-top: 10px;margin: 20px 0 15px;}
 .markdown-body h4{font-size:1.1rem;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;}
 .markdown-body h3{color:#002BB8;margin-bottom: 30px;font-size:1.25rem;border-bottom: 1px solid #ccc;padding-bottom:10px;padding-top: 30px}
-.markdown-body a{margin-bottom:0;border: 1px solid;display: inline-block;padding:0 15px;margin:4px 2px;background-color: #fdfdfd;}
+.markdown-body a{margin-bottom:0;border: 1px solid #000;display: inline-block;padding:0 15px;margin:4px 2px;background-color: #fdfdfd;}
 .show_wz a{color:#002BB8;}/*border-bottom: 1px #555 dotted; #dd1144*/
 .show_wz a:hover{color:black;text-decoration:none;border-bottom:0}
 
 /* 修改字体大小*/
-.markdown-body{padding:3rem 1rem;color:#555;line-height:2;word-wrap:break-word;}
+.markdown-body{padding:3rem 1rem;color:#333;line-height:2;word-wrap:break-word;}
 .markdown-body ul li,.markdown-body ol li{line-height:2}
 @media (max-width: 900px){.show_wz .show_top{height:0}.markdown-body{border:0}}
 @media (max-width: 500px){.markdown-body{padding:2rem;font-size:100%}.markdown-body ul, .markdown-body ol {padding-left: 2em;}}

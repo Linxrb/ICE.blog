@@ -46,7 +46,7 @@ for (var i in no) {
   am[i] = Math.random()*5;         //第i个图片的左右摆动的幅度
   stx[i] = 0.02 + Math.random()/10; //第i个图片x方向的步长
   sty[i] = 0.7 + Math.random();     //第i个图片y方向的步长
-  if(flag){sty[i] = 7 + Math.random()}
+  if(flag){sty[i] = 5 + Math.random()}
   //生成一个容纳雪花图片的div，并设置其绝对坐标
   var snowFlakeDiv = document.createElement('div');
   snowFlakeDiv.setAttribute('id', 'dot'+ i);

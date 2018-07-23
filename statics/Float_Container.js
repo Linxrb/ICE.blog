@@ -1,4 +1,4 @@
-var Agents = ["Android", "iPhone","SymbianOS", "Windows Phone","iPad", "iPod"];
+/* var Agents = ["Android", "iPhone","SymbianOS", "Windows Phone","iPad", "iPod"];
 var flag = false;
 for (var v = 0; v < Agents.length; v++) {
     if (navigator.userAgent.indexOf(Agents[v]) > 0) {
@@ -12,7 +12,7 @@ for (var v = 0; v < Agents.length; v++) {
 //利用了setTimeout函数完成了动画的功能
 //pc端雪花个数
 var no = [0,1,2,3,4,5];
-if (flag){no = [0,1,2,3,4];}    //设备端
+if (flag){no = 0}    //设备端
  
 //声明变量，xp表示横坐标，yp表示纵坐标>
 var dx, xp, yp;
@@ -89,3 +89,4 @@ function snow() {
 //调用snowIE()函数 
 snow();
 
+*/

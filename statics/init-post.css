@@ -47,7 +47,7 @@ a:hover{
     background:#f3f3f3;
 }
 .article_body{max-width:900px;margin: 0 auto;letter-spacing: 1px;background-color:rgba(255, 255, 255, 0);padding-bottom: 35px}
-
+.show_wz .markdown-body a:hover{color:red;border-bottom:1px solid #fdfdfd}
 /* 修改 markdown h 标签属性  */
 .markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{font-weight: bold;padding-top: 10px;margin: 20px 0 15px;}
 .markdown-body h4{font-size:1.1rem;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;}

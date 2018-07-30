@@ -182,6 +182,7 @@ footer .next-project-link+.copyright{
 .revue-form-div{
     float: left;
     width: 50%;
+    height: 2rem;
     background-color: transparent;
     border: none;
     border-bottom: 1px solid;

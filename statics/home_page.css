@@ -179,12 +179,23 @@ footer .next-project-link+.copyright{
     content: '';
     text-align: center;
 }
+.revue-form-div{
+    float: left;
+    width: 50%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid;
+    outline: none;
+    line-height: 2rem;
+    font-size: 1rem;
+    border-radius: 0;
+}
 .revue-form-field{
     float:left;
-    width:50%;
+    /*width:50%;*/
     background-color:transparent;
     border:none;
-    border-bottom:1px solid;
+    /*border-bottom:1px solid;*/
     outline:none;
     line-height:2rem;
     font-size:1rem;

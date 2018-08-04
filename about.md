@@ -9,11 +9,12 @@ layout: about
       [Tornado]() \| 
       Flask \| 
       [小控件(control)]() \| 
+      [爬虫]() \| 
       \>>Projects
     - [Python 开发学习整理记录]({{site.baseurl}}/2017/08/09/Python_Full_Stack)
-- [HTML]() \| 
+- [HTML]({{site.baseurl}}/2017/09/15/HTML) \| 
   [CSS]() \| 
-  [JavasCript]() \| 
+  [JavaScript]() \| 
   [Jquery]() \| 
   [Ajax]({{site.baseurl}}/2017/08/09/Ajax) - Jsonp \| 
   [HTML特殊字符]()

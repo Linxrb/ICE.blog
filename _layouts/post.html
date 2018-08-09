@@ -52,17 +52,22 @@
 #toggle + table{display:none;margin-top:30px;margin-bottom:70px;color:#dd1144;text-align:center;}
 
 /*  toc */
-#markdown-toc{color:deepskyblue}
-#markdown-toc ul,#markdown-toc ol,#markdown-toc li{white-space:nowrap; text-overflow :ellipsis ;}
+
 #markdown-toc ul{padding-left: 2.5em;padding-top: 0.5rem;padding-bottom: 1rem;}
-#markdown-toc li{line-height:1.5;list-style-type: decimal;padding-top: 5px;}
+#markdown-toc li{line-height:1.5;list-style-type: decimal;padding-top: 5px;max-width: 300px;}
+#margin-top li ul{}
 #markdown-toc ul li:hover{}
-#markdown-toc{position: fixed;background-color:#000000;right:-150%;top:0;overflow: auto;bottom: 0;z-index:100;margin:0;padding:60px 40px 40px 60px}
+#markdown-toc{position: fixed;background-color:#000000;right:-100%;top:0;overflow: auto;bottom: 0;z-index:100;margin:0;padding:60px 40px 40px 60px}
+#markdown-toc{color:cyan;
+    transform: translateZ(0) translateX(45%) skew(-12deg);
+    -webkit-transform: translateZ(0) translateX(45%) skew(-12deg);
+    padding-right: 30%;
+}
 #markdown-toc a:link{color:gold;border-bottom:0;padding-right: 20px}
 #markdown-toc a:hover{color:red;}
 #markdown-toc::-webkit-scrollbar {display:none}
 .cover{position:fixed;top:0;right:0;left:0;bottom:0;background-color:rgba(0, 0, 0, 0.48);display:none}
-@media (max-width: 500px){.markdown-body{border:0;margin-top:0}#markdown-toc{width:190px}#markdown-toc ul{padding-left:2.5rem}.article_body{border:0}}
+@media (max-width: 500px){.markdown-body{border:0;margin-top:0}#markdown-toc{   }#markdown-toc ul{padding-left:2.5rem}.article_body{border:0}}
 </style>
 </head>
 <body>
@@ -107,7 +112,6 @@ $(document).ready(function(){
    */
 
 //$("#markdown-toc a").removeAttr("target")
-
 $("#markdown-toc a").addClass("topLink")    // toc  下 a 标签加类名 滑动
 var current = $(window).scrollTop();
 
@@ -131,7 +135,7 @@ menubar.onclick = function () {
     $("#Value").attr("value",i);
     if (i % 2 == 1) {
         $("#markdown-toc").css("display","block");
-        $("#markdown-toc").animate({right:'0px'},"slow")
+        $("#markdown-toc").animate({right:'70px'},"slow")
         $(".cover").fadeIn()
         menu0.style.top = 50 + "%";
         menu1.style.display = "none";
@@ -139,7 +143,7 @@ menubar.onclick = function () {
         menu0.style.transform = "translate3d(-50%,-50%,0) rotate(135deg)";
         menu2.style.transform = "translate3d(-50%,-50%,0) rotate(405deg)";
     }else {
-        $("#markdown-toc").animate({right:'-150%'},"slow",function(){
+        $("#markdown-toc").animate({right:'-100%'},"slow",function(){
             $(this).css("display","none");
         });
         
@@ -162,7 +166,7 @@ menubar.onclick = function () {
         var menu0 = document.getElementById("menu0");
         var menu1 = document.getElementById("menu1");
         var menu2 = document.getElementById("menu2");
-        $("#markdown-toc").animate({right:'-150%'},"slow",function(){
+        $("#markdown-toc").animate({right:'-100%'},"slow",function(){
             $(this).css("display","none");
         });
         

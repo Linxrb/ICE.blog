@@ -12,10 +12,10 @@ layout: about
     - [Python 开发学习整理记录]({{site.baseurl}}/2017/08/09/Python_Full_Stack)
 - [HTML]({{site.baseurl}}/2017/09/15/HTML) \| 
   [CSS]() \| 
+  [HTML特殊字符]() \| 
   [JavaScript]() \| 
   [Jquery]() \| 
   [Ajax]({{site.baseurl}}/2017/08/09/Ajax) - Jsonp \| 
-  [HTML特殊字符]() \| 
   [Markdown]({{site.baseurl}}/2017/08/09/Markdown) \| 
   [Jekyll]({{site.baseurl}}/2017/08/09/Jekyll)
   

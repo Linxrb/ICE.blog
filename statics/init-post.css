@@ -51,7 +51,7 @@ a:hover{
 .show_wz .markdown-body a:hover{border-bottom:1px solid #fdfdfd}
 /* 修改 markdown h 标签属性  */
 .markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{font-weight: bold;margin: 20px 0 15px;}
-.markdown-body h4{font-size:1rem;font-weight:500;color:#000000}
+.markdown-body h4{font-size:1rem;font-weight:500;color:#000000;display: inline-block;width: 65%;border-bottom: 1px solid #D8D6D6;}
 .markdown-body h3{color:#002BB8;margin-bottom: 30px;font-size:1.25rem;border-bottom: 1px solid #ccc;padding-bottom:10px;padding-top: 30px}
 .markdown-body a{margin-bottom:0;border: 1px solid #ccc;display: inline-block;padding:0 15px;margin:4px 2px;background-color: #fdfdfd;}
 .show_wz a{color:#002BB8;}/*border-bottom: 1px #555 dotted; #dd1144*/

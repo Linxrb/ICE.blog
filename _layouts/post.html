@@ -23,12 +23,12 @@
 /* 修改 Python/javascript 代码注释颜色*/
 .highlight .c,.highlight .c1{color:#75715e}
 
-.show_wz{padding-right:2rem;padding-left:2rem;padding-bottom:5rem;font-size:14px}
+.show_wz{padding:5rem 2rem;color:#232323}
 .show_wz a{color:#dd1144}
 .show_wz a:hover{color:black;text-decoration:none}
 
 /* 修改字体大小*/
-.markdown-body{padding:3rem;color:#323232;line-height:2;word-wrap:break-word;border:1px solid;margin-top:3rem}
+.markdown-body{background-color:#F5F5F5;padding:3rem;line-height:2;word-wrap:break-word;border:1px solid;letter-spacing: 2px;}
 .markdown-body ul li,.markdown-body ol li{line-height:2}
 @media (max-width: 500px){.markdown-body{padding:2rem;font-size:100%}.markdown-body ul, .markdown-body ol {padding-left: 2em;}}
 @media (max-width: 500px){.show_wz{padding-left: 0px;padding-right:0px;padding-top: 0;}}
@@ -39,7 +39,7 @@
 /* 文章title*/
 .article_body{letter-spacing: 1px;}
 .article_body .article_title{text-align:center;padding-bottom:5px}
-.article_body .article_title .title{font-size:24px;font-family: Roboto Slab;font-weight:600;padding:4rem 2rem 0 2rem;margin-top:0;margin-bottom:0}
+.article_body .article_title .title{font-size:24px;font-family: Roboto Slab;font-weight:600;padding:2rem 2rem 0 2rem;margin-top:0;margin-bottom:0}
 .article_body .article_title .title span{cursor:pointer;}
 .article_body .article_title .time{margin-top:0;margin-bottom:1rem;margin-left:2.5rem;margin-right:2.5rem;font-size:12px;}
 .article_body .article_title .time span{color:#3699dc;}
@@ -69,13 +69,13 @@
 <div class="wrap">
     <div class = "show_wz">
         <div class="article_body" style="max-width:900px;margin: 0 auto;letter-spacing: 1px;">
-            <div class = 'article_title'>
-                <div class='title'><span><a href="javascript:history.back(-1)" style="color:#000">{{ page.title}}</a></span></div>
-                <div class= 'time'><span>{{ page.date | date: "%Y/%m/%d" }}</span> BY <span>Linrb</span></div>
-            </div>
+
             
             <div class= "markdown-body">
-
+                <div class = 'article_title'>
+                    <div class='title'><span><a href="javascript:history.back(-1)" style="color:#000">{{ page.title}}</a></span></div>
+                    <div class= 'time'><span>{{ page.date | date: "%Y/%m/%d" }}</span> BY <span>Linrb</span></div>
+                </div>
                 {{ content }}
                 
             </div>

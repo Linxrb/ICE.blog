@@ -3,6 +3,7 @@ title: Python 面向对象类的特殊成员
 layout: post
 ---
 
+<br><br>
 
 {% highlight Python linenos%}
 __init__(self, *arg, **kwarg)     # 构造方法，创建对象时自动执行。

@@ -3,6 +3,8 @@ title: socket 获取百度首页
 layout: post
 ---
 
+<br><br>
+
 网络编程,向百度发送请求,获取百度首页代码，保存到本地
 
 {% highlight python linenos %}

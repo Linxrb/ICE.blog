@@ -3,6 +3,7 @@ title: 编码与解码
 layout: post
 ---
 
+<br><br>
 
 {% highlight python linenos %}
 str >>> bytes : 编码

@@ -6,6 +6,8 @@ layout: post
 * TOC
 {:toc}
 
+<br><br>
+
 > 用于生成和修改常见配置文档，当前模块的名称在 python 2.x 版本中变更为 Configparser。其本质上是利用open来操作文件。  
 
 **常见文档格式如下**  

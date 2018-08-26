@@ -6,6 +6,8 @@ layout: post
 * TOC
 {:toc}
 
+<br><br>
+
 反射的定义：以字符串的形式操作对象中的成员
 - `getattr(obj, name, [default])`：根据字符串的形式去一个对象中获取成员
 - `setattr(obj, name, value )`：根据字符串的形式去一个对象中设置成员

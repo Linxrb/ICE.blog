@@ -39,7 +39,7 @@ html{
 html::-webkit-scrollbar{display: none}
 /*'Graphik Web', 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif*/
 body{
-    font:400 14px/1.75 Roboto,'Helvetica Neue',Helvetica,Arial,'Microsoft Yahei',sans-serif;height:100%;
+    font:400 14px/1.7 Roboto,'Helvetica Neue',Helvetica,Arial,'Microsoft Yahei',sans-serif;height:100%;
     color:#000000;
 }
 

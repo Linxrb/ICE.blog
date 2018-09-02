@@ -5,22 +5,22 @@ layout: about
 ## 编程
 
 - [Python]({{site.baseurl}}/2017/08/09/Python)
-    - Web 框架：[Django]({{site.baseurl}}/2017/08/09/Django) \| 
-      [Tornado]() \| 
-      Flask \| 
+    - Web 框架：[Django]({{site.baseurl}}/2017/08/09/Django) | 
+      [Tornado]() | 
+      Flask | 
       \>>Projects
     - [Python 开发学习整理记录]({{site.baseurl}}/2017/08/09/Python_Full_Stack)
-- [HTML]({{site.baseurl}}/2017/09/15/HTML) \| 
-  [CSS]() \| 
-  [HTML特殊字符]() \| 
-  [JavaScript]() \| 
-  [Jquery]() \| 
-  [Ajax]({{site.baseurl}}/2017/08/09/Ajax) - Jsonp \| 
-  [Markdown]({{site.baseurl}}/2017/08/09/Markdown) \| 
+- [HTML]({{site.baseurl}}/2017/09/15/HTML) |
+  [CSS]() |
+  [HTML特殊字符]() |
+  [JavaScript]({{site.baseurl}}/2017/09/17/JavaScript) |
+  [Jquery]() |
+  [Ajax]({{site.baseurl}}/2017/08/09/Ajax) - Jsonp |
+  [Markdown]({{site.baseurl}}/2017/08/09/Markdown) |
   [Jekyll]({{site.baseurl}}/2017/08/09/Jekyll)
   
 - [正则表达式(RegExp)]({{site.baseurl}}/2017/08/13/re)
-- [小控件(control)]() \| 
+- [小控件(control)]() |
   [Git]()
 
 
@@ -30,11 +30,11 @@ layout: about
 
 ## 数据 & 可视化
 
-- 数据库(Database) \| 
-  [MySQL]({{site.baseurl}}/2017/09/16/Mysql) \| 
-  [MongoDB]() \| 
-  [Redis]({{site.baseurl}}/2017/08/15/redis) \| 
-  Oracle \| 
+- 数据库(Database) |
+  [MySQL]({{site.baseurl}}/2017/09/16/Mysql) |
+  [MongoDB]() |
+  [Redis]({{site.baseurl}}/2017/08/15/redis) |
+  Oracle |
   SQLite
 
 ***
@@ -43,9 +43,9 @@ layout: about
 
 ## 网络（WEB）
 
-- 网络基础 \| 
-  [TCP/IP五层模型]({{site.baseurl}}/2017/06/30/network-protocol-basics) \| 
-  [网络通信的实现与流程]({{site.baseurl}}/2017/07/05/network-communications-achieve-and-process) \| 
+- 网络基础 |
+  [TCP/IP五层模型]({{site.baseurl}}/2017/06/30/network-protocol-basics) |
+  [网络通信的实现与流程]({{site.baseurl}}/2017/07/05/network-communications-achieve-and-process) |
   [子网划分]({{site.baseurl}}/2017/07/10/subnet-partition.md)
 
 ***
@@ -55,7 +55,7 @@ layout: about
 ## 操作系统
 
 - 操作系统
-    - [Linux(Ubuntu)]({{site.baseurl}}/2017/08/16/Linux) \| 
+    - [Linux(Ubuntu)]({{site.baseurl}}/2017/08/16/Linux) |
       [Windows]()
 - [虚拟机]()
 

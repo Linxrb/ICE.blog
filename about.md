@@ -16,7 +16,7 @@ layout: about
   [JavaScript]({{site.baseurl}}/2017/09/17/JavaScript) |
   [Jquery]() |
   [Ajax]({{site.baseurl}}/2017/08/09/Ajax) - Jsonp |
-  [Markdown]({{site.baseurl}}/2017/08/09/Markdown) |
+  [Markdown](https://blog.csdn.net/qcx321/article/details/53780672) |
   [Jekyll]({{site.baseurl}}/2017/08/09/Jekyll)
   
 - [正则表达式(RegExp)]({{site.baseurl}}/2017/08/13/re)

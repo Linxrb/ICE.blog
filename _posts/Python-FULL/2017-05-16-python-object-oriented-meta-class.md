@@ -18,8 +18,7 @@ class Foo(object):
 obj = Foo()   # obj是通过Foo类实例化的对象
 {% endhighlight %}
 
-　　上述代码中，obj 是通过 Foo 类实例化的对象，其实，不仅 obj 是一个对象，Foo类本身也是一个对象，<span style="color:red">因为在Python中一切事物都是对象</span>。
-如果按照一切事物都是对象的理论：创建 obj 对象会执行 Foo 类的`构造方法`，那么 Foo 类对象应该也是通过执行某个类的构造方法创建。
+　　上述代码中，obj 是通过 Foo 类实例化的对象，其实，不仅 obj 是一个对象，Foo类本身也是一个对象，<span style="color:red">因为在Python中一切事物都是对象</span>。如果按照一切事物都是对象的理论：创建 obj 对象会执行 Foo 类的`构造方法`，那么 Foo 类对象应该也是通过执行某个类的构造方法创建。
 
 {% highlight python linenos%}
 print type(obj)  # 输出：<class '__main__.Foo'>     表示，obj 对象由Foo类创建

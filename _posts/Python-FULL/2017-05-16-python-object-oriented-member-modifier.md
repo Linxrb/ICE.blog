@@ -83,8 +83,7 @@ class Foo:
 obj = Foo("zhuoxin.me")
 {% endhighlight %}
 
-　　方法、属性的访问于上述方式相似，即：<span style="color:red">私有成员只能在类内部使用</span>，
-即使是继承关系也不可以。  
+　　方法、属性的访问于上述方式相似，即：<span style="color:red">私有成员只能在类内部使用</span>，即使是继承关系也不可以。  
 ps：非要访问私有属性的话，可以通过 `对象._类__属性名`  
 
 {% highlight python linenos %}

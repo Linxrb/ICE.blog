@@ -80,8 +80,7 @@ f('Linrb',16)
 
 #### 关键字参数
 
-　　关键字参数和函数调用关系紧密，函数调用使用关键字参数来确定传入的参数值。
-<span style="border-bottom:1px dashed ;">使用关键字参数允许函数调用时参数的顺序与声明时不一致</span>，因为 Python 解释器能够用参数名匹配参数值。
+　　关键字参数和函数调用关系紧密，函数调用使用关键字参数来确定传入的参数值。<span style="border-bottom:1px dashed ;">使用关键字参数允许函数调用时参数的顺序与声明时不一致</span>，因为 Python 解释器能够用参数名匹配参数值。
 
 {% highlight python  linenos %}
 def f(name,age):

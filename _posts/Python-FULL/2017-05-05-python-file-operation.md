@@ -30,8 +30,7 @@ f.close()             # 3 关闭文件
 {% endhighlight %}
 
 注意  
-　　if in the win。hello 文件是 utf8 保存的，打开文件时 open 函数是通过调用操作系统打开的文件。而 win 操作系统默认的是 gbk 编码（默认打开方式 encoding="gbk"）。
-所以直接打开会乱码（或报错）。需要 f=open('hello',encoding='utf8')，hello 文件如果是 gbk 保存的，则直接打开即可。
+　　if in the win。hello 文件是 utf8 保存的，打开文件时 open 函数是通过调用操作系统打开的文件。而 win 操作系统默认的是 gbk 编码（默认打开方式 encoding="gbk"）。所以直接打开会乱码（或报错）。需要 f=open('hello',encoding='utf8')，hello 文件如果是 gbk 保存的，则直接打开即可。
 
 ### 件打开模式
 

@@ -277,6 +277,21 @@ def outer():
 outer()
 {% endhighlight %}
 
+
+#### 匿名函数 lambda
+
+　　关键字 `lambda` 表示匿名函数，冒号前面的 `x` 表示函数参数。  
+　　匿名函数有个限制，就是只能有一个表达式，不用写return，返回值就是该表达式的结果。  
+　　用匿名函数有个好处，因为函数没有名字，不必担心函数名冲突。此外，匿名函数也是一个函数对象，也可以把匿名函数赋值给一个变量，再利用变量来调用该函数：  
+
+{% highlight python  linenos %}
+f = lambda x: x * x
+# f
+<function <lambda> at 0x10453d7d0>
+f(5)
+# 25
+{% endhighlight %}
+
 <h3 id='z4'>小结</h3>
 
 >（1）变量查找顺序：LEGB，作用域局部 > 外层作用域 > 当前模块中的全局 > python内置作用域；  

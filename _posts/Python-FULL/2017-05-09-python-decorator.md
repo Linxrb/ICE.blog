@@ -80,7 +80,7 @@ print(x)     # 报错
 > 那么什么是闭包呢？  
 > 闭包(closure)是函数式编程的重要的语法结构。  
 > <span style="border-bottom:1px solid">定义：如果在一个内部函数里，对在外部作用域（但不是在全局作用域）的变量进行引用，那么内部函数就被认为是闭包(closure)。</span>  
-> 如上实例，inner 就是内部函数，inner 里引用了外部作用域的变量 x（x在外部作用域outer里面，不是全局作用域），  
+> 如上实例，inner 就是内部函数，inner 里引用了外部作用域的变量 x（x在外部作用域outer里面，不是全局作用域）。  
 > 这个内部函数inner就是一个闭包。  
 > <span style="border-bottom:1px solid">用途1：当闭包执行完后，仍然能够保持住当前的运行环境。</span>  
 > <span style="border-bottom:1px solid">用途2：闭包可以根据外部作用域的局部变量来得到不同的结果，这有点像一种类似配置功能的作用。</span>  

@@ -152,8 +152,8 @@ for n in fab(5):
     pass
 {% endhighlight %}
 
-　　fib 就是一个普通的 python 函数，它特殊的地方在于函数体中没有 return 关键字，
-函数的返回值是一个生成器对象。当执行 f=fib(5) 返回的是一个生成器对象，
+　　fab 就是一个普通的 python 函数，它特殊的地方在于函数体中没有 return 关键字，
+函数的返回值是一个生成器对象。当执行 f=fab(5) 返回的是一个生成器对象，
 此时函数体中的代码并不会执行，只有显示或隐示地调用next的时候才会真正执行里面的代码。
 `yield` 的作用就是把一个函数变成一个 `generator`，
 带有 yield 的函数不再是一个普通函数，Python 解释器会将其视为一个 generator，
@@ -254,10 +254,10 @@ isinstance(iter('abc'), Iterator)   # True
 {% endhighlight %}
 
 > 为什么 list、dict、str 等数据类型不是 Iterator ？  
-> 这是因为 Python 的 Iterator 对象表示的是一个数据流，  
+> 这是因为 Python 的 Iterator 对象表示的是一个数据流。  
 > Iterator 对象可以被 next() 函数调用并不断返回下一个数据，直到没有数据时抛出 StopIteration 错误。  
-> 可以把这个数据流看做是一个有序序列，但我们却不能提前知道序列的长度，  
-> 只能不断通过 next() 函数实现按需计算下一个数据，所以 Iterator 的计算是惰性的，  
+> 可以把这个数据流看做是一个有序序列，但我们却不能提前知道序列的长度。  
+> 只能不断通过 next() 函数实现按需计算下一个数据，所以 Iterator 的计算是惰性的。  
 > 只有在需要返回下一个数据时它才会计算。  
 > Iterator 甚至可以表示一个无限大的数据流，例如全体自然数。而使用 list 是永远不可能存储全体自然数的。
 

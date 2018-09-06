@@ -2,6 +2,7 @@
 title: Hi~ Linrb
 layout: about
 ---
+
 ## 编程
 
 - [Python]({{site.baseurl}}/2017/08/09/Python)
@@ -10,17 +11,17 @@ layout: about
       Flask | 
       \>>Projects
     - [Python 开发学习整理记录]({{site.baseurl}}/2017/08/09/Python_Full_Stack)
-- [HTML]({{site.baseurl}}/2017/09/15/HTML) |
-  [CSS]() |
+- [HTML]({{site.baseurl}}/2017/09/15/HTML) | 
+  [CSS]() | 
   [HTML特殊字符]() |
-  [JavaScript]({{site.baseurl}}/2017/09/17/JavaScript) |
+  [JavaScript]({{site.baseurl}}/2017/09/17/JavaScript) | 
   [Jquery]() |
-  [Ajax]({{site.baseurl}}/2017/08/09/Ajax) - Jsonp |
-  [Markdown](https://blog.csdn.net/qcx321/article/details/53780672) |
+  [Ajax]({{site.baseurl}}/2017/08/09/Ajax) - Jsonp | 
+  [Markdown](https://blog.csdn.net/qcx321/article/details/53780672) | 
   [Jekyll]({{site.baseurl}}/2017/08/09/Jekyll)
   
 - [正则表达式(RegExp)]({{site.baseurl}}/2017/08/13/re)
-- [小控件(control)]() |
+- [小控件(control)]() | 
   [Git]()
 
 

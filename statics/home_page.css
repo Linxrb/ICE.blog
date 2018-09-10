@@ -221,7 +221,7 @@ footer .next-project-link+.copyright{
     border-radius:0
 }
 
-/* toc */
+/* toc 
 .bar{
             width: 25px;
             height: 25px;
@@ -251,7 +251,7 @@ footer .next-project-link+.copyright{
         }
         #menu2{
             top:70%;
-        }
+        }*/
 /* 返回顶部 */
 .go-top {
     position: fixed;
@@ -261,6 +261,8 @@ footer .next-project-link+.copyright{
     z-index:1000;
     color:red;
     font-weight:bold;
+    border:1px solid;
+    padding:0 3px;
 
 }
 .go-top_hide {
@@ -280,7 +282,7 @@ footer .next-project-link+.copyright{
     footer{padding-bottom:2rem}
     .bar {right: 30px;width:30px;height:30px;border-radius: 50px;bottom:10px}
     #linrb {margin-top: 10px;margin-bottom: 20px;}
-    .go-top{right:20%;width:0}
+    .go-top{right:15%;}
 }
 @media (max-width: 480px){
      html{font-size:0.9rem}

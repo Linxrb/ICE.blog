@@ -33,10 +33,11 @@
 @media (max-width: 500px){.markdown-body{padding:2rem;font-size:100%}.markdown-body ul, .markdown-body ol {padding-left: 2em;}}
 @media (max-width: 500px){.show_wz{padding-left: 0px;padding-right:0px;padding-top: 0;}}
 
+.markdown-body ul li a, .markdown-body ol li a {color: #dd1144;border-bottom:0}
 
 
 /* 文章title*/
-.article_body{letter-spacing: 1px;max-width:900px;margin: 0 auto;letter-spacing: 1px;}
+.article_body{letter-spacing: 1px;}
 .article_body .article_title{padding-bottom:5px}
 .article_body .article_title .title{font-size:24px;font-family: Roboto Slab;font-weight:600;margin-top:0;margin-bottom:0}
 .article_body .article_title .title span{cursor:pointer;}
@@ -51,20 +52,23 @@
 #toggle + table{display:none;margin-top:30px;margin-bottom:70px;color:#dd1144;text-align:center;}
 
 /*  toc */
-#markdown-toc li{list-style-type: none;margin: 0;padding: 0 0 0 18px;background: transparent url(/images/icons.png) no-repeat scroll 0 -48px;font-size: .9em;line-height: 18px;overflow: hidden;}
-#markdown-toc ul{margin: 0;padding: 0 0 0 1em;}
-#markdown-toc:hover{-moz-box-shadow: 0 0 8px #666;-webkit-box-shadow: 0 0 8px #666;box-shadow: 0 0 8px #666;-moz-opacity: 1;opacity: 1;-ms-filter: "enabled=false";filter: alpha(enabled=false);}
-#markdown-toc{border: 1px solid #ccc;background: #f8f8f8;max-width: 20rem;float: right;padding: 3px;position: fixed;top: 4em;right: 1em;z-index: 1;-moz-border-radius: 4px;-khtml-border-radius: 4px;-webkit-border-radius: 4px;border-radius: 4px;-moz-opacity: .2;opacity: .2;-ms-filter: "opacity=20";filter: alpha(opacity=20);}
-#markdown-toc a:link{color:#002BB8}
+#markdown-toc ul{padding-left: 2.5em;padding-top: 0.5rem;padding-bottom: 1rem;}
+#markdown-toc li{line-height:1.5;list-style-type: decimal;padding-top: 5px;max-width: 300px;}
+#margin-top li ul{}
+#markdown-toc ul li:hover{}
+#markdown-toc{position: fixed;background-color:#000000;right:-200%;top:0;bottom: 0;z-index:100;margin:0;padding:60px 40px 40px 60px}
+#markdown-toc{color:cyan;}
+#markdown-toc a:link{color:gold;border-bottom:0;padding-right: 20px}
 #markdown-toc a:hover{color:red;}
 #markdown-toc::-webkit-scrollbar {display:none}
-@media (max-width: 500px){#markdown-toc li{max-width:190px }.article_body{border:0}}
+.cover{position:fixed;top:0;right:0;left:0;bottom:0;background-color:rgba(0, 0, 0, 0.48);display:none}
+@media (max-width: 500px){.markdown-body{border:0;margin-top:0}#markdown-toc li{width:190px }#markdown-toc ul{padding-left:2.5rem}.article_body{border:0}}
 </style>
 </head>
 <body>
 <div class="wrap">
     <div class = "show_wz">
-        <div class="article_body">
+        <div class="article_body" style="max-width:780px;margin: 0 auto;letter-spacing: 1px;">
 
             
             <div class= "markdown-body">
@@ -78,9 +82,16 @@
         </div>
     </div>
 </div>
+<div class="bar" id="menubar">
+  <div class="menu" id="menu0"></div>
+  <div class="menu" id="menu1"></div>
+  <div class="menu" id="menu2"></div>
+</div>
 <div id="TOP" class="go-top go-top_hide">
     <img src="{{ site.baseurl }}/images/back-to-top.png" onclick="GoTop();" class="top_img"/>
 </div>
+<div class = "cover"></div>
+<div style="display:none" id="Value" value="0"></div>
 <script>
 //隐藏与显示详细内容
 $(document).ready(function(){
@@ -107,7 +118,62 @@ if (current > 400){
     $(".go-top").addClass("go-top_hide");
 }
 
-
+// toc 按钮
+if ($("#markdown-toc").length>0){
+    var menubar = document.getElementById("menubar");
+    var menu0 = document.getElementById("menu0");
+    var menu1 = document.getElementById("menu1");
+    var menu2 = document.getElementById("menu2");
+menubar.onclick = function () {
+    var i = $("#Value").attr("value")
+    i++;
+    $("#Value").attr("value",i);
+    if (i % 2 == 1) {
+        $("#markdown-toc").css("display","block");
+        $("#markdown-toc").animate({right:'0'},"slow")
+        $(".cover").fadeIn()
+        menu0.style.top = 50 + "%";
+        menu1.style.display = "none";
+        menu2.style.top = 50 + "%";
+        menu0.style.transform = "translate3d(-50%,-50%,0) rotate(135deg)";
+        menu2.style.transform = "translate3d(-50%,-50%,0) rotate(405deg)";
+    }else {
+        $("#markdown-toc").animate({right:'-200%'},"slow",function(){
+            $(this).css("display","none");
+        });
+        
+        $(".cover").fadeOut() 
+        menu0.style.transform = "translate3d(-50%,-50%,0) rotate(0deg)";
+        menu2.style.transform = "translate3d(-50%,-50%,0) rotate(0deg)";
+        menu0.style.top = 30 + "%";
+        menu2.style.top = 70 + "%";
+        menu1.style.display = "block";
+        var current = $(window).scrollTop();
+        if (current < 400){$(".bar").css("display","none");}
+    }
+    
+}}
+    $(".cover").bind("click", function(){
+        var i = $("#Value").attr("value");
+        i++;
+        $("#Value").attr("value",i);
+        var menubar = document.getElementById("menubar");
+        var menu0 = document.getElementById("menu0");
+        var menu1 = document.getElementById("menu1");
+        var menu2 = document.getElementById("menu2");
+        $("#markdown-toc").animate({right:'-200%'},"slow",function(){
+            $(this).css("display","none");
+        });
+        
+        $(".cover").fadeOut() 
+        menu0.style.transform = "translate3d(-50%,-50%,0) rotate(0deg)";
+        menu2.style.transform = "translate3d(-50%,-50%,0) rotate(0deg)";
+        menu0.style.top = 30 + "%";
+        menu2.style.top = 70 + "%";
+        menu1.style.display = "block";
+        var current = $(window).scrollTop();
+        if (current < 400){$(".bar").css("display","none");}
+})
 
 
 //锚点滑动

@@ -6,7 +6,7 @@ layout: post
 * TOC
 {:toc}
 
-#### 判断语句：if ... elif ... else</h4>
+#### 判断语句：if ... elif ... else
 
 {% highlight python linenos %}
 if <条件一>:

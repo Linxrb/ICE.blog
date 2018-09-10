@@ -83,6 +83,7 @@
 <script>
 $(document).ready(function(){
             
+    $(".my-site-list a[href^='http://'], .my-site-list a[href^='https://']").attr("target","_blank")
     $(".my-site-list h2").click(function(){
         $(this).next().slideToggle("slow");
         //$("h2").next().css("display","block");

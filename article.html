@@ -97,24 +97,5 @@
         </div>
     </footer>
 </div>
-<div id="TOP" class="go-top go-top_hide">
-    <img src="images/back-to-top.png" onclick="GoTop();" class="top_img"/>
-</div>
-<script>
-   window.onscroll = function () {
-            var current = $(window).scrollTop();
-            if (current > 180){
-                $(".go-top").removeClass("go-top_hide");
-            }else {
-                $(".go-top").addClass("go-top_hide");
-            }
-        };
-
-        function GoTop() {
-            $(window).scrollTop(900);
-            $('body,html').animate({scrollTop:0},500);
-        }
-</script>
-<script src="statics/Float_Container.js"></script>
 </body>
 </html>

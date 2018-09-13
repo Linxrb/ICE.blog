@@ -24,20 +24,20 @@
 /* 修改 Python/javascript 代码注释颜色*/
 .highlight .c,.highlight .c1{color:#75715e}
 
-.show_wz{max-width:780px;float:right;display:inline-block;}
+.show_wz{padding:4rem 2rem;background:#FFF}
 .show_wz a{color:#dd1144}
 .show_wz a:hover{color:black;text-decoration:none}
 
 /* 修改字体大小*/
 .markdown-body{line-height:2;word-wrap:break-word;letter-spacing: 2px;}
 .markdown-body ul li,.markdown-body ol li{line-height:2}
-@media (max-width: 500px){.markdown-body{font-size:100%}.markdown-body ul, .markdown-body ol {padding-left: 2em;}}
+@media (max-width: 500px){.markdown-body{padding:2rem;font-size:100%}.markdown-body ul, .markdown-body ol {padding-left: 2em;}}
 @media (max-width: 500px){.show_wz{padding-left: 0px;padding-right:0px;padding-top: 0;}}
 
 
 
 /* 文章title*/
-.article_body{letter-spacing: 1px;background:#FFF;padding:3rem 2rem;}
+.article_body{letter-spacing: 1px;max-width:900px;margin: 0 auto;letter-spacing: 1px;}
 .article_body .article_title{padding-bottom:5px}
 .article_body .article_title .title{font-size:24px;font-family: Roboto Slab;font-weight:600;margin-top:0;margin-bottom:0}
 .article_body .article_title .title span{cursor:pointer;}
@@ -51,44 +51,53 @@
 /* 表格操作*/
 #toggle + table{display:none;margin-top:30px;margin-bottom:70px;color:#dd1144;text-align:center;}
 /*  toc */
-#markdown-toc{display:none;}
-.leftToc{box-sizing:border-box;display:inline-block;width:240px;height:100%;float:left;padding:10% 2rem;position:fixed;background:#FFF}
-.leftToc li,.leftToc ul{margin:0;padding:3px;line-height;5px;letter-spacing: 2px;}
-.leftToc li{list-style-type: none;margin: 0;padding: 0 0 0 18px;background: transparent url(/images/icons.png) no-repeat scroll 0 -48px;font-size: .9em;overflow: hidden;}
-.leftToc a{color:#002BB8}
-
-
-.wrap{background:#f5f7f9;}
-@media (max-width: 1100px){.leftToc{display:none}.show_wz{float:none;margin:0 auto;display:block;width:100%}}
+#markdown-toc{margin:1rem 0}
+#markdown-toc li{list-style-type: none;margin: 0;padding: 0 0 0 18px;background: transparent url(/images/icons.png) no-repeat scroll 0 -48px;font-size: .9em;line-height: 18px;overflow: hidden;}
+#markdown-toc ul{margin: 0;padding: 0 0 0 1em;}
+#markdown-toc:hover{-moz-box-shadow: 0 0 8px #666;-webkit-box-shadow: 0 0 8px #666;box-shadow: 0 0 8px #666;-moz-opacity: 1;opacity: 1;-ms-filter: "enabled=false";filter: alpha(enabled=false);}
+#markdown-toc{border: 1px solid #ccc;background: #f8f8f8;max-width: 20rem;float: right;padding: 3px;position: fixed;top: 4em;right: 1em;z-index: 1;-moz-border-radius: 4px;-khtml-border-radius: 4px;-webkit-border-radius: 4px;border-radius: 4px;-moz-opacity: .1;opacity: .1;-ms-filter: "opacity=10";filter: alpha(opacity=10);}
+#markdown-toc a:link{color:#002BB8}
+#markdown-toc a:hover{color:red;}
+#markdown-toc::-webkit-scrollbar {display:none}
+@media (max-width: 500px){#markdown-toc li{max-width:190px }.article_body{border:0}#markdown-toc{top:1rem}}
 </style>
 </head>
 <body>
 <div class="wrap">
-    <div style="max-width:1030px;margin:0 auto;overflow:auto;">
-        <div class="leftToc"></div>
-        <div class = "show_wz">
-            <div class="article_body">
-                <div class= "markdown-body">
-                    <div class = 'article_title'>
-                        <div class='title'><span><a href="javascript:history.back(-1)" style="color:#000">{{ page.title}}</a></span></div>
-                        <div class= 'time'><span>{{ page.date | date: "%Y/%m/%d" }}</span> BY <span>Linrb</span></div>
-                    </div>
-                    {{ content }}
+    <div class = "show_wz">
+        <div class="article_body">
+
+            
+            <div class= "markdown-body">
+                <div class = 'article_title'>
+                    <div class='title'><span><a href="javascript:history.back(-1)" style="color:#000">{{ page.title}}</a></span></div>
+                    <div class= 'time'><span>{{ page.date | date: "%Y/%m/%d" }}</span> BY <span>Linrb</span></div>
                 </div>
+                {{ content }}
+                
             </div>
-    </div>
+        </div>
     </div>
 </div>
-
+<!--<div id="TOP" class="go-top go-top_hide" onclick="GoTop();" class="top_img">
+    <p>top</p>
+</div>-->
 <script>
 //隐藏与显示详细内容
 $(document).ready(function(){
-
-
-$("#markdown-toc").children().clone().prependTo($(".leftToc"))
+    //代码行号
+    //$(".highlight code").each(function(){
+    //    $(this).html("<ul><li>" + $(this).html().replace(/\n/g,"\n</li><li>") +"\n</li></ul>");
+    //});
+   /* 标题菜单
+   $(".article_title .title span").click(function(){
+        $("#toggle").next().slideToggle("slow");
+        $("#toggle").next().css("display","block");
+      });
+   */
 
 //$("#markdown-toc a").removeAttr("target")
-$(".leftToc a").addClass("topLink")    // toc  下 a 标签加类名 滑动
+$("#markdown-toc a").addClass("topLink")    // toc  下 a 标签加类名 滑动
 var current = $(window).scrollTop();
 
 /*/ 页面刷新时 返回顶部标签
@@ -99,6 +108,7 @@ if (current > 400){
     $(".go-top").addClass("go-top_hide");
 }
 */
+
 
 
 //锚点滑动
@@ -112,7 +122,6 @@ $("html, body").animate({
     return false;
 })
 });
-
 
 
 /*/返回顶部   显示隐藏菜单按钮

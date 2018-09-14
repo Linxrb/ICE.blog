@@ -1,7 +1,7 @@
-.my-site-list{background-color:#f3f3f3;line-height:130%;padding:6rem;padding-bottom:6rem;padding-left:13.5rem;padding-right:13.5rem;font-size:100%}
+.my-site-list{background-color:#f3f3f3;line-height:130%;padding:6rem;padding-bottom:6rem;padding-left:13.7rem;padding-right:13.7rem;font-size:100%}
 .my-site-list ul li a{color:#002BB8 }
 .my-site-list ul li a:hover{color:red;border-bottom: none; }
-.my-site-list li{padding-top:7.5px;letter-spacing:0.04rem}
+.my-site-list li{padding-top:7.5px;letter-spacing:0.4px}
 .my-site-list h2{padding-bottom:9px;}
 .my-site-list a[href^="http://"], .my-site-list a[href^="https://"]{
     background: transparent url(/images/icons.png) no-repeat scroll right -16px;

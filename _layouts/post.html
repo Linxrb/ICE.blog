@@ -82,7 +82,7 @@
 
 <script>
 //隐藏与显示详细内容
-$(document).ready(function(){
+(function(){
 
 
 $("#markdown-toc").children().clone().prependTo($(".leftToc"))
@@ -111,7 +111,7 @@ $("html, body").animate({
 });
     return false;
 })
-});
+})();
 
 
 

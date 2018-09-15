@@ -19,12 +19,12 @@
 .markdown-body h3:before, .markdown-body h4:before {content: "# ";}
 
 .markdown-body h4{font-size:1rem;padding-top: 30px}
-.markdown-body h3{color:#002BB8;margin-bottom: 30px;font-size:1.25rem;border-bottom: 1px solid #ccc;padding-bottom:10px;padding-top: 50px}
+.markdown-body h3{color:#002BB8;margin-bottom: 30px;font-size:1.25rem;border-bottom: 1px solid #ccc;padding-bottom:10px;padding-top: 30px}
 .markdown-body p{margin-bottom:0}
 /* 修改 Python/javascript 代码注释颜色*/
 .highlight .c,.highlight .c1{color:#75715e}
 
-.show_wz{max-width:780px;float:right;display:inline-block;}
+.show_wz{width:780px;float:right;display:inline-block;}
 .show_wz a{color:#dd1144}
 .show_wz a:hover{color:black;text-decoration:none}
 
@@ -52,13 +52,14 @@
 #toggle + table{display:none;margin-top:30px;margin-bottom:70px;color:#dd1144;text-align:center;}
 /*  toc */
 #markdown-toc{display:none;}
-.leftToc{box-sizing:border-box;display:inline-block;width:240px;height:100%;float:left;padding:10% 2rem;position:fixed;background:#FFF}
+.leftToc{box-sizing:border-box;display:inline-block;width:240px;height:100%;float:left;padding:10% 2rem;position:fixed;background:#2D2D2D}
 .leftToc li,.leftToc ul{margin:0;padding:3px;line-height;5px;letter-spacing: 2px;}
 .leftToc li{list-style-type: none;margin: 0;padding: 0 0 0 18px;background: transparent url(/images/icons.png) no-repeat scroll 0 -48px;font-size: .9em;overflow: hidden;}
-.leftToc a{color:#002BB8}
+.leftToc a{color:#f8f8f2}
 
 
 .wrap{background:#f5f7f9;}
+.left-a{color:red !important}
 @media (max-width: 1100px){.leftToc{display:none}.show_wz{float:none;margin:0 auto;display:block;width:100%}}
 </style>
 </head>
@@ -111,9 +112,54 @@ $("html, body").animate({
 });
     return false;
 })
+
 })();
 
 
+window.onscroll = function(){
+    var scrollTop = $(window).scrollTop();
+    $("h3,h4").each(function(){
+        var eleTop = $(this).offset().top;
+        var winTop = eleTop - scrollTop;
+        var eleID = "#markdown-toc-" + $(this).attr("id");
+        var lastEleId = "#markdown-toc-" + $("h3,h4").last().attr("id");
+        
+        var docHeight = $(document).height();
+        var winHeight = $(window).height();
+        
+        if(docHeight-winHeight == scrollTop){
+            $(lastEleId).addClass("left-a");
+            $(this).siblings("h3,h4").each(function(){
+                        $("#markdown-toc-" + $(this).attr("id")).removeClass("left-a");
+                    })
+        }else{
+                if(winTop<=35){
+                    $(eleID).addClass("left-a");
+                    $(this).siblings("h3,h4").each(function(){
+                        $("#markdown-toc-" + $(this).attr("id")).removeClass("left-a");
+                    })
+                    return;
+                }else{
+                    $(eleID).removeClass("left-a");
+                }
+            }   
+        
+        
+
+    })
+
+}
+
+
+
+
+/*function Scroll(){
+     console.log($("#python-的诞生").offset().top)
+     console.log($("#python-的诞生").height())
+     console.log($("#python-的诞生").innerHeight())
+     console.log($("#python-的诞生").outerHeight(true))
+
+}*/
 
 /*/返回顶部   显示隐藏菜单按钮
 window.onscroll = function () {

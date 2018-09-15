@@ -8,7 +8,7 @@ layout: post
 
 ### Python 的诞生
 
-　　Python是著名的 `龟叔` `Guido van Rossum(吉多·范罗苏姆)` 在1989年圣诞节期间，为了打发无聊的圣诞节而编写的一个编程语言。  
+　　Python是著名的 `龟叔` `Guido van Rossum(吉多·范罗苏姆)` 在1989年圣诞节期间编写的一个编程语言。  
 
 ![]({{site.baseurl}}/images/images/1483014338667.jpg '龟叔')  
 

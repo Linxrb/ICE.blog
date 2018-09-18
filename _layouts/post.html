@@ -52,26 +52,35 @@
 #toggle + table{display:none;margin-top:30px;margin-bottom:70px;color:#dd1144;text-align:center;}
 /*  toc */
 #markdown-toc{display:none;}
-.leftToc{box-sizing:border-box;display:inline-block;width:240px;height:100%;float:left;padding:10% 2rem;position:fixed;background:#2D2D2D}
-.leftToc li,.leftToc ul{margin:0;padding:3px;line-height;5px;letter-spacing: 2px;}
-.leftToc li{list-style-type: none;margin: 0;padding: 0 0 0 18px;background: transparent url(/images/icons.png) no-repeat scroll 0 -48px;font-size: .9em;overflow: hidden;}
-.leftToc a{color:#fff}
+.left{box-sizing:border-box;display:inline-block;width:240px;height:100%;float:left;padding:0 2rem;position:fixed;background:#2D2D2D}
+.leftToc{width:100%;text-align:center;padding:100px 0 40px 0}
+.leftToc img{width:85px;height:85px;border-radius:50%}
+.leftToc img:hover{transform:rotate(30deg)}
+.leftBottom{margin-bottom:30px;}
+.leftBottom li,.leftBottom ul{margin:0;padding:3px;line-height;5px;letter-spacing: 2px;}
+.leftBottom li{list-style-type: none;margin: 0;padding: 0 0 0 18px;background: transparent url(/images/icons.png) no-repeat scroll 0 -48px;font-size: .9em;overflow: hidden;}
+.leftBottom a{color:#fff}
 
 
-.wrap{background:#f5f7f9;}
+.wrap{background:#618DAD;}
+html{background:#618DAD;}
 .left-a{color:red !important}
-@media (max-width: 1100px){.leftToc{display:none}.show_wz{float:none;margin:0 auto;display:block;width:100%}}
+@media (max-width: 1100px){.left{display:none}.show_wz{float:none;margin:0 auto;display:block;width:100%}}
 </style>
 </head>
 <body>
 <div class="wrap">
     <div style="max-width:1050px;margin:0 auto;overflow:auto;">
-        <div class="leftToc"></div>
+        <div class="left"> 
+            <div class="leftToc"><a href="javascript:history.back(-1)"><img src="{{ site.baseurl }}/images/Mask.jpg"></a></div>
+            <div class="leftBottom"></div> 
+        </div>
+        
         <div class = "show_wz">
             <div class="article_body">
                 <div class= "markdown-body">
                     <div class = 'article_title'>
-                        <div class='title'><span><a href="javascript:history.back(-1)" style="color:#000">{{ page.title}}</a></span></div>
+                        <div class='title'><span>{{ page.title}}</span></div>
                         <div class= 'time'><span>{{ page.date | date: "%Y/%m/%d" }}</span> BY <span>Linrb</span></div>
                     </div>
                     {{ content }}
@@ -86,10 +95,10 @@
 (function(){
 
 
-$("#markdown-toc").children().clone().prependTo($(".leftToc"))
+$("#markdown-toc").children().clone().prependTo($(".leftBottom"))
 
 //$("#markdown-toc a").removeAttr("target")
-$(".leftToc a").addClass("topLink")    // toc  下 a 标签加类名 滑动
+$(".leftBottom a").addClass("topLink")    // toc  下 a 标签加类名 滑动
 var current = $(window).scrollTop();
 
 /*/ 页面刷新时 返回顶部标签

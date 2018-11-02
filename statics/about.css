@@ -8,7 +8,7 @@
     padding: 0 16px 0 0;
 }
 .my-site-list a[href^="http://"]:hover, .my-site-list a[href^="https://"]:hover{background-position: right -30px;}
-hr{height: 0.25em;padding: 0;margin: 24px 0;background-color: #DBDDE0;border: 0;    position: relative;width: 112%;left: -6%;}
+hr{height: 0.25em;padding: 0;margin: 24px 0;background-color: #DBDDE0;    position: relative;width: 112%;left: -6%;}
 
 #about{border-bottom:1px solid;color:red;}
 .my-site-list h2{cursor:pointer;font-size: 1.1rem;}

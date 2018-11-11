@@ -42,6 +42,7 @@ html::-webkit-scrollbar{display: none}
 body{
     font:400 13.5px/1.7 Roboto,'Helvetica Neue',Helvetica,Arial,'Microsoft Yahei',sans-serif;height:100%;
     color:#000000;
+    letter-spacing: 0.6px;
 }
 
 nav ul,nav ol{

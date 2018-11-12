@@ -6,6 +6,7 @@
 .my-site-list a[href^="http://"], .my-site-list a[href^="https://"]{
     background: transparent url(/images/icons.png) no-repeat scroll right -16px;
     padding: 0 16px 0 0;
+    color:red
 }
 .my-site-list a[href^="http://"]:hover, .my-site-list a[href^="https://"]:hover{background-position: right -30px;}
 hr{height: 0.2em;padding: 0;margin: 24px 0;background-color: #DBDDE0;    position: relative;width: 112%;left: -6%;}
